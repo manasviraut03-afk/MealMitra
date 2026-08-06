@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+}
+
+.header-text {
+  width: 50%;
+}
+
+.header-text h1 {
+  font-size: 48px;
+}
+
+.header-text p {
+  margin: 20px 0;
+}
+
+.header-text button {
+  background: tomato;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.header-image img {
+  width: 450px;
+}
