@@ -1,0 +1,487 @@
+/* =========================
+   MAIN MENU SECTION
+========================= */
+
+.menu-section {
+  width: 100%;
+  padding: 50px 35px 75px;
+
+  /* Same red → orange → yellow family as navbar */
+  background: linear-gradient(
+    135deg,
+    #FFF1B8 0%,
+    #FFE2A3 50%,
+    #FFD6A0 100%
+  );
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+/* =========================
+   BEST FOOD HEADER
+========================= */
+
+.menu-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.menu-header h2 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 800;
+
+  /* Navbar red */
+  color: #C83224;
+
+  text-shadow:
+    0 2px 5px rgba(190, 70, 20, 0.15);
+}
+
+
+/* =========================
+   FOOD CATEGORY GRID
+========================= */
+
+.menu-grid {
+  width: 100%;
+  display: grid;
+
+  grid-template-columns: repeat(6, 1fr);
+
+  column-gap: 20px;
+  row-gap: 40px;
+
+  align-items: start;
+}
+
+
+/* =========================
+   CATEGORY CARD
+========================= */
+
+.menu-card {
+  text-align: center;
+  cursor: pointer;
+
+  transition: transform 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+}
+
+
+/* =========================
+   CATEGORY IMAGE
+========================= */
+
+.menu-card img {
+  width: 140px;
+  height: 140px;
+
+  object-fit: contain;
+
+  display: block;
+  margin: 0 auto;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+
+  filter: drop-shadow(
+    0 8px 12px rgba(120, 55, 20, 0.18)
+  );
+}
+
+.menu-card:hover img {
+  transform: scale(1.08);
+}
+
+
+/* =========================
+   CATEGORY NAME
+========================= */
+
+.menu-card p {
+  margin: 12px 0 0;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #7A3218;
+}
+
+
+/* =========================
+   POPULAR FOOD HEADER
+========================= */
+
+.popular-header {
+  text-align: center;
+
+  margin-top: 70px;
+  margin-bottom: 45px;
+}
+
+.popular-header h2 {
+  margin: 0 0 8px;
+
+  font-size: 34px;
+  font-weight: 800;
+
+  color: #C83224;
+
+  text-shadow:
+    0 2px 5px rgba(190, 70, 20, 0.15);
+}
+
+.popular-header p {
+  margin: 0;
+
+  font-size: 17px;
+
+  color: #7A4A2A;
+}
+
+
+/* =========================
+   POPULAR FOOD GRID
+========================= */
+
+.food-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 20px;
+
+  overflow-x: auto;
+
+  padding: 5px 5px 20px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   FOOD CARD
+========================= */
+
+.food-card {
+  min-width: 245px;
+
+  /* Light navbar-style gradient */
+  background: linear-gradient(
+    145deg,
+    #FFF8DC,
+    #FFE6B8
+  );
+
+  border-radius: 20px;
+
+  flex: 0 0 220px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  transition: 0.3s ease;
+
+  box-shadow:
+    0 8px 20px rgba(130, 55, 20, 0.16);
+
+  padding: 15px 15px 25px;
+
+  border: 1px solid rgba(230, 125, 30, 0.18);
+}
+
+.food-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 14px 28px rgba(150, 55, 20, 0.22);
+}
+
+
+/* =========================
+   FOOD IMAGE
+========================= */
+
+.food-image {
+  width: 100%;
+  height: 150px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.food-image img {
+  width: 175px;
+  height: 130px;
+
+  object-fit: cover;
+
+  display: block;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 5px 12px rgba(80, 40, 20, 0.15);
+}
+
+
+/* =========================
+   FOOD DETAILS
+========================= */
+
+.food-details {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+/* =========================
+   FOOD NAME
+========================= */
+
+.food-details h3 {
+  margin: 15px 0 15px;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  color: #7A3218;
+
+  text-align: center;
+}
+
+
+/* =========================
+   RATING
+========================= */
+
+.food-rating {
+  background: #F5A623;
+
+  color: white;
+
+  padding: 4px 8px;
+
+  border-radius: 6px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  box-shadow:
+    0 3px 8px rgba(245, 166, 35, 0.25);
+}
+
+
+/* =========================
+   PRICE + ADD BUTTON
+========================= */
+
+.food-bottom {
+  width: 100%;
+
+  margin-top: 12px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.food-price {
+  font-size: 17px;
+
+  font-weight: 700;
+
+  color: #7A3218;
+}
+
+
+/* =========================
+   ADD BUTTON
+========================= */
+
+.add-cart-btn {
+  border: none;
+
+  /* Same red → orange as navbar */
+  background: linear-gradient(
+    135deg,
+    #E53935,
+    #FF7A00
+  );
+
+  color: white;
+
+  padding: 8px 14px;
+
+  border-radius: 9px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+
+  box-shadow:
+    0 5px 12px rgba(220, 70, 20, 0.25);
+}
+
+.add-cart-btn:hover {
+  background: linear-gradient(
+    135deg,
+    #C62828,
+    #F4511E
+  );
+
+  transform: scale(1.05);
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+.food-grid::-webkit-scrollbar {
+  height: 9px;
+}
+
+.food-grid::-webkit-scrollbar-track {
+  background: #FFD98A;
+
+  border-radius: 10px;
+}
+
+.food-grid::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    90deg,
+    #FFB300,
+    #F4511E
+  );
+
+  border-radius: 10px;
+}
+
+
+/* =========================
+   1200px
+========================= */
+
+@media (max-width: 1200px) {
+
+  .menu-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .food-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+
+/* =========================
+   900px
+========================= */
+
+@media (max-width: 900px) {
+
+  .menu-section {
+    padding: 45px 25px 60px;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+
+    column-gap: 20px;
+    row-gap: 50px;
+  }
+
+  .menu-card img {
+    width: 160px;
+    height: 140px;
+  }
+
+  .menu-header h2,
+  .popular-header h2 {
+    font-size: 32px;
+  }
+
+}
+
+
+/* =========================
+   600px
+========================= */
+
+@media (max-width: 600px) {
+
+  .menu-section {
+    padding: 40px 15px 50px;
+  }
+
+  .menu-header h2,
+  .popular-header h2 {
+    font-size: 28px;
+  }
+
+  .popular-header p {
+    font-size: 16px;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    row-gap: 40px;
+  }
+
+  .menu-card img {
+    width: 140px;
+    height: 120px;
+  }
+
+  .menu-card p {
+    font-size: 17px;
+    margin-top: 15px;
+  }
+
+  .food-grid {
+    display: flex;
+
+    overflow-x: auto;
+
+    gap: 20px;
+  }
+
+  .food-card {
+    min-width: 250px;
+  }
+
+}

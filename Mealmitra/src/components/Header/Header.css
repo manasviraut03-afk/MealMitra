@@ -1,31 +1,436 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 60px;
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.header-text {
-  width: 50%;
+
+/* =========================
+   HERO VIDEO
+========================= */
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: -2;
 }
 
-.header-text h1 {
-  font-size: 48px;
+
+/* =========================
+   DARK WARM OVERLAY
+========================= */
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    /* Dark warm overlay */
+    background: rgba(45, 25, 15, 0.38);
+
+    z-index: -1;
 }
 
-.header-text p {
-  margin: 20px 0;
+
+/* =========================
+   HERO GLOW
+========================= */
+
+.hero-glow {
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    top: 42%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    /* Yellow → Orange → Red Glow */
+    background: radial-gradient(
+        circle,
+        rgba(255, 193, 7, 0.45),
+        rgba(255, 140, 0, 0.30),
+        rgba(240, 68, 56, 0.18),
+        transparent 70%
+    );
+
+    filter: blur(55px);
+
+    animation: glowMove 6s ease-in-out infinite alternate;
+
+    z-index: 0;
+
+    pointer-events: none;
 }
 
-.header-text button {
-  background: tomato;
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 8px;
-  cursor: pointer;
+
+@keyframes glowMove {
+
+    0% {
+        transform: translate(-55%, -50%) scale(0.9);
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: translate(-45%, -55%) scale(1.1);
+        opacity: 0.85;
+    }
+
+    100% {
+        transform: translate(-50%, -45%) scale(1);
+        opacity: 0.65;
+    }
+
 }
 
-.header-image img {
-  width: 450px;
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+
+/* =========================
+   HERO TITLE
+========================= */
+
+.hero-content h1 {
+    font-size: 50px;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+    /* Bright Yellow */
+    color: #FFD166;
+
+    text-shadow:
+        0 0 10px rgba(255, 193, 7, 0.45),
+        0 0 25px rgba(255, 140, 0, 0.35),
+        0 0 45px rgba(240, 68, 56, 0.20);
+
+    animation: textGlow 4s ease-in-out infinite alternate;
+}
+
+
+@keyframes textGlow {
+
+    from {
+        text-shadow:
+            0 0 8px rgba(255, 193, 7, 0.35),
+            0 0 20px rgba(255, 140, 0, 0.20);
+    }
+
+    to {
+        text-shadow:
+            0 0 15px rgba(255, 209, 102, 0.60),
+            0 0 35px rgba(255, 140, 0, 0.40),
+            0 0 50px rgba(240, 68, 56, 0.25);
+    }
+
+}
+
+
+/* =========================
+   HERO DESCRIPTION
+========================= */
+
+.hero-content p {
+    font-size: 22px;
+
+    width: 500px;
+
+    margin-bottom: 30px;
+
+    color: rgba(255, 255, 255, 0.95);
+
+    text-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.65);
+}
+
+
+/* =========================
+   SEARCH AREA
+========================= */
+
+.search-area {
+    display: flex;
+
+    gap: 20px;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   LOCATION BOX
+========================= */
+
+.location-box {
+    width: 350px;
+    height: 65px;
+
+    /* Light Yellow + Orange + Red */
+    background: linear-gradient(
+        135deg,
+        #FFF3B0,
+        #FFE0A3,
+        #FFD6D6
+    );
+
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 20px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255, 152, 0, 0.25);
+
+    box-shadow:
+        0 10px 30px rgba(244, 81, 30, 0.18);
+
+    transition: 0.3s ease;
+}
+
+.location-box:hover {
+    transform: translateY(-3px);
+
+    background: linear-gradient(
+        135deg,
+        #FFD54F,
+        #FFCC80,
+        #FFCDD2
+    );
+
+    box-shadow:
+        0 15px 35px rgba(244, 81, 30, 0.25);
+}
+
+.location-box:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.28);
+}
+
+
+/* Location Icon */
+
+.location-icon {
+    font-size: 25px;
+
+    margin-right: 15px;
+
+    /* Red */
+    color: #E53935;
+}
+
+
+/* Location Input */
+
+.location-box input {
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 17px;
+
+    width: 100%;
+
+    color: #3D2418;
+}
+
+
+.location-box input::placeholder {
+    color: #8A7568;
+}
+
+
+/* Arrow */
+
+.arrow {
+    font-size: 28px;
+
+    margin-left: auto;
+
+    /* Orange */
+    color: #FF8C00;
+}
+
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.search-box {
+    width: 350px;
+    height: 65px;
+
+    /* Light Red + Orange + Yellow */
+    background: linear-gradient(
+        135deg,
+        #FFF1D6,
+        #FFE0B2,
+        #FFD6D6
+    );
+
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 20px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255, 152, 0, 0.25);
+
+    box-shadow:
+        0 10px 30px rgba(244, 81, 30, 0.18);
+
+    transition: 0.3s ease;
+}
+
+.search-box:hover {
+    transform: translateY(-3px);
+
+    background: linear-gradient(
+        135deg,
+        #FFE082,
+        #FFCC80,
+        #FFCDD2
+    );
+
+    box-shadow:
+        0 15px 35px rgba(244, 81, 30, 0.25);
+}
+
+.search-box:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.28);
+}
+
+
+/* Search Input */
+
+.search-box input {
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 17px;
+
+    width: 100%;
+
+    color: #3D2418;
+}
+
+
+.search-box input::placeholder {
+    color: #8A7568;
+}
+
+
+/* Search Icon */
+
+.search-icon {
+    font-size: 23px;
+
+    margin-left: 15px;
+
+    /* Orange */
+    color: #FF8C00;
+}
+
+
+/* =========================
+   ORDER BUTTON
+========================= */
+
+.hero-content button {
+    width: 180px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    /* Red → Orange */
+    background: linear-gradient(
+        90deg,
+        #E53935,
+        #F4511E,
+        #FF8C00
+    );
+
+    color: #FFFFFF;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 8px 22px rgba(229, 57, 53, 0.35);
+}
+
+
+.hero-content button:hover {
+    /* Orange → Yellow */
+    background: linear-gradient(
+        90deg,
+        #FF8C00,
+        #FFC107
+    );
+
+    color: #3D2418;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 28px rgba(255, 140, 0, 0.45);
 }

@@ -1,39 +1,62 @@
-import "./Footer.tsx";
+import "./Footer.css";
 
 function Footer() {
   return (
     <footer className="footer">
+
       <div className="footer-container">
 
-        <div className="footer-logo">
-          <h2>🍽️ MealMitra</h2>
-          <p>Your Favourite Food Delivery Partner.</p>
+        {/* Brand */}
+        <div className="footer-brand">
+          <h2>MealMitra</h2>
+          <p>
+            Your favourite food, delivered fresh and fast.
+            Discover delicious meals and restaurants around you.
+          </p>
         </div>
 
-        <div className="footer-links">
+        {/* Quick Links */}
+        <div className="footer-column">
           <h3>Quick Links</h3>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/menu">Menu</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
+          <a href="#">Home</a>
+          <a href="#">Offers</a>
+          <a href="#">About Us</a>
+          <a href="#">Restaurants</a>
+          <a href="#">Contact Us</a>
         </div>
 
-        <div className="footer-contact">
-          <h3>Contact</h3>
-          <p>Email: mealmitra@gmail.com</p>
-          <p>Phone: +91 9876543210</p>
-          <p>Nagpur, Maharashtra</p>
+        {/* Explore */}
+        <div className="footer-column">
+          <h3>Explore</h3>
+          <a href="#">Veg Mode</a>
+          <a href="#">Popular Food</a>
+          <a href="#">Best Restaurants</a>
+          <a href="#">Desserts</a>
+          <a href="#">Breakfast</a>
+        </div>
+
+        {/* Support */}
+        <div className="footer-column">
+          <h3>Support</h3>
+          <a href="#">Help & Support</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Refund Policy</a>
         </div>
 
       </div>
 
-      <hr />
-
+      {/* Bottom */}
       <div className="footer-bottom">
-        <p>© 2026 MealMitra. All Rights Reserved.</p>
+        <p>© 2026 MealMitra. All rights reserved.</p>
+
+        <div className="social-links">
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">LinkedIn</a>
+        </div>
       </div>
+
     </footer>
   );
 }

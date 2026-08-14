@@ -1,0 +1,619 @@
+/* =====================================================
+   WHY MEALMITRA SECTION
+===================================================== */
+
+.why-mealmitra {
+  width: 100%;
+  padding: 80px 40px;
+
+  /* SAME DARK RED → ORANGE GRADIENT AS SERVICES */
+  background: linear-gradient(
+    135deg,
+    #7F1D1D 0%,
+    #B8321C 45%,
+    #D95F02 100%
+  );
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.why-header {
+  width: 100%;
+  max-width: 850px;
+
+  margin: 0 auto 60px;
+
+  text-align: center;
+}
+
+.why-header h2 {
+  margin: 0 0 18px;
+
+  font-size: 48px;
+  line-height: 1.15;
+
+  font-weight: 800;
+
+  /* SAME GOLDEN YELLOW AS SERVICES */
+  color: #FFD166;
+
+  text-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.30);
+}
+
+.why-header p {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  font-size: 20px;
+  line-height: 1.6;
+
+  /* SAME CREAM AS SERVICES */
+  color: #FFF4D6;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.why-content {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 300px 1fr;
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+
+/* =====================================================
+   FEATURE COLUMNS
+===================================================== */
+
+.feature-column {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 25px;
+}
+
+
+/* =====================================================
+   FEATURE CARD
+===================================================== */
+
+.feature-card {
+  width: 210px;
+  height: 145px;
+
+  padding: 20px;
+
+  /* GOLDEN GRADIENT */
+  background: linear-gradient(
+    135deg,
+    #FFD166,
+    #FFB703
+  );
+
+  border: 2px solid rgba(255, 193, 7, 0.50);
+
+  border-radius: 22px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =====================================================
+   CARD HOVER
+===================================================== */
+
+.feature-card:hover {
+  transform: translateY(-7px);
+
+  /* ORANGE → GOLD */
+  background: linear-gradient(
+    135deg,
+    #FFB703,
+    #FF6B00
+  );
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =====================================================
+   LEFT CARDS
+===================================================== */
+
+.left-features .feature-card {
+  margin-left: auto;
+}
+
+
+/* =====================================================
+   RIGHT CARDS
+===================================================== */
+
+.right-features .feature-card {
+  margin-right: auto;
+}
+
+
+/* =====================================================
+   FEATURE ICON
+===================================================== */
+
+.feature-icon {
+  font-size: 42px;
+
+  line-height: 1;
+
+  margin-bottom: 14px;
+}
+
+
+/* =====================================================
+   FEATURE TITLE
+===================================================== */
+
+.feature-card h3 {
+  margin: 0;
+
+  font-size: 18px;
+
+  line-height: 1.3;
+
+  font-weight: 700;
+
+  /* DARK RED FROM SERVICES */
+  color: #7F1D1D !important;
+}
+
+
+/* =====================================================
+   PHONE CONTAINER
+===================================================== */
+
+.phone-container {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+
+/* =====================================================
+   PHONE BODY
+===================================================== */
+
+.phone {
+  position: relative;
+
+  width: 270px;
+  height: 500px;
+
+  padding: 10px;
+
+  /* DARK RED */
+  background: #7F1D1D;
+
+  border-radius: 42px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.40);
+
+  border: 2px solid rgba(255, 193, 7, 0.35);
+}
+
+
+/* =====================================================
+   PHONE SCREEN
+===================================================== */
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+
+  padding: 55px 20px 20px;
+
+  /* CREAM */
+  background: #FFF4D6;
+
+  border-radius: 34px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   PHONE NOTCH
+===================================================== */
+
+.phone-notch {
+  position: absolute;
+
+  top: 10px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 110px;
+  height: 28px;
+
+  /* SAME DARK RED */
+  background: #7F1D1D;
+
+  border-radius: 0 0 18px 18px;
+
+  z-index: 5;
+}
+
+
+/* =====================================================
+   PHONE LOGO
+===================================================== */
+
+.phone-logo {
+  width: 65px;
+  height: 65px;
+
+  /* SAME SERVICES GOLDEN GRADIENT */
+  background: linear-gradient(
+    135deg,
+    #FFD166,
+    #FFB703
+  );
+
+  border-radius: 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 32px;
+
+  box-shadow:
+    0 8px 20px rgba(255, 183, 3, 0.40);
+}
+
+
+/* =====================================================
+   PHONE TITLE
+===================================================== */
+
+.phone-screen h3 {
+  margin: 15px 0 3px;
+
+  font-size: 25px;
+
+  font-weight: 700;
+
+  /* SERVICES ORANGE */
+  color: #B8321C;
+}
+
+
+/* =====================================================
+   PHONE SUBTITLE
+===================================================== */
+
+.phone-screen > p {
+  margin: 0;
+
+  font-size: 14px;
+
+  color: #7F4A32;
+}
+
+
+/* =====================================================
+   FOOD DISPLAY
+===================================================== */
+
+.food-display {
+  width: 190px;
+  height: 150px;
+
+  margin-top: 35px;
+
+  background: #FFFFFF;
+
+  border-radius: 25px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  font-size: 42px;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =====================================================
+   ORDER BOX
+===================================================== */
+
+.order-box {
+  width: 190px;
+
+  margin-top: 25px;
+
+  padding: 14px;
+
+  /* SAME SERVICES ARROW GRADIENT */
+  background: linear-gradient(
+    135deg,
+    #FFB703,
+    #FF6B00,
+    #E63920
+  );
+
+  color: #FFFFFF;
+
+  border-radius: 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 6px 18px rgba(255, 107, 0, 0.40);
+}
+
+
+/* =====================================================
+   ORDER ICON
+===================================================== */
+
+.order-box span {
+  font-size: 25px;
+}
+
+
+/* =====================================================
+   ORDER TEXT
+===================================================== */
+
+.order-box strong {
+  display: block;
+
+  font-size: 14px;
+}
+
+.order-box small {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+
+  .why-mealmitra {
+    padding: 70px 25px;
+  }
+
+  .why-content {
+    grid-template-columns: 1fr 270px 1fr;
+
+    gap: 35px;
+  }
+
+  .feature-card {
+    width: 190px;
+
+    height: 140px;
+  }
+
+  .phone {
+    width: 250px;
+
+    height: 470px;
+  }
+
+  .why-header h2 {
+    font-size: 42px;
+  }
+}
+
+
+/* =====================================================
+   SMALL TABLET
+===================================================== */
+
+@media (max-width: 850px) {
+
+  .why-content {
+    grid-template-columns: 1fr 240px 1fr;
+
+    gap: 20px;
+  }
+
+  .feature-card {
+    width: 170px;
+
+    height: 135px;
+  }
+
+  .feature-icon {
+    font-size: 38px;
+  }
+
+  .feature-card h3 {
+    font-size: 16px;
+  }
+
+  .phone {
+    width: 230px;
+
+    height: 440px;
+  }
+
+  .food-display {
+    width: 170px;
+
+    height: 130px;
+
+    font-size: 35px;
+  }
+
+  .order-box {
+    width: 170px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .why-mealmitra {
+    padding: 60px 20px;
+  }
+
+  .why-header {
+    margin-bottom: 45px;
+  }
+
+  .why-header h2 {
+    font-size: 32px;
+  }
+
+  .why-header p {
+    font-size: 17px;
+  }
+
+  .why-content {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 35px;
+  }
+
+  /* Phone first */
+
+  .phone-container {
+    order: 1;
+  }
+
+  /* Left features */
+
+  .left-features {
+    order: 2;
+  }
+
+  /* Right features */
+
+  .right-features {
+    order: 3;
+  }
+
+  .feature-column {
+    width: 100%;
+
+    align-items: center;
+
+    gap: 20px;
+  }
+
+  .left-features .feature-card,
+  .right-features .feature-card {
+    margin: 0;
+  }
+
+  .feature-card {
+    width: 210px;
+
+    height: 140px;
+  }
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .why-header h2 {
+    font-size: 28px;
+  }
+
+  .why-header p {
+    font-size: 16px;
+  }
+
+  .phone {
+    width: 220px;
+
+    height: 430px;
+  }
+
+  .feature-card {
+    width: 190px;
+  }
+}

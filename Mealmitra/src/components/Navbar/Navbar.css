@@ -1,12 +1,382 @@
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ff6347;
-  color: white;
-  padding: 15px 40px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
-.navbar h2 {
-  margin: 0;
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+    height: 80px;
+
+    /* Yellow → Orange → Red */
+    background: linear-gradient(
+        90deg,
+        #FFC107 0%,
+        #FF8C00 50%,
+        #F04438 100%
+    );
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 70px;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 4px 15px rgba(217, 54, 46, 0.18);
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+
+    /* Deep Red */
+    color: #B92B27;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.04);
+    color: #7F1D1D;
+}
+
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+.nav-right a {
+    text-decoration: none;
+
+    /* Dark Brown */
+    color: #3D2418;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    transition: 0.3s;
+
+    position: relative;
+}
+
+.nav-right a:hover {
+    color: #FFFFFF;
+}
+
+
+/* =========================
+   UNDERLINE
+========================= */
+
+.nav-right a::after {
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+    height: 3px;
+
+    background: #FFFFFF;
+
+    left: 0;
+    bottom: -6px;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+
+.nav-right a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================
+   VEG MODE
+========================= */
+
+.veg-mode {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.veg-mode span {
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #3D2418;
+}
+
+
+/* =========================
+   TOGGLE SWITCH
+========================= */
+
+.switch {
+    position: relative;
+
+    width: 50px;
+    height: 26px;
+}
+
+.switch input {
+    display: none;
+}
+
+
+.slider {
+    position: absolute;
+
+    inset: 0;
+
+    /* OFF */
+    background: #D9362E;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+
+.slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    left: 3px;
+    top: 3px;
+
+    background: #FFFFFF;
+
+    border-radius: 50%;
+
+    transition: 0.4s;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* VEG MODE ON */
+
+.switch input:checked + .slider {
+    background: #FFB000;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(24px);
+}
+
+
+/* =========================
+   PROFILE / SIGN IN BUTTON
+========================= */
+
+.profile-btn {
+    width: 48px;
+    height: 48px;
+
+    border: 3px solid #FFFFFF;
+
+    border-radius: 50%;
+
+    /* Red */
+    background: #D9362E;
+
+    color: #FFFFFF;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    font-size: 22px;
+
+    box-shadow:
+        0 5px 15px rgba(120, 20, 10, 0.25);
+}
+
+
+.profile-btn:hover {
+    transform: scale(1.08);
+
+    /* Yellow */
+    background: #FFC107;
+
+    color: #7F1D1D;
+
+    border-color: #FFFFFF;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 30px;
+    }
+
+    .nav-right {
+        gap: 18px;
+    }
+
+    .nav-right a {
+        font-size: 16px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: auto;
+        min-height: 70px;
+
+        padding: 15px 20px;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .nav-right {
+        gap: 15px;
+    }
+
+    .nav-right a {
+        display: none;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+
+    .profile-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+
+/* =========================
+   PROFILE CONTAINER
+========================= */
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+/* =========================
+   LOGGED IN PROFILE
+========================= */
+
+.profile-btn.logged-in {
+  background: linear-gradient(
+    135deg,
+    #FFD166,
+    #FFB703
+  );
+
+  color: #7F1D1D;
+
+  box-shadow:
+    0 5px 15px rgba(255, 183, 3, 0.25);
+}
+
+
+/* =========================
+   USER NAME
+========================= */
+
+.user-name {
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: #7F1D1D;
+
+  max-width: 100px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================
+   PROFILE HOVER
+========================= */
+
+.profile-btn.logged-in:hover {
+  transform: scale(1.08);
+
+  background: linear-gradient(
+    135deg,
+    #FFB703,
+    #FFD166
+  );
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .user-name {
+    display: none;
+  }
+
+}
 }
