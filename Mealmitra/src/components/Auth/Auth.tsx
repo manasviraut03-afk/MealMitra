@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./Auth.css";
 import SuccessMessage from "../SuccessMessage/SuccessMessage";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 type AuthProps = {
   onClose: () => void;
@@ -16,146 +15,272 @@ type User = {
 };
 
 function Auth({ onClose, onLogin }: AuthProps) {
-  const [isSignUp, setIsSignUp] = useState(false);
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  /* =================================================
+     LOGIN STEP
+  ================================================= */
+
+  const [step, setStep] = useState<"phone" | "otp" | "name">(
+    "phone"
+  );
+
   const [phone, setPhone] = useState("");
 
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [otp, setOtp] = useState("");
 
-  // Show / hide password
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] =
-    useState(false);
+  const [generatedOtp, setGeneratedOtp] = useState("");
+
+  const [name, setName] = useState("");
 
   const [error, setError] = useState("");
+
   const [showSuccess, setShowSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+
+  /* =================================================
+     SEND OTP
+  ================================================= */
+
+  const handleSendOtp = (e: React.FormEvent) => {
+
     e.preventDefault();
 
     setError("");
+
+    const cleanPhone = phone.replace(/\D/g, "");
+
+    if (cleanPhone.length !== 10) {
+
+      setError(
+        "Please enter a valid 10-digit mobile number."
+      );
+
+      return;
+    }
+
+
+    /*
+      Demo OTP
+
+      In a real application this OTP would be
+      sent through an SMS service/backend.
+    */
+
+    const demoOtp = "1234";
+
+    setGeneratedOtp(demoOtp);
+
+    setStep("otp");
+
+  };
+
+
+  /* =================================================
+     VERIFY OTP
+  ================================================= */
+
+  const handleVerifyOtp = (e: React.FormEvent) => {
+
+    e.preventDefault();
+
+    setError("");
+
+    if (otp.length !== 4) {
+
+      setError("Please enter the 4-digit OTP.");
+
+      return;
+    }
+
+
+    if (otp !== generatedOtp) {
+
+      setError("Invalid OTP. Please try again.");
+
+      return;
+    }
+
 
     const savedUsers: User[] = JSON.parse(
       localStorage.getItem("mealmitraUsers") || "[]"
     );
 
-    /* =========================
-       SIGN UP
-    ========================= */
 
-    if (isSignUp) {
-      if (password !== confirmPassword) {
-        setError("Passwords do not match!");
-        return;
-      }
+    const existingUser = savedUsers.find(
+      (user) => user.phone === phone
+    );
 
-      const existingUser = savedUsers.find(
-        (user) => user.email === email
-      );
 
-      if (existingUser) {
-        setError(
-          "An account with this email already exists."
-        );
-        return;
-      }
+    /* =================================================
+       EXISTING USER
+    ================================================= */
 
-      const newUser: User = {
-        name,
-        email,
-        phone,
-        password,
-      };
-
-      localStorage.setItem(
-        "mealmitraUsers",
-        JSON.stringify([
-          ...savedUsers,
-          newUser,
-        ])
-      );
+    if (existingUser) {
 
       localStorage.setItem(
         "mealmitraCurrentUser",
-        JSON.stringify(newUser)
+        JSON.stringify(existingUser)
       );
 
-      onLogin?.(name);
+      onLogin?.(existingUser.name);
 
       setShowSuccess(true);
 
       return;
     }
 
-    /* =========================
-       SIGN IN
-    ========================= */
 
-    const existingUser = savedUsers.find(
-      (user) =>
-        user.email === email &&
-        user.password === password
-    );
+    /* =================================================
+       NEW USER
+    ================================================= */
 
-    if (!existingUser) {
-      setError("Invalid email or password.");
-      return;
-    }
+    setStep("name");
 
-    localStorage.setItem(
-      "mealmitraCurrentUser",
-      JSON.stringify(existingUser)
-    );
-
-    onLogin?.(existingUser.name);
-
-    setShowSuccess(true);
   };
 
-  /* =========================
-     SUCCESS CLOSE
-  ========================= */
 
-  const handleSuccessClose = () => {
-    setShowSuccess(false);
-    onClose();
-  };
+  /* =================================================
+     CREATE NEW ACCOUNT
+  ================================================= */
 
-  /* =========================
-     SWITCH SIGN IN / SIGN UP
-  ========================= */
+  const handleCreateAccount = (e: React.FormEvent) => {
 
-  const switchAuth = () => {
-    setIsSignUp(!isSignUp);
+    e.preventDefault();
 
     setError("");
 
-    setName("");
-    setEmail("");
-    setPhone("");
-    setPassword("");
-    setConfirmPassword("");
+    if (!name.trim()) {
 
-    setShowPassword(false);
-    setShowConfirmPassword(false);
+      setError("Please enter your name.");
+
+      return;
+    }
+
+
+    const savedUsers: User[] = JSON.parse(
+      localStorage.getItem("mealmitraUsers") || "[]"
+    );
+
+
+    const newUser: User = {
+
+      name: name.trim(),
+
+      email: "",
+
+      phone: phone,
+
+      password: "",
+
+    };
+
+
+    localStorage.setItem(
+      "mealmitraUsers",
+      JSON.stringify([
+        ...savedUsers,
+        newUser,
+      ])
+    );
+
+
+    localStorage.setItem(
+      "mealmitraCurrentUser",
+      JSON.stringify(newUser)
+    );
+
+
+    localStorage.setItem(
+      "mealmitraPhoneNumber",
+      phone
+    );
+
+
+    onLogin?.(newUser.name);
+
+    setShowSuccess(true);
+
   };
+
+
+  /* =================================================
+     BACK
+  ================================================= */
+
+  const handleBack = () => {
+
+    setError("");
+
+    if (step === "otp") {
+
+      setOtp("");
+
+      setStep("phone");
+
+      return;
+    }
+
+
+    if (step === "name") {
+
+      setName("");
+
+      setOtp("");
+
+      setStep("otp");
+
+      return;
+    }
+
+
+    onClose();
+
+  };
+
+
+  /* =================================================
+     RESEND OTP
+  ================================================= */
+
+  const handleResendOtp = () => {
+
+    setError("");
+
+    const demoOtp = "1234";
+
+    setGeneratedOtp(demoOtp);
+
+    setOtp("");
+
+  };
+
+
+  /* =================================================
+     SUCCESS CLOSE
+  ================================================= */
+
+  const handleSuccessClose = () => {
+
+    setShowSuccess(false);
+
+    onClose();
+
+  };
+
 
   return (
     <>
-      {/* =========================
+      {/* =================================================
           AUTH OVERLAY
-      ========================= */}
+      ================================================= */}
 
       <div className="auth-overlay">
 
         <div className="auth-box">
 
-          {/* =========================
+          {/* =================================================
               CLOSE BUTTON
-          ========================= */}
+          ================================================= */}
 
           <button
             className="auth-close"
@@ -165,256 +290,293 @@ function Auth({ onClose, onLogin }: AuthProps) {
             ✕
           </button>
 
-          {/* =========================
+
+          {/* =================================================
               LOGO
-          ========================= */}
+          ================================================= */}
 
           <div className="auth-logo">
             🍽️
           </div>
 
-          <h1>MealMitra</h1>
 
-          <p className="auth-subtitle">
-            {isSignUp
-              ? "Create your MealMitra account"
-              : "Welcome back! Sign in to continue"}
-          </p>
+          <h1>
+            MealMitra
+          </h1>
 
-          {/* =========================
-              ERROR
-          ========================= */}
 
-          {error && (
-            <div className="auth-error">
-              {error}
-            </div>
+          {/* =================================================
+              PHONE STEP
+          ================================================= */}
+
+          {step === "phone" && (
+
+            <>
+              <p className="auth-subtitle">
+                Login or sign up using your mobile number
+              </p>
+
+
+              {error && (
+                <div className="auth-error">
+                  {error}
+                </div>
+              )}
+
+
+              <form onSubmit={handleSendOtp}>
+
+                <div className="auth-input-group">
+
+                  <label>
+                    Mobile Number
+                  </label>
+
+
+                  <div className="phone-input-wrapper">
+
+                    <span className="country-code">
+                      +91
+                    </span>
+
+
+                    <input
+                      type="tel"
+                      placeholder="Enter mobile number"
+                      value={phone}
+                      maxLength={10}
+                      onChange={(e) => {
+
+                        const value =
+                          e.target.value.replace(
+                            /\D/g,
+                            ""
+                          );
+
+                        setPhone(value);
+
+                      }}
+                      required
+                    />
+
+                  </div>
+
+                </div>
+
+
+                <button
+                  type="submit"
+                  className="auth-submit"
+                >
+                  Continue
+                </button>
+
+              </form>
+
+
+              <p className="auth-terms">
+                By continuing, you agree to our
+                Terms of Service and Privacy Policy.
+              </p>
+
+            </>
+
           )}
 
-          {/* =========================
-              FORM
-          ========================= */}
 
-          <form onSubmit={handleSubmit}>
+          {/* =================================================
+              OTP STEP
+          ================================================= */}
 
-            {/* =========================
-                NAME
-            ========================= */}
+          {step === "otp" && (
 
-            {isSignUp && (
-              <div className="auth-input-group">
+            <>
+              <button
+                type="button"
+                className="auth-back-button"
+                onClick={handleBack}
+              >
+                ← Change number
+              </button>
 
-                <label>Full Name</label>
 
-                <input
-                  type="text"
-                  placeholder="Enter your name"
-                  value={name}
-                  onChange={(e) =>
-                    setName(e.target.value)
-                  }
-                  required
-                />
+              <p className="auth-subtitle">
+                Enter the OTP sent to
+              </p>
 
-              </div>
-            )}
 
-            {/* =========================
-                EMAIL
-            ========================= */}
+              <p className="auth-phone-display">
+                +91 {phone}
+              </p>
 
-            <div className="auth-input-group">
 
-              <label>Email</label>
+              {error && (
+                <div className="auth-error">
+                  {error}
+                </div>
+              )}
 
-              <input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) =>
-                  setEmail(e.target.value)
-                }
-                required
-              />
 
-            </div>
+              <form onSubmit={handleVerifyOtp}>
 
-            {/* =========================
-                PHONE
-            ========================= */}
+                <div className="auth-input-group">
 
-            {isSignUp && (
-              <div className="auth-input-group">
+                  <label>
+                    Enter OTP
+                  </label>
 
-                <label>Phone Number</label>
 
-                <input
-                  type="tel"
-                  placeholder="Enter phone number"
-                  value={phone}
-                  onChange={(e) =>
-                    setPhone(e.target.value)
-                  }
-                  required
-                />
+                  <input
+                    className="otp-input"
+                    type="text"
+                    inputMode="numeric"
+                    placeholder="Enter 4-digit OTP"
+                    value={otp}
+                    maxLength={4}
+                    onChange={(e) => {
 
-              </div>
-            )}
+                      const value =
+                        e.target.value.replace(
+                          /\D/g,
+                          ""
+                        );
 
-            {/* =========================
-                PASSWORD
-            ========================= */}
+                      setOtp(value);
 
-            <div className="auth-input-group">
+                    }}
+                    required
+                  />
 
-              <label>Password</label>
+                </div>
 
-              <div className="password-wrapper">
 
-                <input
-                  type={
-                    showPassword
-                      ? "text"
-                      : "password"
-                  }
-                  placeholder="Enter password"
-                  value={password}
-                  onChange={(e) =>
-                    setPassword(e.target.value)
-                  }
-                  required
-                />
+                <button
+                  type="submit"
+                  className="auth-submit"
+                >
+                  Verify & Continue
+                </button>
+
+              </form>
+
+
+              <div className="auth-resend">
+
+                Didn't receive the OTP?
 
                 <button
                   type="button"
-                  className="password-toggle"
-                  onClick={() =>
-                    setShowPassword(
-                      !showPassword
-                    )
-                  }
-                  aria-label={
-                    showPassword
-                      ? "Hide password"
-                      : "Show password"
-                  }
+                  onClick={handleResendOtp}
                 >
-                  {showPassword ? (
-                    <FaEyeSlash />
-                  ) : (
-                    <FaEye />
-                  )}
+                  Resend OTP
                 </button>
 
               </div>
 
-            </div>
 
-            {/* =========================
-                CONFIRM PASSWORD
-            ========================= */}
+              <div className="demo-otp">
+                Demo OTP: <strong>1234</strong>
+              </div>
 
-            {isSignUp && (
-              <div className="auth-input-group">
+            </>
 
-                <label>Confirm Password</label>
+          )}
 
-                <div className="password-wrapper">
+
+          {/* =================================================
+              NAME STEP
+          ================================================= */}
+
+          {step === "name" && (
+
+            <>
+              <p className="auth-subtitle">
+                Welcome to MealMitra!
+              </p>
+
+
+              <p className="auth-phone-display">
+                +91 {phone}
+              </p>
+
+
+              <p className="auth-name-description">
+                What should we call you?
+              </p>
+
+
+              {error && (
+                <div className="auth-error">
+                  {error}
+                </div>
+              )}
+
+
+              <form onSubmit={handleCreateAccount}>
+
+                <div className="auth-input-group">
+
+                  <label>
+                    Your Name
+                  </label>
+
 
                   <input
-                    type={
-                      showConfirmPassword
-                        ? "text"
-                        : "password"
-                    }
-                    placeholder="Confirm password"
-                    value={confirmPassword}
+                    type="text"
+                    placeholder="Enter your name"
+                    value={name}
                     onChange={(e) =>
-                      setConfirmPassword(
-                        e.target.value
-                      )
+                      setName(e.target.value)
                     }
                     required
                   />
 
-                  <button
-                    type="button"
-                    className="password-toggle"
-                    onClick={() =>
-                      setShowConfirmPassword(
-                        !showConfirmPassword
-                      )
-                    }
-                    aria-label={
-                      showConfirmPassword
-                        ? "Hide password"
-                        : "Show password"
-                    }
-                  >
-                    {showConfirmPassword ? (
-                      <FaEyeSlash />
-                    ) : (
-                      <FaEye />
-                    )}
-                  </button>
-
                 </div>
 
-              </div>
-            )}
 
-            {/* =========================
-                SUBMIT
-            ========================= */}
+                <button
+                  type="submit"
+                  className="auth-submit"
+                >
+                  Continue to MealMitra
+                </button>
 
-            <button
-              type="submit"
-              className="auth-submit"
-            >
-              {isSignUp
-                ? "Create Account"
-                : "Sign In"}
-            </button>
+              </form>
 
-          </form>
 
-          {/* =========================
-              SWITCH
-          ========================= */}
+              <button
+                type="button"
+                className="auth-back-button"
+                onClick={handleBack}
+              >
+                ← Back
+              </button>
 
-          <div className="auth-switch">
+            </>
 
-            {isSignUp
-              ? "Already have an account?"
-              : "Don't have an account?"}
-
-            <button
-              type="button"
-              onClick={switchAuth}
-            >
-              {isSignUp
-                ? "Sign In"
-                : "Create Account"}
-            </button>
-
-          </div>
+          )}
 
         </div>
 
       </div>
 
-      {/* =========================
+
+      {/* =================================================
           SUCCESS MESSAGE
-      ========================= */}
+      ================================================= */}
 
       {showSuccess && (
+
         <SuccessMessage
-          isSignUp={isSignUp}
+          isSignUp={step === "name"}
           onClose={handleSuccessClose}
         />
+
       )}
+
     </>
   );
 }
+
 
 export default Auth;

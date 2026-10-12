@@ -84,6 +84,7 @@
   transition: 0.2s;
 }
 
+
 .auth-close:hover {
   background: #FFB703;
 
@@ -144,6 +145,8 @@
   color: #765B4D;
 
   font-size: 14px;
+
+  line-height: 1.5;
 }
 
 
@@ -154,18 +157,89 @@
 .auth-input-group {
   text-align: left;
 
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 
 .auth-input-group label {
   display: block;
 
-  margin-bottom: 6px;
+  margin-bottom: 7px;
 
   font-size: 14px;
 
   font-weight: 600;
+
+  color: #3B2A24;
+}
+
+
+/* =========================
+   PHONE INPUT
+========================= */
+
+.phone-input-wrapper {
+  display: flex;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #E8CDB8;
+
+  border-radius: 9px;
+
+  background: #FFFFFF;
+
+  overflow: hidden;
+
+  transition: 0.2s;
+}
+
+
+.phone-input-wrapper:focus-within {
+  border-color: #D95F02;
+
+  box-shadow:
+    0 0 0 3px rgba(217, 95, 2, 0.12);
+}
+
+
+.country-code {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 12px 13px;
+
+  background: #FFF3E5;
+
+  color: #7F1D1D;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  border-right: 1px solid #E8CDB8;
+}
+
+
+.phone-input-wrapper input {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 12px 14px;
+
+  border: none;
+
+  outline: none;
+
+  font-size: 14px;
+
+  background: transparent;
 
   color: #3B2A24;
 }
@@ -207,24 +281,13 @@
 
 
 /* =========================
-   PASSWORD WRAPPER
+   OTP INPUT
 ========================= */
 
-.password-wrapper {
-  position: relative;
-
-  width: 100%;
-}
-
-
-/* =========================
-   PASSWORD INPUT
-========================= */
-
-.password-wrapper input {
+.otp-input {
   width: 100%;
 
-  padding: 12px 48px 12px 14px;
+  padding: 15px;
 
   box-sizing: border-box;
 
@@ -234,7 +297,13 @@
 
   outline: none;
 
-  font-size: 14px;
+  font-size: 22px;
+
+  font-weight: 700;
+
+  letter-spacing: 8px;
+
+  text-align: center;
 
   background: #FFFFFF;
 
@@ -244,7 +313,7 @@
 }
 
 
-.password-wrapper input:focus {
+.otp-input:focus {
   border-color: #D95F02;
 
   box-shadow:
@@ -253,60 +322,30 @@
 
 
 /* =========================
-   PASSWORD EYE
+   PHONE DISPLAY
 ========================= */
 
-.password-toggle {
-  position: absolute;
+.auth-phone-display {
+  margin: -10px 0 22px;
 
-  right: 10px;
-  top: 50%;
+  color: #7F1D1D;
 
-  transform: translateY(-50%);
+  font-size: 15px;
 
-  width: 32px;
-  height: 32px;
-
-  border: none;
-
-  outline: none;
-
-  background: transparent;
-
-  color: #999;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  padding: 0;
-
-  cursor: pointer;
-
-  font-size: 17px;
-
-  transition: 0.2s ease;
+  font-weight: 700;
 }
 
 
-/* Eye hover */
+/* =========================
+   NAME DESCRIPTION
+========================= */
 
-.password-toggle:hover {
-  background: transparent;
+.auth-name-description {
+  margin: -10px 0 22px;
 
-  color: #666;
+  color: #765B4D;
 
-  transform: translateY(-50%);
-}
-
-
-/* Eye focus */
-
-.password-toggle:focus {
-  outline: none;
-
-  background: transparent;
+  font-size: 14px;
 }
 
 
@@ -356,10 +395,40 @@
 
 
 /* =========================
-   SWITCH
+   BACK BUTTON
 ========================= */
 
-.auth-switch {
+.auth-back-button {
+  border: none;
+
+  background: transparent;
+
+  color: #D95F02;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  padding: 5px 0;
+
+  margin-bottom: 15px;
+}
+
+
+.auth-back-button:hover {
+  color: #B8321C;
+
+  text-decoration: underline;
+}
+
+
+/* =========================
+   RESEND OTP
+========================= */
+
+.auth-resend {
   margin-top: 20px;
 
   color: #765B4D;
@@ -368,7 +437,7 @@
 }
 
 
-.auth-switch button {
+.auth-resend button {
   border: none;
 
   background: none;
@@ -383,10 +452,51 @@
 }
 
 
-.auth-switch button:hover {
+.auth-resend button:hover {
   color: #B8321C;
 
   text-decoration: underline;
+}
+
+
+/* =========================
+   DEMO OTP
+========================= */
+
+.demo-otp {
+  margin-top: 15px;
+
+  padding: 9px;
+
+  background: #FFF3E5;
+
+  border-radius: 8px;
+
+  color: #765B4D;
+
+  font-size: 12px;
+}
+
+
+.demo-otp strong {
+  color: #D95F02;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   TERMS
+========================= */
+
+.auth-terms {
+  margin-top: 18px;
+
+  color: #8A7468;
+
+  font-size: 11px;
+
+  line-height: 1.5;
 }
 
 
@@ -429,9 +539,11 @@
     border-radius: 18px;
   }
 
+
   .auth-box h1 {
     font-size: 27px;
   }
+
 
   .auth-logo {
     width: 65px;

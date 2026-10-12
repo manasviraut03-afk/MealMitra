@@ -1,0 +1,898 @@
+/* =========================================================
+   MEALMITRA ABOUT PAGE
+   SIMPLE • CLEAN • COMPACT
+   YELLOW → ORANGE → RED THEME
+========================================================= */
+
+
+.about-mealmitra-page {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffaf0 0%,
+      #fff4e8 45%,
+      #fff0ed 100%
+    );
+
+  color: #222;
+
+  transition: 0.3s ease;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+.about-mealmitra-page.dark-mode {
+  background:
+    linear-gradient(
+      135deg,
+      #171411 0%,
+      #1d1714 50%,
+      #211515 100%
+    );
+
+  color: #f5f5f5;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.about-mealmitra-header {
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 7%;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  border-bottom: 1px solid #eeeeee;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 10;
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+
+.about-mealmitra-page.dark-mode
+.about-mealmitra-header {
+  background: rgba(27, 24, 22, 0.95);
+
+  border-bottom-color: #39302c;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.about-mealmitra-back-button {
+  width: 44px;
+  height: 44px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #fff0d9;
+
+  color: #e85d04;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+
+  margin-right: 20px;
+}
+
+
+.about-mealmitra-back-button:hover {
+  background: #ff6b00;
+
+  color: white;
+
+  transform: translateX(-2px);
+}
+
+
+.about-mealmitra-page.dark-mode
+.about-mealmitra-back-button {
+  background: #35251d;
+
+  color: #ff914d;
+}
+
+
+/* =========================================================
+   HEADER TITLE
+========================================================= */
+
+.about-mealmitra-header-title {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.about-mealmitra-header-icon {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd166,
+      #ff7a00,
+      #e63946
+    );
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+}
+
+
+.about-mealmitra-header-title h1 {
+  margin: 0;
+
+  font-size: 27px;
+
+  font-weight: 700;
+}
+
+
+.about-mealmitra-header-title p {
+  margin: 4px 0 0;
+
+  font-size: 14px;
+
+  color: #777;
+}
+
+
+.about-mealmitra-page.dark-mode
+.about-mealmitra-header-title p {
+  color: #aaa;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.about-mealmitra-main {
+  width: min(900px, 90%);
+
+  margin: 0 auto;
+
+  padding: 40px 0 60px;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.about-mealmitra-intro {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 25px;
+
+  margin-bottom: 40px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff4c7,
+      #ffe2c2,
+      #ffd8d8
+    );
+
+  border: 1px solid #ffd9bd;
+
+  box-shadow:
+    0 8px 25px rgba(255, 107, 0, 0.08);
+}
+
+
+.about-mealmitra-page.dark-mode
+.about-mealmitra-intro {
+  background:
+    linear-gradient(
+      135deg,
+      #30251b,
+      #30201a,
+      #301b1c
+    );
+
+  border-color: #4a3429;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.about-mealmitra-logo {
+  width: 58px;
+  height: 58px;
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd166,
+      #ff7a00,
+      #e63946
+    );
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+
+.about-mealmitra-logo span {
+  font-size: 28px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   INTRO TEXT
+========================================================= */
+
+.about-mealmitra-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  color: #e85d04;
+}
+
+
+.about-mealmitra-intro h2 {
+  margin: 4px 0;
+
+  font-size: 21px;
+
+  font-weight: 600;
+}
+
+
+.about-mealmitra-intro p {
+  margin: 0;
+
+  font-size: 13px;
+
+  color: #666;
+
+  line-height: 1.5;
+}
+
+
+.about-mealmitra-page.dark-mode
+.about-mealmitra-intro p {
+  color: #aaa;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.about-mealmitra-section {
+  margin-bottom: 38px;
+}
+
+
+/* =========================================================
+   VERSION CARD
+========================================================= */
+
+.about-mealmitra-version-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 18px 22px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border: 1px solid #eeeeee;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 7px 25px rgba(0, 0, 0, 0.04);
+}
+
+
+.about-mealmitra-page.dark-mode
+.about-mealmitra-version-card {
+  background: #1f1c1a;
+
+  border-color: #38302c;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   VERSION ICON
+========================================================= */
+
+.about-mealmitra-version-icon {
+  width: 47px;
+  height: 47px;
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff0df;
+
+  color: #ff7a00;
+
+  font-size: 20px;
+
+  flex-shrink: 0;
+}
+
+
+.about-mealmitra-page.dark-mode
+.about-mealmitra-version-icon {
+  background: #35261c;
+
+  color: #ff984d;
+}
+
+
+/* =========================================================
+   VERSION TEXT
+========================================================= */
+
+.about-mealmitra-version-content h3 {
+  margin: 0 0 4px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+}
+
+
+.about-mealmitra-version-content p {
+  margin: 0;
+
+  font-size: 12.5px;
+
+  color: #777;
+
+  line-height: 1.5;
+}
+
+
+.about-mealmitra-page.dark-mode
+.about-mealmitra-version-content p {
+  color: #aaa;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.about-mealmitra-section-heading {
+  margin-bottom: 17px;
+
+  text-align: center;
+}
+
+
+.about-mealmitra-section-heading span {
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  color: #e85d04;
+}
+
+
+.about-mealmitra-section-heading h2 {
+  margin: 5px 0 0;
+
+  font-size: 22px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   LEGAL LIST
+========================================================= */
+
+.about-mealmitra-list {
+  background: rgba(255, 255, 255, 0.95);
+
+  border: 1px solid #eeeeee;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 7px 25px rgba(0, 0, 0, 0.04);
+}
+
+
+.about-mealmitra-page.dark-mode
+.about-mealmitra-list {
+  background: #1f1c1a;
+
+  border-color: #38302c;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   LEGAL LIST ITEM
+========================================================= */
+
+.about-mealmitra-list-item {
+  width: 100%;
+
+  min-height: 78px;
+
+  padding: 15px 22px;
+
+  border: none;
+
+  border-bottom: 1px solid #eeeeee;
+
+  background: transparent;
+
+  color: inherit;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+
+.about-mealmitra-list-item:last-child {
+  border-bottom: none;
+}
+
+
+.about-mealmitra-list-item:hover {
+  background:
+    linear-gradient(
+      90deg,
+      #fff9ed,
+      #fff2ed
+    );
+}
+
+
+.about-mealmitra-page.dark-mode
+.about-mealmitra-list-item {
+  border-bottom-color: #38302c;
+}
+
+
+.about-mealmitra-page.dark-mode
+.about-mealmitra-list-item:hover {
+  background: #292320;
+}
+
+
+/* =========================================================
+   LEGAL LEFT CONTENT
+========================================================= */
+
+.about-mealmitra-list-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   LEGAL ICON
+========================================================= */
+
+.about-mealmitra-icon {
+  width: 47px;
+  height: 47px;
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+
+  flex-shrink: 0;
+}
+
+
+.about-mealmitra-icon.red {
+  background: #ffe4e4;
+
+  color: #e63946;
+}
+
+
+.about-mealmitra-icon.yellow {
+  background: #fff5c7;
+
+  color: #e5a500;
+}
+
+
+.about-mealmitra-page.dark-mode
+.about-mealmitra-icon.red {
+  background: #351d20;
+
+  color: #ff6b6b;
+}
+
+
+.about-mealmitra-page.dark-mode
+.about-mealmitra-icon.yellow {
+  background: #352e1b;
+
+  color: #ffd166;
+}
+
+
+/* =========================================================
+   LEGAL TEXT
+========================================================= */
+
+.about-mealmitra-list-item h3 {
+  margin: 0;
+
+  font-size: 15px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   CHEVRON
+========================================================= */
+
+.about-mealmitra-list-item > svg {
+  flex-shrink: 0;
+
+  color: #999;
+
+  font-size: 19px;
+
+  transition: 0.25s ease;
+}
+
+
+.about-mealmitra-list-item:hover > svg {
+  transform: translateX(4px);
+
+  color: #f4511e;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.about-mealmitra-footer-info {
+  text-align: center;
+
+  padding: 15px 20px 5px;
+}
+
+
+.about-mealmitra-footer-logo {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 8px;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd166,
+      #ff7a00,
+      #e63946
+    );
+
+  color: white;
+
+  font-size: 21px;
+
+  font-weight: 800;
+}
+
+
+.about-mealmitra-footer-info h3 {
+  margin: 0 0 4px;
+
+  font-size: 18px;
+
+  font-weight: 600;
+}
+
+
+.about-mealmitra-footer-info p {
+  margin: 0 0 7px;
+
+  font-size: 13px;
+
+  color: #777;
+}
+
+
+.about-mealmitra-footer-info span {
+  color: #8a8a8a;
+
+  font-size: 11.5px;
+}
+
+
+.about-mealmitra-page.dark-mode
+.about-mealmitra-footer-info p {
+  color: #aaa;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .about-mealmitra-header {
+    height: 80px;
+
+    padding: 0 20px;
+  }
+
+
+  .about-mealmitra-back-button {
+    width: 42px;
+    height: 42px;
+
+    font-size: 19px;
+
+    margin-right: 14px;
+  }
+
+
+  .about-mealmitra-header-title {
+    gap: 11px;
+  }
+
+
+  .about-mealmitra-header-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 13px;
+
+    font-size: 19px;
+  }
+
+
+  .about-mealmitra-header-title h1 {
+    font-size: 22px;
+  }
+
+
+  .about-mealmitra-header-title p {
+    font-size: 12px;
+  }
+
+
+  .about-mealmitra-main {
+    width: 92%;
+
+    padding-top: 28px;
+  }
+
+
+  .about-mealmitra-intro {
+    padding: 20px;
+
+    gap: 14px;
+
+    margin-bottom: 30px;
+  }
+
+
+  .about-mealmitra-logo {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 14px;
+  }
+
+
+  .about-mealmitra-logo span {
+    font-size: 24px;
+  }
+
+
+  .about-mealmitra-intro h2 {
+    font-size: 18px;
+  }
+
+
+  .about-mealmitra-intro p {
+    font-size: 12px;
+  }
+
+
+  .about-mealmitra-version-card {
+    padding: 16px;
+
+    gap: 13px;
+  }
+
+
+  .about-mealmitra-version-icon {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 13px;
+
+    font-size: 18px;
+  }
+
+
+  .about-mealmitra-version-content h3 {
+    font-size: 14px;
+  }
+
+
+  .about-mealmitra-version-content p {
+    font-size: 11.5px;
+  }
+
+
+  .about-mealmitra-section-heading h2 {
+    font-size: 20px;
+  }
+
+
+  .about-mealmitra-list-item {
+    min-height: 70px;
+
+    padding: 13px 16px;
+  }
+
+
+  .about-mealmitra-list-left {
+    gap: 12px;
+  }
+
+
+  .about-mealmitra-icon {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 13px;
+
+    font-size: 18px;
+  }
+
+
+  .about-mealmitra-list-item h3 {
+    font-size: 14px;
+  }
+
+
+  .about-mealmitra-list-item > svg {
+    font-size: 18px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .about-mealmitra-header-title h1 {
+    font-size: 20px;
+  }
+
+
+  .about-mealmitra-header-title p {
+    font-size: 11px;
+  }
+
+
+  .about-mealmitra-intro {
+    padding: 17px;
+  }
+
+
+  .about-mealmitra-intro h2 {
+    font-size: 17px;
+  }
+
+
+  .about-mealmitra-intro p {
+    font-size: 11.5px;
+  }
+
+}

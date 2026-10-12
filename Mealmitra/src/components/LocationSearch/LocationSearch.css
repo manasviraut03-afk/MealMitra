@@ -1,0 +1,444 @@
+/* =========================================================
+   LOCATION SEARCH PAGE
+========================================================= */
+
+.location-search-page {
+  min-height: 100vh;
+
+  background: #ffffff;
+
+  color: #222222;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.location-header {
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 0 8%;
+
+  border-bottom: 1px solid #eeeeee;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BACK
+========================================================= */
+
+.location-back {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  color: #222222;
+
+  font-size: 23px;
+}
+
+.location-back:hover {
+  background: #f7f7f7;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   SEARCH INPUT
+========================================================= */
+
+.location-input-box {
+  width: 600px;
+
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 17px;
+
+  background: #f8f8f8;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 8px;
+
+  box-sizing: border-box;
+}
+
+.location-input-box:focus-within {
+  background: #ffffff;
+
+  border-color: #999999;
+}
+
+
+/* =========================================================
+   SEARCH ICON
+========================================================= */
+
+.location-search-icon {
+  width: 20px;
+  height: 20px;
+
+  color: #555555;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.location-input-box input {
+  flex: 1;
+
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  font-size: 15px;
+
+  color: #222222;
+}
+
+.location-input-box input::placeholder {
+  color: #777777;
+}
+
+
+/* =========================================================
+   CLEAR
+========================================================= */
+
+.location-clear {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  border-radius: 50%;
+
+  color: #666666;
+}
+
+.location-clear:hover {
+  background: #eeeeee;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.location-container {
+  width: 700px;
+
+  max-width: calc(100% - 40px);
+
+  margin: 0 auto;
+
+  padding: 35px 0 60px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CURRENT LOCATION
+========================================================= */
+
+.use-current-location {
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  padding: 10px 5px 22px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   CURRENT LOCATION ICON
+========================================================= */
+
+.current-location-icon {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f7f7f7;
+
+  color: #333333;
+}
+
+.current-location-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* =========================================================
+   CURRENT LOCATION TEXT
+========================================================= */
+
+.current-location-text h3 {
+  margin: 0 0 5px;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  color: #333333;
+}
+
+.current-location-text p {
+  margin: 0;
+
+  font-size: 13px;
+
+  color: #888888;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.location-divider {
+  height: 1px;
+
+  background: #eeeeee;
+
+  margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.location-title {
+  margin: 0 0 15px;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  color: #222222;
+}
+
+
+/* =========================================================
+   LOCATION LIST
+========================================================= */
+
+.location-list {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   LOCATION ROW
+========================================================= */
+
+.location-row {
+  min-height: 70px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  padding: 10px 5px;
+
+  border-bottom: 1px solid #f1f1f1;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition: background 0.2s ease;
+}
+
+.location-row:hover {
+  background: #fafafa;
+}
+
+
+/* =========================================================
+   LOCATION PIN
+========================================================= */
+
+.location-pin {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: #f7f7f7;
+
+  border-radius: 50%;
+
+  color: #666666;
+}
+
+.location-pin svg {
+  width: 19px;
+  height: 19px;
+}
+
+
+/* =========================================================
+   LOCATION DETAILS
+========================================================= */
+
+.location-details {
+  flex: 1;
+}
+
+.location-details h3 {
+  margin: 0 0 5px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: #333333;
+}
+
+.location-details p {
+  margin: 0;
+
+  font-size: 13px;
+
+  color: #888888;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.location-empty {
+  text-align: center;
+
+  padding: 60px 20px;
+
+  color: #777777;
+}
+
+.location-empty svg {
+  width: 34px;
+  height: 34px;
+
+  margin-bottom: 12px;
+}
+
+.location-empty h3 {
+  margin: 0 0 7px;
+
+  color: #333333;
+
+  font-size: 17px;
+}
+
+.location-empty p {
+  margin: 0;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .location-header {
+    height: 70px;
+
+    padding: 0 15px;
+
+    gap: 10px;
+  }
+
+  .location-back {
+    width: 38px;
+    height: 38px;
+
+    font-size: 20px;
+  }
+
+  .location-input-box {
+    height: 46px;
+
+    width: 100%;
+  }
+
+  .location-container {
+    width: auto;
+
+    max-width: none;
+
+    margin: 0 15px;
+
+    padding-top: 25px;
+  }
+
+}

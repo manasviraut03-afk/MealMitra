@@ -1,0 +1,1114 @@
+/* =========================================================
+   MEALMITRA - PERSONAL INFORMATION
+   Professional Zomato / Swiggy Style
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.personal-information-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #f8f8f8;
+  color: #1c1c1c;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.personal-information-header {
+  height: 76px;
+  width: 100%;
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 48px;
+
+  border-bottom: 1px solid #eeeeee;
+
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+
+/* BACK BUTTON */
+
+.personal-information-back-button {
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid #e2e2e2;
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  color: #333333;
+
+  font-size: 20px;
+
+  transition: all 0.2s ease;
+}
+
+.personal-information-back-button:hover {
+  background: #f7f7f7;
+  border-color: #cccccc;
+}
+
+
+/* HEADER TITLE */
+
+.personal-information-header > div {
+  margin-left: 18px;
+}
+
+.personal-information-header h1 {
+  margin: 0;
+
+  font-size: 25px;
+  font-weight: 700;
+
+  color: #1c1c1c;
+
+  line-height: 1.2;
+}
+
+.personal-information-header p {
+  margin: 5px 0 0;
+
+  font-size: 14px;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.personal-information-main {
+  width: min(1100px, calc(100% - 48px));
+
+  margin: 0 auto;
+
+  padding: 36px 0 60px;
+}
+
+
+/* =========================================================
+   INFORMATION NOTICE
+========================================================= */
+
+.personal-information-notice {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  background: #fff7ed;
+
+  border: 1px solid #ffe1c2;
+
+  border-radius: 10px;
+
+  padding: 18px 20px;
+
+  margin-bottom: 36px;
+}
+
+.personal-information-notice-icon {
+  width: 44px;
+  height: 44px;
+
+  min-width: 44px;
+
+  border-radius: 8px;
+
+  background: #fff0df;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ff5a1f;
+
+  font-size: 21px;
+}
+
+.personal-information-notice h3 {
+  margin: 0 0 5px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  color: #222222;
+}
+
+.personal-information-notice p {
+  margin: 0;
+
+  font-size: 14px;
+
+  color: #666666;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   PERSONAL DETAILS SECTION
+========================================================= */
+
+.personal-details-section {
+  width: 100%;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.personal-details-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.personal-details-heading span {
+  display: block;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  color: #ff5a1f;
+
+  margin-bottom: 7px;
+}
+
+.personal-details-heading h2 {
+  margin: 0;
+
+  font-size: 23px;
+  font-weight: 700;
+
+  color: #1c1c1c;
+}
+
+.personal-details-heading p {
+  margin: 6px 0 0;
+
+  font-size: 14px;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.personal-edit-button {
+  height: 42px;
+
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: linear-gradient(
+    135deg,
+    #ffb21a,
+    #ff4b2b
+  );
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.personal-edit-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 14px rgba(255, 82, 35, 0.18);
+}
+
+.personal-edit-button svg {
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   INFORMATION CARD
+========================================================= */
+
+.personal-information-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e5e5;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+
+/* =========================================================
+   INFORMATION ROW
+========================================================= */
+
+.personal-information-row {
+  min-height: 104px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 20px 26px;
+
+  border-bottom: 1px solid #eeeeee;
+
+  background: #ffffff;
+
+  transition: background 0.2s ease;
+}
+
+.personal-information-row:last-child {
+  border-bottom: none;
+}
+
+.personal-information-row:hover {
+  background: #fafafa;
+}
+
+
+/* =========================================================
+   ROW ICON
+========================================================= */
+
+.personal-information-row-icon {
+  width: 48px;
+  height: 48px;
+
+  min-width: 48px;
+
+  border-radius: 9px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+
+  margin-right: 20px;
+}
+
+
+/* ORANGE */
+
+.personal-information-row-icon.orange {
+  background: #fff0df;
+  color: #ff6b00;
+}
+
+
+/* RED */
+
+.personal-information-row-icon.red {
+  background: #fff0f0;
+  color: #ef4444;
+}
+
+
+/* YELLOW */
+
+.personal-information-row-icon.yellow {
+  background: #fff8dc;
+  color: #f59e0b;
+}
+
+
+/* ORANGE LIGHT */
+
+.personal-information-row-icon.orange-light {
+  background: #fff1e6;
+  color: #ff6b35;
+}
+
+
+/* =========================================================
+   ROW CONTENT
+========================================================= */
+
+.personal-information-row-content {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.personal-information-row-content span {
+  font-size: 13px;
+
+  font-weight: 500;
+
+  color: #777777;
+}
+
+.personal-information-row-content strong {
+  font-size: 16px;
+
+  font-weight: 600;
+
+  color: #1c1c1c;
+
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   ROW ARROW
+========================================================= */
+
+.personal-row-arrow {
+  color: #a0a0a0;
+
+  font-size: 19px;
+
+  margin-left: 20px;
+}
+
+
+/* =========================================================
+   EDIT CARD
+========================================================= */
+
+.personal-edit-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e5e5;
+
+  border-radius: 12px;
+
+  padding: 28px;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.personal-form-group {
+  margin-bottom: 22px;
+}
+
+.personal-form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #444444;
+}
+
+
+/* =========================================================
+   INPUT WRAPPER
+========================================================= */
+
+.personal-input-wrapper {
+  height: 46px;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 7px;
+
+  padding: 0 14px;
+
+  background: #ffffff;
+
+  transition: all 0.2s ease;
+}
+
+.personal-input-wrapper svg {
+  color: #888888;
+
+  font-size: 18px;
+
+  flex-shrink: 0;
+}
+
+.personal-input-wrapper:focus-within {
+  border-color: #ff6b35;
+
+  box-shadow:
+    0 0 0 3px rgba(255, 107, 53, 0.08);
+}
+
+.personal-input-wrapper input {
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  font-size: 14px;
+
+  color: #222222;
+}
+
+.personal-input-wrapper input::placeholder {
+  color: #aaaaaa;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.personal-form-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  padding-top: 6px;
+
+  border-top: 1px solid #eeeeee;
+
+  margin-top: 6px;
+
+  padding-top: 22px;
+}
+
+
+/* CANCEL */
+
+.personal-cancel-button {
+  height: 42px;
+
+  padding: 0 18px;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #555555;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.personal-cancel-button:hover {
+  background: #f7f7f7;
+}
+
+
+/* SAVE */
+
+.personal-save-button {
+  height: 42px;
+
+  padding: 0 20px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #ff5a1f;
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.personal-save-button:hover {
+  background: #e94c17;
+}
+
+
+/* =========================================================
+   WHY INFORMATION SECTION
+========================================================= */
+
+.why-information-section {
+  width: 100%;
+
+  margin-top: 36px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e5e5;
+
+  border-radius: 12px;
+
+  padding: 26px 28px;
+}
+
+
+/* =========================================================
+   WHY INFORMATION HEADING
+========================================================= */
+
+.why-information-heading span {
+  display: block;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+
+  color: #ff5a1f;
+
+  margin-bottom: 7px;
+}
+
+.why-information-heading h2 {
+  margin: 0;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  color: #222222;
+}
+
+
+/* =========================================================
+   WHY INFORMATION LIST
+========================================================= */
+
+.why-information-list {
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+
+/* =========================================================
+   WHY INFORMATION ITEM
+========================================================= */
+
+.why-information-item {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.why-information-check {
+  width: 24px;
+  height: 24px;
+
+  min-width: 24px;
+
+  border-radius: 50%;
+
+  background: #fff0e8;
+
+  color: #ff5a1f;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 13px;
+}
+
+.why-information-item p {
+  margin: 0;
+
+  font-size: 14px;
+
+  color: #555555;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   PRIVACY & SECURITY CARD
+========================================================= */
+
+.personal-privacy-card {
+  width: 100%;
+
+  margin-top: 20px;
+
+  min-height: 86px;
+
+  border: 1px solid #e3e3e3;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  padding: 18px 22px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.personal-privacy-card:hover {
+  border-color: #dddddd;
+
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.05);
+
+  transform: translateY(-1px);
+}
+
+
+/* PRIVACY ICON */
+
+.personal-privacy-icon {
+  width: 48px;
+  height: 48px;
+
+  min-width: 48px;
+
+  border-radius: 9px;
+
+  background: #fff0f0;
+
+  color: #ef4444;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+
+  margin-right: 18px;
+}
+
+
+/* PRIVACY CONTENT */
+
+.personal-privacy-content {
+  flex: 1;
+}
+
+.personal-privacy-content h3 {
+  margin: 0 0 5px;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  color: #222222;
+}
+
+.personal-privacy-content p {
+  margin: 0;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  color: #777777;
+}
+
+
+/* PRIVACY ARROW */
+
+.personal-privacy-arrow {
+  color: #999999;
+
+  font-size: 19px;
+
+  margin-left: 18px;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+.personal-information-page.dark-mode {
+  background: #151515;
+
+  color: #ffffff;
+}
+
+
+/* HEADER */
+
+.personal-information-page.dark-mode
+.personal-information-header {
+  background: #1e1e1e;
+
+  border-color: #303030;
+}
+
+.personal-information-page.dark-mode
+.personal-information-header h1 {
+  color: #ffffff;
+}
+
+.personal-information-page.dark-mode
+.personal-information-header p {
+  color: #aaaaaa;
+}
+
+
+/* BACK */
+
+.personal-information-page.dark-mode
+.personal-information-back-button {
+  background: #1e1e1e;
+
+  border-color: #3a3a3a;
+
+  color: #ffffff;
+}
+
+.personal-information-page.dark-mode
+.personal-information-back-button:hover {
+  background: #292929;
+}
+
+
+/* NOTICE */
+
+.personal-information-page.dark-mode
+.personal-information-notice {
+  background: #282019;
+
+  border-color: #493526;
+}
+
+.personal-information-page.dark-mode
+.personal-information-notice h3 {
+  color: #ffffff;
+}
+
+.personal-information-page.dark-mode
+.personal-information-notice p {
+  color: #aaaaaa;
+}
+
+
+/* HEADINGS */
+
+.personal-information-page.dark-mode
+.personal-details-heading h2,
+.personal-information-page.dark-mode
+.why-information-heading h2 {
+  color: #ffffff;
+}
+
+.personal-information-page.dark-mode
+.personal-details-heading p {
+  color: #aaaaaa;
+}
+
+
+/* CARD */
+
+.personal-information-page.dark-mode
+.personal-information-card,
+.personal-information-page.dark-mode
+.personal-edit-card,
+.personal-information-page.dark-mode
+.why-information-section,
+.personal-information-page.dark-mode
+.personal-privacy-card {
+  background: #1e1e1e;
+
+  border-color: #303030;
+}
+
+
+/* ROW */
+
+.personal-information-page.dark-mode
+.personal-information-row {
+  background: #1e1e1e;
+
+  border-color: #303030;
+}
+
+.personal-information-page.dark-mode
+.personal-information-row:hover {
+  background: #252525;
+}
+
+
+/* ROW TEXT */
+
+.personal-information-page.dark-mode
+.personal-information-row-content strong {
+  color: #ffffff;
+}
+
+.personal-information-page.dark-mode
+.personal-information-row-content span {
+  color: #999999;
+}
+
+
+/* FORM */
+
+.personal-information-page.dark-mode
+.personal-form-group label {
+  color: #dddddd;
+}
+
+.personal-information-page.dark-mode
+.personal-input-wrapper {
+  background: #181818;
+
+  border-color: #3a3a3a;
+}
+
+.personal-information-page.dark-mode
+.personal-input-wrapper input {
+  color: #ffffff;
+}
+
+
+/* CANCEL */
+
+.personal-information-page.dark-mode
+.personal-cancel-button {
+  background: #1e1e1e;
+
+  border-color: #444444;
+
+  color: #dddddd;
+}
+
+
+/* WHY */
+
+.personal-information-page.dark-mode
+.why-information-item p {
+  color: #aaaaaa;
+}
+
+
+/* PRIVACY */
+
+.personal-information-page.dark-mode
+.personal-privacy-content h3 {
+  color: #ffffff;
+}
+
+.personal-information-page.dark-mode
+.personal-privacy-content p {
+  color: #aaaaaa;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .personal-information-header {
+    height: 68px;
+
+    padding: 0 20px;
+  }
+
+  .personal-information-header h1 {
+    font-size: 20px;
+  }
+
+  .personal-information-header p {
+    font-size: 12px;
+  }
+
+  .personal-information-main {
+    width: calc(100% - 28px);
+
+    padding: 24px 0 40px;
+  }
+
+  .personal-details-heading {
+    align-items: flex-start;
+
+    gap: 16px;
+  }
+
+  .personal-details-heading h2 {
+    font-size: 20px;
+  }
+
+  .personal-edit-button {
+    flex-shrink: 0;
+  }
+
+  .personal-information-row {
+    min-height: 90px;
+
+    padding: 16px;
+  }
+
+  .personal-information-row-icon {
+    width: 42px;
+    height: 42px;
+
+    min-width: 42px;
+
+    margin-right: 14px;
+  }
+
+  .personal-information-row-content strong {
+    font-size: 14px;
+  }
+
+  .personal-information-row-content span {
+    font-size: 12px;
+  }
+
+  .personal-row-arrow {
+    display: none;
+  }
+
+  .personal-edit-card {
+    padding: 20px;
+  }
+
+  .personal-privacy-card {
+    padding: 16px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .personal-information-notice {
+    align-items: flex-start;
+
+    padding: 16px;
+  }
+
+  .personal-details-heading {
+    flex-direction: column;
+  }
+
+  .personal-edit-button {
+    align-self: flex-start;
+  }
+
+  .personal-information-row-icon {
+    margin-right: 12px;
+  }
+
+  .personal-information-row {
+    padding: 14px;
+  }
+
+  .personal-information-row-content {
+    min-width: 0;
+  }
+
+  .personal-information-row-content strong {
+    word-break: break-word;
+  }
+
+  .personal-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .personal-cancel-button,
+  .personal-save-button {
+    width: 100%;
+  }
+
+  .personal-information-main {
+    width: calc(100% - 20px);
+  }
+
+}

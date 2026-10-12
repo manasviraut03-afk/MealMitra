@@ -1,0 +1,810 @@
+/* =========================================================
+   MEALMITRA NOTIFICATIONS
+   YELLOW → ORANGE → RED THEME
+========================================================= */
+
+.notifications-page {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 214, 92, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(255, 75, 43, 0.12),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #fff9df,
+      #fff1d5,
+      #ffe5d4
+    );
+
+  color: #222;
+
+  transition: 0.3s ease;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.notifications-header {
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 7%;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  border-bottom: 1px solid #ffd9b8;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 10;
+
+  backdrop-filter: blur(15px);
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.notifications-back-button {
+  width: 44px;
+  height: 44px;
+
+  border: none;
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffe36e,
+      #ff9b54
+    );
+
+  color: #e94b19;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+
+  margin-right: 20px;
+}
+
+.notifications-back-button:hover {
+  transform: translateX(-3px) scale(1.04);
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd52f,
+      #ff5b35
+    );
+
+  color: white;
+}
+
+
+/* =========================================================
+   HEADER TITLE
+========================================================= */
+
+.notifications-header-title {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.notifications-header-icon {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffe36e,
+      #ff7545
+    );
+
+  color: #ef4b18;
+
+  font-size: 23px;
+}
+
+
+.notifications-header-title h1 {
+  margin: 0;
+
+  font-size: 28px;
+
+  font-weight: 700;
+}
+
+
+.notifications-header-title p {
+  margin: 4px 0 0;
+
+  font-size: 14px;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.notifications-main {
+  width: min(900px, 90%);
+
+  margin: 0 auto;
+
+  padding: 45px 0 80px;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.notifications-section {
+  margin-bottom: 35px;
+}
+
+
+.notifications-section-heading {
+  margin-bottom: 18px;
+}
+
+
+.notifications-section-heading > span {
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color: #f04422;
+
+  letter-spacing: 1.5px;
+}
+
+
+.notifications-section-heading h2 {
+  margin: 6px 0 4px;
+
+  font-size: 22px;
+}
+
+
+.notifications-section-heading p {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   NOTIFICATION LIST
+========================================================= */
+
+.notifications-list {
+  background: rgba(255, 255, 255, 0.94);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  border: 1px solid #ffd1aa;
+
+  box-shadow:
+    0 12px 35px rgba(255, 107, 0, 0.08);
+}
+
+
+/* =========================================================
+   NOTIFICATION ITEM
+========================================================= */
+
+.notification-item {
+  min-height: 105px;
+
+  padding: 20px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #ffe1ca;
+
+  transition: 0.25s ease;
+}
+
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+
+.notification-item:hover {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 218, 99, 0.10),
+      rgba(255, 112, 58, 0.06)
+    );
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.notification-left {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  min-width: 0;
+}
+
+
+.notification-icon {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   ICON COLORS
+========================================================= */
+
+.notification-icon.orange {
+  background:
+    linear-gradient(
+      135deg,
+      #ffe36d,
+      #ff9a63
+    );
+
+  color: #f04d17;
+}
+
+
+.notification-icon.yellow {
+  background:
+    linear-gradient(
+      135deg,
+      #fff08a,
+      #ffb25e
+    );
+
+  color: #ed6715;
+}
+
+
+.notification-icon.red {
+  background:
+    linear-gradient(
+      135deg,
+      #ffd36c,
+      #ff7650
+    );
+
+  color: #e84020;
+}
+
+
+.notification-icon.purple {
+  background:
+    linear-gradient(
+      135deg,
+      #ffe27a,
+      #ff9a72
+    );
+
+  color: #e94b25;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.notification-content {
+  min-width: 0;
+}
+
+
+.notification-content h3 {
+  margin: 0 0 5px;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+
+.notification-content p {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   TOGGLE
+========================================================= */
+
+.notification-toggle {
+  width: 54px;
+  height: 30px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: #d5d7da;
+
+  padding: 3px;
+
+  cursor: pointer;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  transition: 0.3s ease;
+}
+
+
+.notification-toggle:hover {
+  transform: scale(1.04);
+}
+
+
+.notification-toggle.active {
+  background:
+    linear-gradient(
+      90deg,
+      #ffd43b,
+      #ff6b35,
+      #ef3f28
+    );
+}
+
+
+.notification-toggle-circle {
+  width: 24px;
+  height: 24px;
+
+  background: white;
+
+  border-radius: 50%;
+
+  display: block;
+
+  transition: 0.3s ease;
+
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.notification-toggle.active
+.notification-toggle-circle {
+  transform: translateX(24px);
+}
+
+
+/* =========================================================
+   INFORMATION
+========================================================= */
+
+.notification-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 20px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff4c9,
+      #ffe3cf,
+      #ffd8d0
+    );
+
+  border: 1px solid #ffc899;
+
+  box-shadow:
+    0 10px 30px rgba(255, 107, 0, 0.06);
+}
+
+
+.notification-info-icon {
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd52e,
+      #f04424
+    );
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+
+  flex-shrink: 0;
+}
+
+
+.notification-info h3 {
+  margin: 0 0 4px;
+
+  font-size: 15px;
+}
+
+
+.notification-info p {
+  margin: 0;
+
+  font-size: 13px;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+.notifications-page.dark-mode {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 183, 3, 0.10),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(255, 75, 43, 0.08),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #211b16,
+      #241c18,
+      #281c19
+    );
+
+  color: #f5f5f5;
+}
+
+
+.notifications-page.dark-mode
+.notifications-header {
+  background: rgba(30, 27, 24, 0.90);
+
+  border-bottom: 1px solid rgba(255, 153, 84, 0.20);
+}
+
+
+.notifications-page.dark-mode
+.notifications-header-title h1 {
+  color: #ffffff;
+}
+
+
+.notifications-page.dark-mode
+.notifications-header-title p {
+  color: #b8b8b8;
+}
+
+
+.notifications-page.dark-mode
+.notifications-section-heading h2 {
+  color: #ffffff;
+}
+
+
+.notifications-page.dark-mode
+.notifications-section-heading p {
+  color: #b8b8b8;
+}
+
+
+.notifications-page.dark-mode
+.notifications-list {
+  background: rgba(35, 31, 28, 0.96);
+
+  border-color: rgba(255, 153, 84, 0.20);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.20);
+}
+
+
+.notifications-page.dark-mode
+.notification-item {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+
+.notifications-page.dark-mode
+.notification-item:hover {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 218, 99, 0.06),
+      rgba(255, 112, 58, 0.04)
+    );
+}
+
+
+.notifications-page.dark-mode
+.notification-content h3 {
+  color: #ffffff;
+}
+
+
+.notifications-page.dark-mode
+.notification-content p {
+  color: #aaaaaa;
+}
+
+
+.notifications-page.dark-mode
+.notification-info {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 220, 100, 0.10),
+      rgba(255, 130, 80, 0.08),
+      rgba(255, 80, 60, 0.08)
+    );
+
+  border-color: rgba(255, 153, 84, 0.20);
+}
+
+
+.notifications-page.dark-mode
+.notification-info h3 {
+  color: #ffffff;
+}
+
+
+.notifications-page.dark-mode
+.notification-info p {
+  color: #aaaaaa;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .notifications-header {
+    height: 80px;
+
+    padding: 0 20px;
+  }
+
+
+  .notifications-back-button {
+    width: 40px;
+    height: 40px;
+
+    font-size: 19px;
+
+    margin-right: 14px;
+  }
+
+
+  .notifications-header-icon {
+    width: 42px;
+    height: 42px;
+
+    font-size: 20px;
+  }
+
+
+  .notifications-header-title {
+    gap: 10px;
+  }
+
+
+  .notifications-header-title h1 {
+    font-size: 23px;
+  }
+
+
+  .notifications-header-title p {
+    font-size: 12px;
+  }
+
+
+  .notifications-main {
+    width: 92%;
+
+    padding-top: 30px;
+  }
+
+
+  .notifications-section-heading > span {
+    font-size: 11px;
+  }
+
+
+  .notifications-section-heading h2 {
+    font-size: 20px;
+  }
+
+
+  .notification-item {
+    min-height: 95px;
+
+    padding: 18px;
+  }
+
+
+  .notification-left {
+    gap: 12px;
+  }
+
+
+  .notification-icon {
+    width: 45px;
+    height: 45px;
+
+    font-size: 20px;
+
+    border-radius: 13px;
+  }
+
+
+  .notification-content h3 {
+    font-size: 15px;
+  }
+
+
+  .notification-content p {
+    max-width: 190px;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+  }
+
+
+  .notification-toggle {
+    width: 50px;
+    height: 28px;
+  }
+
+
+  .notification-toggle-circle {
+    width: 22px;
+    height: 22px;
+  }
+
+
+  .notification-toggle.active
+  .notification-toggle-circle {
+    transform: translateX(22px);
+  }
+
+
+  .notification-info {
+    padding: 18px;
+
+    gap: 12px;
+  }
+
+
+  .notification-info-icon {
+    width: 40px;
+    height: 40px;
+
+    font-size: 18px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .notifications-header-title p {
+    display: none;
+  }
+
+
+  .notification-item {
+    padding: 15px;
+  }
+
+
+  .notification-content p {
+    max-width: 145px;
+  }
+
+
+  .notification-toggle {
+    width: 46px;
+    height: 27px;
+  }
+
+
+  .notification-toggle-circle {
+    width: 21px;
+    height: 21px;
+  }
+
+
+  .notification-toggle.active
+  .notification-toggle-circle {
+    transform: translateX(19px);
+  }
+
+}

@@ -1,73 +1,147 @@
+import { FiUser } from "react-icons/fi";
 import "./Navbar.css";
-import { FaUser } from "react-icons/fa";
 
-type NavbarProps = {
+interface NavbarProps {
   onSignIn: () => void;
   loggedInUser: string | null;
-  onLogout: () => void;
-};
+  onProfile: () => void;
+  onHome?: () => void;
+  onOffers?: () => void;
+  onAbout?: () => void;
+
+  // VEG MODE
+  onVegMode?: () => void;
+  vegMode?: boolean;
+}
 
 function Navbar({
   onSignIn,
   loggedInUser,
-  onLogout,
+  onProfile,
+  onHome,
+  onOffers,
+  onAbout,
+  onVegMode,
+  vegMode = false,
 }: NavbarProps) {
+
   return (
     <nav className="navbar">
 
-      {/* Logo */}
-      <div className="logo">
+      {/* =====================================================
+          LOGO
+      ===================================================== */}
+
+      <div
+        className="navbar-logo"
+        onClick={onHome}
+      >
         MealMitra
       </div>
 
-      {/* Navigation */}
-      <div className="nav-right">
 
-        <a href="#">Home</a>
+      {/* =====================================================
+          NAV LINKS
+      ===================================================== */}
 
-        <a href="#">Offers</a>
+      <div className="navbar-links">
 
-        <a href="#">About Us</a>
+        {/* HOME */}
 
-        {/* Veg Mode */}
-        <div className="veg-mode">
-          <span>Veg</span>
+        <button
+          className="navbar-link"
+          onClick={onHome}
+        >
+          Home
+        </button>
 
-          <label className="switch">
-            <input type="checkbox" />
-            <span className="slider"></span>
-          </label>
-        </div>
 
-        {/* PROFILE */}
-        <div className="profile-container">
+        {/* OFFERS */}
+
+        <button
+          className="navbar-link"
+          onClick={onOffers}
+        >
+          Offers
+        </button>
+
+
+        {/* ABOUT */}
+
+        <button
+          className="navbar-link"
+          onClick={onAbout}
+        >
+          About Us
+        </button>
+
+
+        {/* =================================================
+            VEG MODE
+        ================================================= */}
+
+        <button
+          type="button"
+          className={`veg-mode ${
+            vegMode ? "veg-mode-active" : ""
+          }`}
+          onClick={onVegMode}
+          aria-pressed={vegMode}
+        >
+
+          <span className="veg-text">
+            Veg
+          </span>
+
+
+          <span className="veg-toggle">
+
+            <span className="veg-circle"></span>
+
+          </span>
+
+        </button>
+
+
+        {/* =================================================
+            PROFILE / SIGN IN
+        ================================================= */}
+
+        {loggedInUser ? (
 
           <button
-            className={`profile-btn ${
-              loggedInUser ? "logged-in" : ""
-            }`}
-            onClick={
-              loggedInUser
-                ? onLogout
-                : onSignIn
-            }
-            type="button"
-            title={
-              loggedInUser
-                ? "Click to logout"
-                : "Sign In"
-            }
+            className="profile-button"
+            onClick={onProfile}
           >
-            <FaUser />
-          </button>
 
-          {loggedInUser && (
-            <span className="user-name">
+            <span className="profile-icon">
+              <FiUser />
+            </span>
+
+            <span className="profile-name">
               {loggedInUser}
             </span>
-          )}
 
-        </div>
+          </button>
+
+        ) : (
+
+          <button
+            className="sign-in-button"
+            onClick={onSignIn}
+          >
+
+            <span className="profile-icon">
+              <FiUser />
+            </span>
+
+            <span className="profile-name">
+              Sign In
+            </span>
+
+          </button>
+
+        )}
 
       </div>
 

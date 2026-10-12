@@ -1,11 +1,28 @@
 import "./Header.css";
 import hero from "../../assets/videos/hero.mp4";
 
-function Header() {
+import {
+  FaMapMarkerAlt,
+  FaSearch,
+} from "react-icons/fa";
+
+import { FiChevronDown } from "react-icons/fi";
+
+interface HeaderProps {
+  onSearch: () => void;
+  onLocationClick: () => void;
+  selectedLocation: string;
+}
+
+function Header({
+  onSearch,
+  onLocationClick,
+  selectedLocation,
+}: HeaderProps) {
   return (
     <section className="hero">
 
-      {/* Background Video */}
+      {/* HERO VIDEO */}
       <video
         className="hero-video"
         src={hero}
@@ -15,39 +32,65 @@ function Header() {
         playsInline
       />
 
-      {/* Dark Overlay */}
-      <div className="overlay"></div>
+      {/* DARK OVERLAY */}
+      <div className="hero-overlay"></div>
 
-      {/* Hero Content */}
+      {/* HERO CONTENT */}
       <div className="hero-content">
 
-        <h1>Every Meal, One Click Away</h1>
+        {/* HEADING */}
+        <div className="hero-heading-section">
 
-        <p>Fresh meals at your doorstep.</p>
+          <h1>
+            Every Meal, One Click Away
+          </h1>
 
-        {/* Location + Search */}
+          <p>
+            Fresh meals at your doorstep.
+          </p>
+
+        </div>
+
+
+        {/* SEARCH AREA */}
         <div className="search-area">
 
-          {/* Location Box */}
-          <div className="location-box">
-            <span className="location-icon">📍</span>
+          {/* LOCATION BOX */}
+          <div
+            className="location-box"
+            onClick={onLocationClick}
+          >
 
-            <input
-              type="text"
-              placeholder="Enter your delivery location"
-            />
+            <div className="location-icon">
+              <FaMapMarkerAlt />
+            </div>
 
-            <span className="arrow">⌄</span>
+            <span className="location-text">
+              {selectedLocation ||
+                "Enter your delivery location"}
+            </span>
+
+            <div className="arrow">
+              <FiChevronDown />
+            </div>
+
           </div>
 
-          {/* Search Box */}
-          <div className="search-box">
-            <input
-              type="text"
-              placeholder="Search for restaurant, item or more"
-            />
 
-            <span className="search-icon">🔍</span>
+          {/* SEARCH BOX */}
+          <div
+            className="search-box"
+            onClick={onSearch}
+          >
+
+            <span className="search-placeholder">
+              Search for restaurant, item or more
+            </span>
+
+            <div className="search-icon">
+              <FaSearch />
+            </div>
+
           </div>
 
         </div>

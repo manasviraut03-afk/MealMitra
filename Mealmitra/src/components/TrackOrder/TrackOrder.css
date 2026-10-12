@@ -1,0 +1,1455 @@
+/* =========================================
+   MEALMITRA - TRACK ORDER
+   PROFESSIONAL FOOD DELIVERY UI
+   ORANGE + RED BRAND THEME
+========================================= */
+
+.track-page {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 183, 3, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #fffaf5 0%,
+      #fff5eb 48%,
+      #fff9f5 100%
+    );
+
+  color: #2d211c;
+  font-family: "Poppins", sans-serif;
+
+  padding-bottom: 70px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.track-header {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 26px 30px 22px;
+}
+
+
+.track-header-content {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  position: relative;
+}
+
+
+/* =========================================
+   HEADER TEXT
+========================================= */
+
+.track-heading {
+  padding-top: 2px;
+}
+
+
+.track-small-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #e8751a;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+
+.track-heading h1 {
+  margin: 0;
+
+  color: #7f1d1d;
+
+  font-size: 30px;
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+
+.track-heading p {
+  margin: 5px 0 0;
+
+  color: #80695d;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.track-close-button {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  border: 1px solid #efd8c7;
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #8b1e1e;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 18px rgba(91, 45, 20, 0.09);
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.track-close-button:hover {
+  background: #8b1e1e;
+
+  color: #ffffff;
+
+  transform: rotate(90deg);
+
+  box-shadow:
+    0 8px 22px rgba(139, 30, 30, 0.18);
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.track-container {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  padding: 0 30px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+/* =========================================
+   COMMON CARD
+========================================= */
+
+.status-card,
+.info-card,
+.items-card {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #ead8cc;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 8px 28px rgba(82, 48, 29, 0.07);
+}
+
+
+/* =========================================
+   STATUS CARD
+========================================= */
+
+.status-card {
+  padding: 24px;
+}
+
+
+/* =========================================
+   STATUS TOP
+========================================= */
+
+.status-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid #eee3dc;
+}
+
+
+.status-heading {
+  min-width: 0;
+}
+
+
+.status-label {
+  display: block;
+
+  color: #9a8275;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+}
+
+
+.status-top h2 {
+  margin: 5px 0 0;
+
+  color: #8b1e1e;
+
+  font-size: 21px;
+  font-weight: 800;
+}
+
+
+.status-heading p {
+  margin: 5px 0 0;
+
+  color: #8b776c;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   STATUS ICON
+========================================= */
+
+.status-icon {
+  width: 54px;
+  height: 54px;
+
+  flex-shrink: 0;
+
+  border-radius: 15px;
+
+  background: linear-gradient(
+    135deg,
+    #ffbf54,
+    #ea9148
+  );
+
+  color: #7f1d1d;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+
+  box-shadow:
+    0 7px 18px rgba(234, 145, 72, 0.22);
+}
+
+
+/* =========================================
+   DELIVERY TIME
+========================================= */
+
+.delivery-time {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 17px 0;
+
+  border-bottom: 1px solid #eee3dc;
+}
+
+
+.delivery-time-icon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: #fff3e3;
+
+  color: #e8751a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+
+.delivery-time-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+
+  flex: 1;
+}
+
+
+.delivery-time-content span {
+  color: #8e796d;
+
+  font-size: 11px;
+}
+
+
+.delivery-time-content strong {
+  color: #2d211c;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+
+.delivery-time-badge {
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  background: #edf8ee;
+
+  border: 1px solid #d3ead5;
+
+  color: #34783c;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.timeline {
+  padding-top: 22px;
+}
+
+
+.timeline-item {
+  width: 100%;
+
+  min-height: 72px;
+
+  display: flex;
+
+  gap: 14px;
+
+  position: relative;
+}
+
+
+.timeline-left {
+  width: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  position: relative;
+}
+
+
+.timeline-circle {
+  width: 34px;
+  height: 34px;
+
+  box-sizing: border-box;
+
+  border-radius: 50%;
+
+  background: #f4ece6;
+
+  border: 1px solid #e8dcd4;
+
+  color: #a39186;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   COMPLETED
+========================================= */
+
+.timeline-item.completed .timeline-circle {
+  background: linear-gradient(
+    135deg,
+    #ffbf54,
+    #ea9148
+  );
+
+  border-color: #ea9148;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 4px 12px rgba(234, 145, 72, 0.20);
+}
+
+
+/* =========================================
+   ACTIVE
+========================================= */
+
+.timeline-item.active .timeline-circle {
+  background: linear-gradient(
+    135deg,
+    #ea9148,
+    #e8751a
+  );
+
+  border-color: #e8751a;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 0 0 5px rgba(234, 145, 72, 0.13),
+    0 5px 15px rgba(232, 117, 26, 0.24);
+}
+
+
+/* =========================================
+   TIMELINE LINE
+========================================= */
+
+.timeline-line {
+  position: absolute;
+
+  top: 34px;
+  bottom: -2px;
+
+  width: 2px;
+
+  background: #e8ddd6;
+
+  border-radius: 10px;
+
+  z-index: 1;
+}
+
+
+.completed-line {
+  background: linear-gradient(
+    180deg,
+    #ea9148,
+    #ea9148
+  );
+}
+
+
+.active-line {
+  background: linear-gradient(
+    180deg,
+    #ea9148,
+    #e8ddd6
+  );
+}
+
+
+/* =========================================
+   TIMELINE CONTENT
+========================================= */
+
+.timeline-content {
+  flex: 1;
+
+  padding: 2px 0 24px;
+}
+
+
+.timeline-content h3 {
+  margin: 0 0 4px;
+
+  color: #3a2a22;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+.timeline-content p {
+  margin: 0;
+
+  color: #8e796e;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+.timeline-item.completed .timeline-content h3 {
+  color: #7f1d1d;
+}
+
+
+.timeline-item.active .timeline-content h3 {
+  color: #d65f15;
+}
+
+
+/* =========================================
+   CURRENT BADGE
+========================================= */
+
+.timeline-title-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.current-badge {
+  padding: 3px 7px;
+
+  border-radius: 20px;
+
+  background: #fff2e3;
+
+  color: #e8751a;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   LAST ITEM
+========================================= */
+
+.last-item {
+  min-height: auto;
+}
+
+
+.last-item .timeline-content {
+  padding-bottom: 2px;
+}
+
+
+/* =========================================
+   RESTAURANT CARD
+========================================= */
+
+.info-card {
+  padding: 18px 20px;
+}
+
+
+.restaurant-card-content {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+}
+
+
+.heading-icon {
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #ffbf54,
+    #ea9148
+  );
+
+  color: #7f1d1d;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 19px;
+
+  box-shadow:
+    0 5px 13px rgba(234, 145, 72, 0.18);
+}
+
+
+.restaurant-details {
+  min-width: 0;
+
+  flex: 1;
+}
+
+
+.card-label {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #9a8275;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+.restaurant-details h3,
+.partner-details h3 {
+  margin: 0;
+
+  color: #2d211c;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+
+.restaurant-details p {
+  margin: 3px 0 0;
+
+  color: #8b776c;
+
+  font-size: 11px;
+}
+
+
+.restaurant-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 13px;
+  margin-left: 57px;
+
+  color: #c65d00;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+.restaurant-status span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #ea9148;
+
+  box-shadow:
+    0 0 0 3px rgba(234, 145, 72, 0.12);
+}
+
+
+/* =========================================
+   DELIVERY PARTNER
+========================================= */
+
+.partner-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+
+.partner-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  min-width: 0;
+}
+
+
+.partner-avatar {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #ffbf54,
+    #ea9148
+  );
+
+  color: #7f1d1d;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 19px;
+}
+
+
+.partner-details {
+  min-width: 0;
+}
+
+
+.partner-details p {
+  margin: 3px 0 0;
+
+  color: #c65d00;
+
+  font-size: 10px;
+}
+
+
+/* =========================================
+   CALL BUTTON
+========================================= */
+
+.call-button {
+  height: 38px;
+
+  padding: 0 14px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: linear-gradient(
+    135deg,
+    #ea9148,
+    #e8751a
+  );
+
+  color: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 14px rgba(232, 117, 26, 0.20);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.call-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(232, 117, 26, 0.28);
+}
+
+
+.call-button svg {
+  font-size: 14px;
+}
+
+
+/* =========================================
+   ORDER ITEMS CARD
+========================================= */
+
+.items-card {
+  padding: 21px;
+}
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.section-title {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding-bottom: 15px;
+
+  border-bottom: 1px solid #eee3dc;
+}
+
+
+.section-small-label {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #e8751a;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+
+.section-title h2 {
+  margin: 0;
+
+  color: #30231d;
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+
+.items-count {
+  color: #9a8275;
+
+  font-size: 10px;
+}
+
+
+/* =========================================
+   ITEMS LIST
+========================================= */
+
+.items-list {
+  padding: 9px 0 2px;
+}
+
+
+/* =========================================
+   SINGLE ITEM
+========================================= */
+
+.track-order-item {
+  width: 100%;
+
+  min-height: 70px;
+
+  box-sizing: border-box;
+
+  padding: 8px 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  border-bottom: 1px solid #f3e9e3;
+}
+
+
+.track-order-item:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================================
+   FOOD IMAGE CONTAINER
+========================================= */
+
+.track-food-image-container {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: #fff7f0;
+
+  border: 1px solid #f0dfd3;
+
+  box-shadow:
+    0 3px 9px rgba(75, 43, 25, 0.08);
+}
+
+
+/* =========================================
+   FOOD IMAGE
+========================================= */
+
+.track-food-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.25s ease;
+}
+
+
+.track-food-image-container:hover .track-food-image {
+  transform: scale(1.05);
+}
+
+
+/* =========================================
+   FOOD INFO
+========================================= */
+
+.track-food-info {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.track-food-info h4 {
+  margin: 0 0 4px;
+
+  color: #30231d;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.track-food-info span {
+  color: #8e796e;
+
+  font-size: 10px;
+}
+
+
+/* =========================================
+   ITEM PRICE
+========================================= */
+
+.track-item-price {
+  flex-shrink: 0;
+
+  color: #a51d1d;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   BILL
+========================================= */
+
+.bill {
+  margin-top: 13px;
+
+  padding-top: 13px;
+
+  border-top: 1px solid #eee3dc;
+}
+
+
+.bill-row {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 4px 0;
+}
+
+
+.bill-row span {
+  color: #817067;
+
+  font-size: 11px;
+}
+
+
+.bill-row strong {
+  color: #3a2a22;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+.free-delivery {
+  color: #36803e !important;
+}
+
+
+/* =========================================
+   BILL DIVIDER
+========================================= */
+
+.bill-divider {
+  width: 100%;
+
+  height: 1px;
+
+  margin: 8px 0;
+
+  background: #eee3dc;
+}
+
+
+/* =========================================
+   TOTAL
+========================================= */
+
+.bill-total {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 2px;
+}
+
+
+.bill-total span {
+  color: #30231d;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+.bill-total strong {
+  color: #a51d1d;
+
+  font-size: 19px;
+  font-weight: 800;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+  .track-header {
+    padding: 23px 22px 18px;
+  }
+
+
+  .track-container {
+    padding: 0 22px;
+  }
+
+
+  .track-heading h1 {
+    font-size: 27px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .track-page {
+    padding-bottom: 45px;
+  }
+
+
+  .track-header {
+    padding: 18px 15px 17px;
+  }
+
+
+  .track-header-content {
+    align-items: flex-start;
+  }
+
+
+  .track-small-label {
+    font-size: 8px;
+    letter-spacing: 1.4px;
+  }
+
+
+  .track-heading h1 {
+    font-size: 24px;
+  }
+
+
+  .track-heading p {
+    font-size: 11px;
+  }
+
+
+  .track-close-button {
+    width: 38px;
+    height: 38px;
+
+    font-size: 19px;
+  }
+
+
+  .track-container {
+    padding: 0 14px;
+
+    gap: 13px;
+  }
+
+
+  .status-card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+
+  .status-top {
+    gap: 12px;
+    padding-bottom: 17px;
+  }
+
+
+  .status-top h2 {
+    font-size: 18px;
+  }
+
+
+  .status-heading p {
+    font-size: 10px;
+  }
+
+
+  .status-icon {
+    width: 47px;
+    height: 47px;
+
+    border-radius: 13px;
+
+    font-size: 20px;
+  }
+
+
+  .delivery-time {
+    padding: 14px 0;
+  }
+
+
+  .delivery-time-icon {
+    width: 34px;
+    height: 34px;
+
+    font-size: 16px;
+  }
+
+
+  .delivery-time-content strong {
+    font-size: 13px;
+  }
+
+
+  .delivery-time-badge {
+    font-size: 8px;
+    padding: 5px 8px;
+  }
+
+
+  .timeline {
+    padding-top: 19px;
+  }
+
+
+  .timeline-item {
+    gap: 11px;
+    min-height: 68px;
+  }
+
+
+  .timeline-left {
+    width: 31px;
+  }
+
+
+  .timeline-circle {
+    width: 31px;
+    height: 31px;
+
+    font-size: 12px;
+  }
+
+
+  .timeline-line {
+    top: 31px;
+  }
+
+
+  .timeline-content {
+    padding-bottom: 20px;
+  }
+
+
+  .timeline-content h3 {
+    font-size: 12px;
+  }
+
+
+  .timeline-content p {
+    font-size: 9px;
+  }
+
+
+  .current-badge {
+    font-size: 7px;
+  }
+
+
+  .info-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+
+  .heading-icon {
+    width: 40px;
+    height: 40px;
+
+    font-size: 17px;
+  }
+
+
+  .restaurant-details h3,
+  .partner-details h3 {
+    font-size: 13px;
+  }
+
+
+  .restaurant-details p,
+  .partner-details p {
+    font-size: 9px;
+  }
+
+
+  .restaurant-status {
+    margin-left: 53px;
+  }
+
+
+  .partner-avatar {
+    width: 42px;
+    height: 42px;
+
+    font-size: 17px;
+  }
+
+
+  .call-button {
+    height: 35px;
+    padding: 0 11px;
+
+    font-size: 10px;
+  }
+
+
+  .items-card {
+    padding: 17px;
+    border-radius: 16px;
+  }
+
+
+  .section-title h2 {
+    font-size: 15px;
+  }
+
+
+  .track-food-image-container {
+    width: 53px;
+    height: 53px;
+  }
+
+
+  .track-food-info h4 {
+    font-size: 12px;
+  }
+
+
+  .track-food-info span {
+    font-size: 9px;
+  }
+
+
+  .track-item-price {
+    font-size: 12px;
+  }
+
+
+  .bill-row span {
+    font-size: 10px;
+  }
+
+
+  .bill-row strong {
+    font-size: 11px;
+  }
+
+
+  .bill-total span {
+    font-size: 12px;
+  }
+
+
+  .bill-total strong {
+    font-size: 17px;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .track-header {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+
+  .track-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
+  .track-heading h1 {
+    font-size: 22px;
+  }
+
+
+  .track-close-button {
+    width: 36px;
+    height: 36px;
+
+    font-size: 18px;
+  }
+
+
+  .status-card {
+    padding: 15px;
+  }
+
+
+  .status-top h2 {
+    font-size: 17px;
+  }
+
+
+  .delivery-time-badge {
+    display: none;
+  }
+
+
+  .timeline-content h3 {
+    font-size: 11px;
+  }
+
+
+  .timeline-content p {
+    font-size: 8px;
+  }
+
+
+  .items-card {
+    padding: 15px;
+  }
+
+
+  .track-food-image-container {
+    width: 49px;
+    height: 49px;
+  }
+
+
+  .track-food-info h4 {
+    font-size: 11px;
+  }
+
+
+  .track-item-price {
+    font-size: 11px;
+  }
+
+}

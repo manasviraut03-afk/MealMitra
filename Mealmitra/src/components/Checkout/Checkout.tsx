@@ -1,363 +1,533 @@
 import { useState } from "react";
+import {
+  FiArrowLeft,
+  FiMapPin,
+  FiHome,
+  FiCreditCard,
+  FiSmartphone,
+  FiCheckCircle,
+  FiPlus,
+} from "react-icons/fi";
+
+import type { CartItem } from "../../types";
+
 import "./Checkout.css";
 
-export type CheckoutItem = {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-  quantity: number;
-};
-
-type CheckoutProps = {
-  cartItems: CheckoutItem[];
+interface CheckoutProps {
+  cartItems: CartItem[];
   onBack: () => void;
   onPlaceOrder: () => void;
-};
+}
 
 function Checkout({
   cartItems,
   onBack,
   onPlaceOrder,
 }: CheckoutProps) {
-  // =========================
-  // FORM STATE
-  // =========================
+  /* =========================================================
+     ADDRESS
+  ========================================================= */
 
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [pincode, setPincode] = useState("");
+  const [selectedAddress, setSelectedAddress] =
+    useState("home");
+
+  /* =========================================================
+     PAYMENT
+  ========================================================= */
 
   const [paymentMethod, setPaymentMethod] =
-    useState("Cash on Delivery");
+    useState("upi");
 
-  const [error, setError] = useState("");
+  /* =========================================================
+     COUPON
+  ========================================================= */
 
-  // =========================
-  // PRICE CALCULATION
-  // =========================
+  const [coupon, setCoupon] = useState("");
 
-  const subtotal = cartItems.reduce(
+  const [couponApplied, setCouponApplied] =
+    useState(false);
+
+  /* =========================================================
+     CALCULATIONS
+  ========================================================= */
+
+  const itemTotal = cartItems.reduce(
     (total, item) =>
       total + item.price * item.quantity,
     0
   );
 
-  const deliveryFee = subtotal > 499 ? 0 : 40;
+  const deliveryFee = itemTotal >= 299 ? 0 : 40;
 
-  const total = subtotal + deliveryFee;
+  const platformFee = 5;
 
-  // =========================
-  // PLACE ORDER
-  // =========================
+  const discount = couponApplied ? 50 : 0;
+
+  const taxes = Math.round(
+    itemTotal * 0.05
+  );
+
+  const totalAmount =
+    itemTotal +
+    deliveryFee +
+    platformFee +
+    taxes -
+    discount;
+
+  /* =========================================================
+     COUPON
+  ========================================================= */
+
+  const applyCoupon = () => {
+    if (
+      coupon.trim().toUpperCase() ===
+      "MEAL50"
+    ) {
+      setCouponApplied(true);
+    } else {
+      alert(
+        "Invalid coupon. Try MEAL50"
+      );
+    }
+  };
+
+  /* =========================================================
+     PLACE ORDER
+  ========================================================= */
 
   const handlePlaceOrder = () => {
-    // Check empty fields
-    if (
-      !name.trim() ||
-      !phone.trim() ||
-      !address.trim() ||
-      !city.trim() ||
-      !pincode.trim()
-    ) {
-      setError("Please fill in all delivery details.");
+    if (cartItems.length === 0) {
+      alert("Your cart is empty.");
       return;
     }
 
-    // Check phone number
-    if (!/^[0-9]{10}$/.test(phone)) {
-      setError("Please enter a valid 10-digit phone number.");
-      return;
-    }
-
-    // Check pincode
-    if (!/^[0-9]{6}$/.test(pincode)) {
-      setError("Please enter a valid 6-digit pincode.");
-      return;
-    }
-
-    // Remove error
-    setError("");
-
-    // Place order
     onPlaceOrder();
   };
 
   return (
     <div className="checkout-page">
 
-      {/* =========================
+      {/* =====================================================
           HEADER
-      ========================= */}
+      ===================================================== */}
 
       <div className="checkout-header">
 
         <button
-          className="back-btn"
+          className="checkout-back-button"
           onClick={onBack}
         >
-          ← Back to Cart
+          <FiArrowLeft />
         </button>
 
-        <h1>Checkout</h1>
+        <div>
+          <h1>Checkout</h1>
 
-        <div className="checkout-logo">
-          🍽️ MealMitra
+          <p>
+            Complete your order
+          </p>
         </div>
 
       </div>
 
 
-      {/* =========================
-          MAIN CONTENT
-      ========================= */}
+      {/* =====================================================
+          MAIN CHECKOUT
+      ===================================================== */}
 
       <div className="checkout-container">
 
-        {/* =========================
-            LEFT SIDE
-        ========================= */}
+        {/* ===================================================
+            LEFT SECTION
+        =================================================== */}
 
         <div className="checkout-left">
 
-          {/* =========================
+          {/* =================================================
               DELIVERY ADDRESS
-          ========================= */}
+          ================================================= */}
 
-          <div className="checkout-card">
+          <section className="checkout-section">
 
-            <h2>📍 Delivery Address</h2>
+            <div className="section-title">
 
-            <div className="address-form">
+              <FiMapPin />
 
-              {/* Name */}
+              <div>
+                <h2>
+                  Delivery Address
+                </h2>
 
-              <div className="form-group">
+                <p>
+                  Where should we deliver your food?
+                </p>
+              </div>
 
-                <label>
-                  Full Name
-                </label>
+            </div>
 
-                <input
-                  type="text"
-                  placeholder="Enter your name"
-                  value={name}
-                  onChange={(e) =>
-                    setName(e.target.value)
-                  }
-                />
+
+            {/* HOME ADDRESS */}
+
+            <div
+              className={`address-card ${
+                selectedAddress === "home"
+                  ? "selected-address"
+                  : ""
+              }`}
+              onClick={() =>
+                setSelectedAddress("home")
+              }
+            >
+
+              <div className="address-radio">
+
+                {selectedAddress === "home" && (
+                  <FiCheckCircle />
+                )}
 
               </div>
 
 
-              {/* Phone */}
-
-              <div className="form-group">
-
-                <label>
-                  Phone Number
-                </label>
-
-                <input
-                  type="tel"
-                  placeholder="Enter phone number"
-                  value={phone}
-                  maxLength={10}
-                  onChange={(e) =>
-                    setPhone(
-                      e.target.value.replace(
-                        /\D/g,
-                        ""
-                      )
-                    )
-                  }
-                />
-
+              <div className="address-icon">
+                <FiHome />
               </div>
 
 
-              {/* Address */}
+              <div className="address-content">
 
-              <div className="form-group">
+                <h3>
+                  Home
+                </h3>
 
-                <label>
-                  Address
-                </label>
+                <p>
+                  Your saved home address
+                </p>
 
-                <textarea
-                  placeholder="House No, Street, Area"
-                  rows={3}
-                  value={address}
-                  onChange={(e) =>
-                    setAddress(e.target.value)
-                  }
-                ></textarea>
-
-              </div>
-
-
-              {/* City + Pincode */}
-
-              <div className="address-row">
-
-                <div className="form-group">
-
-                  <label>
-                    City
-                  </label>
-
-                  <input
-                    type="text"
-                    placeholder="City"
-                    value={city}
-                    onChange={(e) =>
-                      setCity(e.target.value)
-                    }
-                  />
-
-                </div>
-
-
-                <div className="form-group">
-
-                  <label>
-                    Pincode
-                  </label>
-
-                  <input
-                    type="text"
-                    placeholder="Pincode"
-                    value={pincode}
-                    maxLength={6}
-                    onChange={(e) =>
-                      setPincode(
-                        e.target.value.replace(
-                          /\D/g,
-                          ""
-                        )
-                      )
-                    }
-                  />
-
-                </div>
+                <span>
+                  Nagpur, Maharashtra
+                </span>
 
               </div>
 
             </div>
 
-          </div>
+
+            {/* WORK ADDRESS */}
+
+            <div
+              className={`address-card ${
+                selectedAddress === "work"
+                  ? "selected-address"
+                  : ""
+              }`}
+              onClick={() =>
+                setSelectedAddress("work")
+              }
+            >
+
+              <div className="address-radio">
+
+                {selectedAddress === "work" && (
+                  <FiCheckCircle />
+                )}
+
+              </div>
 
 
-          {/* =========================
-              PAYMENT
-          ========================= */}
-
-          <div className="checkout-card">
-
-            <h2>💳 Payment Method</h2>
-
-            <div className="payment-options">
-
-              {/* Cash */}
-
-              <label className="payment-option">
-
-                <input
-                  type="radio"
-                  name="payment"
-                  value="Cash on Delivery"
-                  checked={
-                    paymentMethod ===
-                    "Cash on Delivery"
-                  }
-                  onChange={(e) =>
-                    setPaymentMethod(
-                      e.target.value
-                    )
-                  }
-                />
-
-                <span>
-                  💵 Cash on Delivery
-                </span>
-
-              </label>
+              <div className="address-icon">
+                <FiMapPin />
+              </div>
 
 
-              {/* UPI */}
+              <div className="address-content">
 
-              <label className="payment-option">
+                <h3>
+                  Work
+                </h3>
 
-                <input
-                  type="radio"
-                  name="payment"
-                  value="UPI"
-                  checked={
-                    paymentMethod === "UPI"
-                  }
-                  onChange={(e) =>
-                    setPaymentMethod(
-                      e.target.value
-                    )
-                  }
-                />
+                <p>
+                  Office / workplace address
+                </p>
 
                 <span>
-                  📱 UPI
+                  Nagpur, Maharashtra
                 </span>
 
-              </label>
-
-
-              {/* Card */}
-
-              <label className="payment-option">
-
-                <input
-                  type="radio"
-                  name="payment"
-                  value="Card"
-                  checked={
-                    paymentMethod === "Card"
-                  }
-                  onChange={(e) =>
-                    setPaymentMethod(
-                      e.target.value
-                    )
-                  }
-                />
-
-                <span>
-                  💳 Card
-                </span>
-
-              </label>
+              </div>
 
             </div>
 
-          </div>
+
+            {/* ADD NEW ADDRESS */}
+
+            <button
+              className="add-address-button"
+              onClick={() =>
+                alert(
+                  "Add new address feature coming soon!"
+                )
+              }
+            >
+
+              <FiPlus />
+
+              Add New Address
+
+            </button>
+
+          </section>
+
+
+          {/* =================================================
+              PAYMENT METHOD
+          ================================================= */}
+
+          <section className="checkout-section">
+
+            <div className="section-title">
+
+              <FiCreditCard />
+
+              <div>
+
+                <h2>
+                  Payment Method
+                </h2>
+
+                <p>
+                  Choose how you want to pay
+                </p>
+
+              </div>
+
+            </div>
+
+
+            {/* UPI */}
+
+            <div
+              className={`payment-card ${
+                paymentMethod === "upi"
+                  ? "selected-payment"
+                  : ""
+              }`}
+              onClick={() =>
+                setPaymentMethod("upi")
+              }
+            >
+
+              <div className="payment-icon">
+                <FiSmartphone />
+              </div>
+
+              <div className="payment-content">
+
+                <h3>
+                  UPI
+                </h3>
+
+                <p>
+                  Google Pay, PhonePe, Paytm
+                </p>
+
+              </div>
+
+              <div className="payment-radio">
+
+                {paymentMethod === "upi" && (
+                  <FiCheckCircle />
+                )}
+
+              </div>
+
+            </div>
+
+
+            {/* CARD */}
+
+            <div
+              className={`payment-card ${
+                paymentMethod === "card"
+                  ? "selected-payment"
+                  : ""
+              }`}
+              onClick={() =>
+                setPaymentMethod("card")
+              }
+            >
+
+              <div className="payment-icon">
+                <FiCreditCard />
+              </div>
+
+              <div className="payment-content">
+
+                <h3>
+                  Credit / Debit Card
+                </h3>
+
+                <p>
+                  Visa, Mastercard, RuPay
+                </p>
+
+              </div>
+
+              <div className="payment-radio">
+
+                {paymentMethod === "card" && (
+                  <FiCheckCircle />
+                )}
+
+              </div>
+
+            </div>
+
+
+            {/* CASH */}
+
+            <div
+              className={`payment-card ${
+                paymentMethod === "cash"
+                  ? "selected-payment"
+                  : ""
+              }`}
+              onClick={() =>
+                setPaymentMethod("cash")
+              }
+            >
+
+              <div className="payment-icon">
+                💵
+              </div>
+
+              <div className="payment-content">
+
+                <h3>
+                  Cash on Delivery
+                </h3>
+
+                <p>
+                  Pay when your order arrives
+                </p>
+
+              </div>
+
+              <div className="payment-radio">
+
+                {paymentMethod === "cash" && (
+                  <FiCheckCircle />
+                )}
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+          {/* =================================================
+              COUPON
+          ================================================= */}
+
+          <section className="checkout-section">
+
+            <div className="section-title">
+
+              <span className="coupon-icon">
+                %
+              </span>
+
+              <div>
+
+                <h2>
+                  Apply Coupon
+                </h2>
+
+                <p>
+                  Save more on your order
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div className="coupon-box">
+
+              <input
+                type="text"
+                placeholder="Enter coupon code"
+                value={coupon}
+                onChange={(event) =>
+                  setCoupon(event.target.value)
+                }
+              />
+
+              <button
+                onClick={applyCoupon}
+              >
+                Apply
+              </button>
+
+            </div>
+
+
+            {couponApplied && (
+              <div className="coupon-success">
+
+                <FiCheckCircle />
+
+                MEAL50 applied! ₹50 saved.
+
+              </div>
+            )}
+
+          </section>
 
         </div>
 
 
-        {/* =========================
-            RIGHT SIDE
-        ========================= */}
+        {/* ===================================================
+            RIGHT SECTION
+        =================================================== */}
 
         <div className="checkout-right">
 
-          <div className="order-summary">
+          {/* =================================================
+              ORDER SUMMARY
+          ================================================= */}
+
+          <section className="order-summary">
 
             <h2>
               Your Order
             </h2>
 
 
-            {/* =========================
-                FOOD ITEMS
-            ========================= */}
+            {/* RESTAURANT */}
+
+            <div className="checkout-restaurant">
+
+              <div className="restaurant-small-icon">
+                🍴
+              </div>
+
+              <div>
+
+                <h3>
+                  MealMitra Restaurant
+                </h3>
+
+                <p>
+                  Delivering to your selected address
+                </p>
+
+              </div>
+
+            </div>
+
+
+            {/* ITEMS */}
 
             <div className="checkout-items">
 
@@ -368,13 +538,17 @@ function Checkout({
                   key={item.id}
                 >
 
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                  />
+                  <div className="checkout-item-image">
+
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                    />
+
+                  </div>
 
 
-                  <div className="checkout-item-details">
+                  <div className="checkout-item-info">
 
                     <h3>
                       {item.name}
@@ -388,7 +562,9 @@ function Checkout({
 
 
                   <strong>
-                    ₹{item.price * item.quantity}
+                    ₹
+                    {item.price *
+                      item.quantity}
                   </strong>
 
                 </div>
@@ -398,44 +574,101 @@ function Checkout({
             </div>
 
 
-            {/* =========================
-                PRICE DETAILS
-            ========================= */}
+            {/* BILL DETAILS */}
 
-            <div className="price-details">
+            <div className="bill-details">
 
-              <div>
+              <h3>
+                Bill Details
+              </h3>
+
+
+              <div className="bill-row">
+
                 <span>
-                  Subtotal
+                  Item Total
                 </span>
 
                 <span>
-                  ₹{subtotal}
+                  ₹{itemTotal}
                 </span>
+
               </div>
 
 
-              <div>
+              <div className="bill-row">
+
                 <span>
                   Delivery Fee
                 </span>
 
-                <span>
+                <span
+                  className={
+                    deliveryFee === 0
+                      ? "free-text"
+                      : ""
+                  }
+                >
                   {deliveryFee === 0
                     ? "FREE"
                     : `₹${deliveryFee}`}
                 </span>
+
               </div>
 
 
-              <div className="total-row">
+              <div className="bill-row">
 
-                <strong>
+                <span>
+                  Platform Fee
+                </span>
+
+                <span>
+                  ₹{platformFee}
+                </span>
+
+              </div>
+
+
+              <div className="bill-row">
+
+                <span>
+                  Taxes & Charges
+                </span>
+
+                <span>
+                  ₹{taxes}
+                </span>
+
+              </div>
+
+
+              {couponApplied && (
+                <div className="bill-row discount-row">
+
+                  <span>
+                    Coupon Discount
+                  </span>
+
+                  <span>
+                    -₹{discount}
+                  </span>
+
+                </div>
+              )}
+
+
+              <div className="bill-divider"></div>
+
+
+              <div className="bill-total">
+
+                <span>
                   Total
-                </strong>
+                </span>
 
                 <strong>
-                  ₹{total}
+                  ₹{totalAmount}
                 </strong>
 
               </div>
@@ -443,29 +676,29 @@ function Checkout({
             </div>
 
 
-            {/* =========================
-                ERROR MESSAGE
-            ========================= */}
-
-            {error && (
-              <p className="checkout-error">
-                ⚠️ {error}
-              </p>
-            )}
-
-
-            {/* =========================
-                PLACE ORDER
-            ========================= */}
+            {/* PLACE ORDER */}
 
             <button
-              className="place-order-btn"
+              className="place-order-button"
               onClick={handlePlaceOrder}
             >
-              Place Order • ₹{total}
+
+              Place Order
+
+              <span>
+                ₹{totalAmount}
+              </span>
+
             </button>
 
-          </div>
+
+            <p className="secure-payment">
+
+              🔒 Safe and secure payments
+
+            </p>
+
+          </section>
 
         </div>
 

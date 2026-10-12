@@ -1,0 +1,901 @@
+/* =========================================================
+   MEALMITRA SETTINGS PAGE
+   MATCHED WITH MEALMITRA OFFERS THEME
+========================================================= */
+
+.settings-page {
+  min-height: 100vh;
+
+  padding: 38px 0 80px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffaf5 0%,
+      #fff5eb 45%,
+      #fff0df 100%
+    );
+
+  color: #171717;
+
+  position: relative;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+   IMPORTANT:
+   ABSOLUTE = SCROLLS WITH THE PAGE
+   NOT FIXED TO THE SCREEN
+========================================================= */
+
+.settings-close-button {
+  position: absolute;
+
+  top: 16px;
+  right: 22px;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 14px;
+
+  border: 1px solid #ead8ca;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  color: #a92518;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+  z-index: 100;
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.07);
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.settings-close-button:hover {
+  background: #a92518;
+
+  color: #ffffff;
+
+  border-color: #a92518;
+
+  transform: scale(1.05);
+}
+
+
+/* =========================================================
+   SETTINGS HERO CARD
+========================================================= */
+
+.settings-hero-card {
+  width: min(1260px, 90%);
+
+  min-height: 235px;
+
+  margin: 40px auto 65px;
+
+  border-radius: 22px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 45px 70px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      115deg,
+      #fff5ec 0%,
+      #fffaf7 48%,
+      #fff0e8 100%
+    );
+
+  border: 1px solid #f1d8c8;
+
+  box-shadow:
+    0 15px 35px rgba(128, 55, 20, 0.08);
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLES
+========================================================= */
+
+.settings-hero-circle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+.settings-circle-one {
+  width: 350px;
+  height: 350px;
+
+  right: -95px;
+  top: -150px;
+
+  border: 48px solid rgba(241, 110, 48, 0.08);
+}
+
+
+.settings-circle-two {
+  width: 190px;
+  height: 190px;
+
+  right: 115px;
+  bottom: -125px;
+
+  background: rgba(255, 137, 74, 0.07);
+}
+
+
+/* =========================================================
+   HERO ICON
+========================================================= */
+
+.settings-hero-icon {
+  width: 80px;
+  height: 80px;
+
+  border-radius: 20px;
+
+  background: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #222222;
+
+  font-size: 34px;
+
+  flex-shrink: 0;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.07);
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.settings-hero-content {
+  margin-left: 42px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.settings-hero-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #f15b32;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+.settings-hero-content h1 {
+  margin: 0;
+
+  font-size: 42px;
+
+  line-height: 1.05;
+
+  font-weight: 500;
+
+  color: #151515;
+}
+
+
+.settings-hero-content p {
+  margin: 12px 0 0;
+
+  font-size: 16px;
+
+  color: #555555;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.settings-main {
+  width: min(900px, 90%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.settings-section {
+  margin-bottom: 52px;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.settings-section-heading {
+  margin-bottom: 18px;
+}
+
+
+.settings-section-heading > span {
+  display: block;
+
+  color: #f15b32;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  margin-bottom: 5px;
+}
+
+
+.settings-section-heading h2 {
+  margin: 0 0 5px;
+
+  font-size: 25px;
+
+  font-weight: 500;
+
+  color: #222222;
+}
+
+
+.settings-section-heading p {
+  margin: 0;
+
+  font-size: 14px;
+
+  color: #777777;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   APPEARANCE CARD
+========================================================= */
+
+.settings-card {
+  width: 100%;
+
+  min-height: 100px;
+
+  box-sizing: border-box;
+
+  padding: 22px 26px;
+
+  border-radius: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: #ffffff;
+
+  border: 1px solid #f1ddd0;
+
+  box-shadow:
+    0 8px 24px rgba(128, 55, 20, 0.06);
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.settings-card:hover {
+  border-color: #f3b69b;
+
+  box-shadow:
+    0 12px 28px rgba(128, 55, 20, 0.09);
+}
+
+
+/* =========================================================
+   CARD LEFT
+========================================================= */
+
+.settings-card-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+}
+
+
+.settings-icon {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 15px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff1b8,
+      #ffd18e,
+      #ffb18d
+    );
+
+  color: #ed641f;
+
+  font-size: 22px;
+
+  flex-shrink: 0;
+}
+
+
+.settings-card-content h3 {
+  margin: 0 0 5px;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  color: #222222;
+}
+
+
+.settings-card-content p {
+  margin: 0;
+
+  font-size: 13px;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   THEME TOGGLE
+========================================================= */
+
+.theme-toggle {
+  width: 60px;
+  height: 32px;
+
+  padding: 3px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffbd17,
+      #ff8c00
+    );
+
+  cursor: pointer;
+
+  position: relative;
+
+  transition: background 0.3s ease;
+}
+
+
+.theme-toggle.active {
+  background:
+    linear-gradient(
+      90deg,
+      #ed641f,
+      #c9281c
+    );
+}
+
+
+.toggle-circle {
+  width: 26px;
+  height: 26px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 2px 7px rgba(0, 0, 0, 0.2);
+
+  transition: transform 0.3s ease;
+}
+
+
+.theme-toggle.active .toggle-circle {
+  transform: translateX(28px);
+}
+
+
+/* =========================================================
+   SETTINGS LIST
+========================================================= */
+
+.settings-list {
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #f1ddd0;
+
+  box-shadow:
+    0 8px 24px rgba(128, 55, 20, 0.06);
+}
+
+
+/* =========================================================
+   LIST ITEM
+========================================================= */
+
+.settings-list-item {
+  width: 100%;
+
+  min-height: 92px;
+
+  padding: 18px 25px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border: none;
+
+  border-bottom: 1px solid #f3e1d7;
+
+  background: transparent;
+
+  color: #222222;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: background 0.25s ease;
+}
+
+
+.settings-list-item:last-child {
+  border-bottom: none;
+}
+
+
+.settings-list-item:hover {
+  background:
+    linear-gradient(
+      90deg,
+      #fffaf5,
+      #fff3eb
+    );
+}
+
+
+.settings-list-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+}
+
+
+.settings-list-item h3 {
+  margin: 0 0 5px;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+
+.settings-list-item p {
+  margin: 0;
+
+  font-size: 13px;
+
+  color: #777777;
+}
+
+
+.settings-list-item > svg {
+  color: #999999;
+
+  font-size: 19px;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.settings-list-item:hover > svg {
+  color: #e75b2a;
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   THEME INFORMATION
+========================================================= */
+
+.theme-info {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 21px 24px;
+
+  margin-bottom: 20px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      110deg,
+      #fff7d9,
+      #fff0dc,
+      #ffe8df
+    );
+
+  border: 1px solid #f2cfad;
+
+  box-shadow:
+    0 8px 24px rgba(128, 55, 20, 0.05);
+}
+
+
+.theme-info-icon {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 14px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffbf24,
+      #f47b35,
+      #dc3528
+    );
+
+  color: #ffffff;
+
+  font-size: 21px;
+}
+
+
+.theme-info h3 {
+  margin: 0 0 5px;
+
+  font-size: 15px;
+}
+
+
+.theme-info p {
+  margin: 0;
+
+  font-size: 13px;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+.settings-page.dark-mode {
+  background:
+    linear-gradient(
+      135deg,
+      #201612,
+      #281713,
+      #21110f
+    );
+
+  color: #f5f5f5;
+}
+
+
+.dark-mode .settings-hero-card {
+  background:
+    linear-gradient(
+      115deg,
+      #30221d,
+      #291b18,
+      #321915
+    );
+
+  border-color: #52352c;
+
+  box-shadow: none;
+}
+
+
+.dark-mode .settings-hero-content h1 {
+  color: #ffffff;
+}
+
+
+.dark-mode .settings-hero-content p {
+  color: #cdbdb5;
+}
+
+
+.dark-mode .settings-hero-icon {
+  background: #3a2c27;
+
+  color: #ffffff;
+}
+
+
+.dark-mode .settings-section-heading h2 {
+  color: #ffffff;
+}
+
+
+.dark-mode .settings-section-heading p {
+  color: #bcaea8;
+}
+
+
+.dark-mode .settings-card,
+.dark-mode .settings-list {
+  background:
+    linear-gradient(
+      135deg,
+      #2c211d,
+      #251916
+    );
+
+  border-color: #51362d;
+
+  box-shadow: none;
+}
+
+
+.dark-mode .settings-card-content h3,
+.dark-mode .settings-list-item h3 {
+  color: #ffffff;
+}
+
+
+.dark-mode .settings-card-content p,
+.dark-mode .settings-list-item p {
+  color: #bcaea8;
+}
+
+
+.dark-mode .settings-list-item {
+  border-bottom-color: #493129;
+
+  color: #ffffff;
+}
+
+
+.dark-mode .settings-list-item:hover {
+  background:
+    linear-gradient(
+      90deg,
+      #35271f,
+      #3b211b
+    );
+}
+
+
+.dark-mode .theme-info {
+  background:
+    linear-gradient(
+      110deg,
+      #3a2d18,
+      #38241b,
+      #351b1a
+    );
+
+  border-color: #604333;
+}
+
+
+.dark-mode .theme-info p {
+  color: #bcaea8;
+}
+
+
+.dark-mode .settings-close-button {
+  background: #30211d;
+
+  border-color: #5b4036;
+
+  color: #ff8068;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .settings-hero-card {
+    padding: 38px 40px;
+  }
+
+
+  .settings-hero-content h1 {
+    font-size: 36px;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .settings-page {
+    padding-top: 25px;
+  }
+
+
+  .settings-close-button {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    width: 44px;
+    height: 44px;
+  }
+
+
+  .settings-hero-card {
+    width: 90%;
+
+    min-height: auto;
+
+    padding: 32px 25px;
+
+    margin-top: 45px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .settings-hero-icon {
+    width: 62px;
+    height: 62px;
+
+    font-size: 28px;
+
+    margin-bottom: 22px;
+  }
+
+
+  .settings-hero-content {
+    margin-left: 0;
+  }
+
+
+  .settings-hero-content h1 {
+    font-size: 32px;
+  }
+
+
+  .settings-hero-content p {
+    font-size: 14px;
+  }
+
+
+  .settings-main {
+    width: 90%;
+  }
+
+
+  .settings-card {
+    padding: 18px;
+  }
+
+
+  .settings-list-item {
+    padding: 18px;
+  }
+
+
+  .settings-list-left {
+    gap: 12px;
+  }
+
+
+  .settings-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+
+  .settings-list-item p {
+    max-width: 220px;
+  }
+
+}

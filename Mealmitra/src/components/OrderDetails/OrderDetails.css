@@ -1,0 +1,967 @@
+/* =========================================
+   MEALMITRA - ORDER DETAILS
+   PROFESSIONAL FOOD DELIVERY UI
+   Cream → Yellow → Orange → Red
+========================================= */
+
+.order-details-page {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  padding: 28px 24px 70px;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 183, 3, 0.13),
+      transparent 32%
+    ),
+    linear-gradient(
+      180deg,
+      #fffaf5 0%,
+      #fff4e8 52%,
+      #fff9f5 100%
+    );
+
+  color: #30231d;
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.order-details-header {
+  position: relative;
+
+  width: 100%;
+  max-width: 850px;
+
+  margin: 0 auto 24px;
+
+  min-height: 92px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+/* HEADER CONTENT */
+
+.details-header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.details-small-label {
+  margin-bottom: 5px;
+
+  color: #e8751a;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.details-header-content h1 {
+  margin: 0;
+
+  color: #7f1d1d;
+
+  font-size: 32px;
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+.details-header-content p {
+  margin: 6px 0 0;
+
+  color: #80695d;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   CLOSE / X BUTTON
+========================================= */
+
+.details-close-btn {
+  position: absolute;
+
+  right: 0;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid #ead8cc;
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #8b1e1e;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 18px rgba(82, 48, 29, 0.10);
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.details-close-btn:hover {
+  background: #8b1e1e;
+
+  color: #ffffff;
+
+  transform:
+    translateY(-50%)
+    rotate(90deg);
+
+  box-shadow:
+    0 8px 22px rgba(139, 30, 30, 0.20);
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.order-details-container {
+  width: 100%;
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
+
+  padding: 25px;
+
+  background: #ffffff;
+
+  border: 1px solid #ead8cc;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 35px rgba(82, 48, 29, 0.08);
+}
+
+
+/* =========================================
+   ORDER SUMMARY
+========================================= */
+
+.details-summary {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid #eee2da;
+}
+
+
+.details-summary-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  min-width: 0;
+}
+
+
+/* ORDER ICON */
+
+.details-order-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd166,
+      #ea9148
+    );
+
+  color: #7f1d1d;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+
+  box-shadow:
+    0 5px 14px rgba(234, 145, 72, 0.20);
+}
+
+
+/* LABEL */
+
+.details-label {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #9a8275;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+/* ORDER ID */
+
+.details-summary h2 {
+  margin: 0;
+
+  color: #2d211c;
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.details-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 8px 13px;
+
+  border-radius: 30px;
+
+  background: #edf8ee;
+
+  border: 1px solid #cde8d0;
+
+  color: #2d7b38;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.details-status svg {
+  font-size: 14px;
+}
+
+
+/* =========================================
+   DATE
+========================================= */
+
+.details-date {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 17px 2px;
+
+  border-bottom: 1px solid #eee2da;
+}
+
+.details-date > svg {
+  width: 18px;
+  height: 18px;
+
+  color: #e8751a;
+}
+
+.details-date div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.details-date span {
+  color: #9a8275;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.details-date strong {
+  color: #4b372d;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.details-section-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 13px;
+}
+
+.details-section-heading span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #e8751a;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.details-section-heading h2 {
+  margin: 0;
+
+  color: #30231d;
+
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.details-section-heading > strong {
+  color: #9a8275;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   ORDERED ITEMS
+========================================= */
+
+.details-items {
+  padding-top: 24px;
+}
+
+
+/* ITEMS LIST */
+
+.details-items-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+/* =========================================
+   ITEM CARD
+========================================= */
+
+.details-item {
+  width: 100%;
+
+  min-height: 74px;
+
+  box-sizing: border-box;
+
+  padding: 8px 11px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  background: #fffaf6;
+
+  border: 1px solid #f1e5dd;
+
+  border-radius: 12px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.details-item:hover {
+  background: #fff5ec;
+
+  border-color: #eacbb7;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   FOOD IMAGE
+========================================= */
+
+.details-item-image {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: #fff1e5;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.10);
+}
+
+.details-item-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.3s ease;
+}
+
+.details-item:hover .details-item-image img {
+  transform: scale(1.05);
+}
+
+
+/* =========================================
+   ITEM INFORMATION
+========================================= */
+
+.details-item-info {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.details-item-info h3 {
+  margin: 0 0 4px;
+
+  color: #2e211b;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.details-item-info p {
+  margin: 0;
+
+  color: #8d796e;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   ITEM PRICE
+========================================= */
+
+.details-item-price {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 3px;
+
+  padding-right: 2px;
+
+  white-space: nowrap;
+}
+
+.details-item-price strong {
+  color: #a51d1d;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.details-item-price span {
+  color: #a08b80;
+
+  font-size: 8px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   BILL DETAILS
+========================================= */
+
+.details-bill {
+  margin-top: 24px;
+
+  padding-top: 23px;
+
+  border-top: 1px solid #eee2da;
+}
+
+
+/* BILL CONTENT */
+
+.bill-content {
+  padding-top: 3px;
+}
+
+
+/* BILL ROW */
+
+.bill-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 6px 0;
+}
+
+.bill-row span {
+  color: #817067;
+
+  font-size: 12px;
+}
+
+.bill-row strong {
+  color: #3a2a22;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* FREE */
+
+.bill-row strong.free {
+  color: #2d7b38;
+}
+
+
+/* DIVIDER */
+
+.bill-divider {
+  height: 1px;
+
+  margin: 8px 0;
+
+  background: #eee4dd;
+}
+
+
+/* =========================================
+   TOTAL
+========================================= */
+
+.bill-total {
+  padding-top: 5px;
+}
+
+.bill-total span {
+  color: #34251f;
+
+  font-size: 14px;
+
+  font-weight: 800;
+}
+
+.bill-total strong {
+  color: #a51d1d;
+
+  font-size: 20px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================
+   SUCCESS MESSAGE
+========================================= */
+
+.details-success {
+  margin-top: 23px;
+
+  padding: 14px 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff9ef,
+      #fff4e8
+    );
+
+  border: 1px solid #f0dfd0;
+
+  border-radius: 13px;
+}
+
+
+/* SUCCESS ICON */
+
+.success-icon {
+  width: 35px;
+  height: 35px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #edf8ee;
+
+  color: #2d7b38;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+}
+
+
+/* SUCCESS TEXT */
+
+.details-success > div:nth-child(2) {
+  flex: 1;
+}
+
+.details-success h3 {
+  margin: 0 0 3px;
+
+  color: #4a3024;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.details-success p {
+  margin: 0;
+
+  color: #8b776c;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* ARROW */
+
+.success-arrow {
+  color: #c8a28d;
+
+  font-size: 17px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+  .order-details-page {
+    padding: 24px 20px 60px;
+  }
+
+  .order-details-header {
+    max-width: 100%;
+  }
+
+  .order-details-container {
+    max-width: 100%;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .order-details-page {
+    padding: 17px 14px 45px;
+  }
+
+
+  /* HEADER */
+
+  .order-details-header {
+    min-height: 82px;
+
+    margin-bottom: 17px;
+  }
+
+  .details-header-content {
+    padding: 0 45px;
+  }
+
+  .details-small-label {
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .details-header-content h1 {
+    font-size: 27px;
+  }
+
+  .details-header-content p {
+    font-size: 11px;
+  }
+
+
+  /* X BUTTON */
+
+  .details-close-btn {
+    width: 38px;
+    height: 38px;
+
+    right: 0;
+
+    font-size: 19px;
+  }
+
+
+  /* CONTAINER */
+
+  .order-details-container {
+    padding: 17px;
+
+    border-radius: 17px;
+  }
+
+
+  /* SUMMARY */
+
+  .details-summary {
+    gap: 10px;
+  }
+
+  .details-order-icon {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 12px;
+
+    font-size: 18px;
+  }
+
+  .details-summary h2 {
+    font-size: 14px;
+  }
+
+  .details-label {
+    font-size: 8px;
+  }
+
+
+  /* STATUS */
+
+  .details-status {
+    padding: 7px 9px;
+
+    font-size: 9px;
+  }
+
+
+  /* DATE */
+
+  .details-date {
+    padding: 14px 1px;
+  }
+
+
+  /* SECTION */
+
+  .details-section-heading h2 {
+    font-size: 17px;
+  }
+
+  .details-section-heading span {
+    font-size: 8px;
+  }
+
+
+  /* ITEMS */
+
+  .details-item {
+    min-height: 66px;
+
+    padding: 7px 8px;
+
+    gap: 9px;
+  }
+
+  .details-item-image {
+    width: 51px;
+    height: 51px;
+
+    border-radius: 9px;
+  }
+
+  .details-item-info h3 {
+    font-size: 12px;
+  }
+
+  .details-item-info p {
+    font-size: 10px;
+  }
+
+  .details-item-price strong {
+    font-size: 12px;
+  }
+
+  .details-item-price span {
+    font-size: 7px;
+  }
+
+
+  /* BILL */
+
+  .bill-row span {
+    font-size: 11px;
+  }
+
+  .bill-row strong {
+    font-size: 12px;
+  }
+
+  .bill-total span {
+    font-size: 13px;
+  }
+
+  .bill-total strong {
+    font-size: 18px;
+  }
+
+
+  /* SUCCESS */
+
+  .details-success {
+    padding: 12px;
+
+    gap: 9px;
+  }
+
+  .success-icon {
+    width: 32px;
+    height: 32px;
+
+    font-size: 15px;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .order-details-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .details-header-content h1 {
+    font-size: 24px;
+  }
+
+  .details-header-content p {
+    font-size: 10px;
+  }
+
+  .details-close-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .order-details-container {
+    padding: 14px;
+  }
+
+  .details-status {
+    padding: 6px 8px;
+    font-size: 8px;
+  }
+
+  .details-item-price span {
+    display: none;
+  }
+
+}

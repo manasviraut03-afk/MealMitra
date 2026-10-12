@@ -1,0 +1,1094 @@
+/* =========================================================
+   RESTAURANT DETAILS PAGE
+========================================================= */
+
+.restaurant-details-page {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    background: #fff9f3;
+    color: #321a10;
+
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =========================================================
+   TOP NAVBAR
+========================================================= */
+
+.restaurant-details-navbar {
+    width: 100%;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 28px;
+
+    background: #fffdfb;
+
+    border-bottom: 1px solid #eaded5;
+
+    position: relative;
+    z-index: 10;
+}
+
+.restaurant-details-navbar h2 {
+    margin: 0;
+
+    font-size: 22px;
+    font-weight: 500;
+
+    color: #4e3a30;
+
+    text-align: center;
+}
+
+.restaurant-back-button {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid #d9c8bc;
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #4e3a30;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.restaurant-back-button:hover {
+    background: #ffcc99;
+    border-color: #ea9148;
+    color: #7a3218;
+}
+
+.restaurant-back-button svg {
+    width: 18px;
+    height: 18px;
+}
+
+.restaurant-navbar-space {
+    width: 36px;
+}
+
+
+/* =========================================================
+   MAIN WRAPPER
+========================================================= */
+
+.restaurant-details-wrapper {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    background: #fff9f3;
+}
+
+
+/* =========================================================
+   RESTAURANT HERO IMAGE
+========================================================= */
+
+.restaurant-hero-section {
+    width: 100%;
+    background: #fff9f3;
+}
+
+.restaurant-hero-image {
+    position: relative;
+
+    width: 100%;
+    height: 340px;
+
+    overflow: hidden;
+
+    background: #eaded5;
+}
+
+.restaurant-hero-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.restaurant-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.02),
+        rgba(0, 0, 0, 0.20)
+    );
+}
+
+
+/* =========================================================
+   RESTAURANT MAIN INFORMATION
+========================================================= */
+
+.restaurant-main-info {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 28px 45px 15px;
+
+    background: #fff9f3;
+}
+
+.restaurant-title-content {
+    min-width: 0;
+}
+
+.restaurant-title-content h1 {
+    margin: 0 0 8px;
+
+    font-size: 40px;
+    line-height: 1.2;
+
+    font-weight: 500;
+
+    color: #4e3a30;
+}
+
+.restaurant-category {
+    margin: 0;
+
+    font-size: 15px;
+
+    color: #806f65;
+}
+
+
+/* =========================================================
+   RATING
+========================================================= */
+
+.restaurant-rating-box {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 8px 14px;
+
+    border: 1px solid #e5c8b4;
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #7a3218;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.restaurant-rating-box svg {
+    width: 17px;
+    height: 17px;
+
+    color: #ea9148;
+    fill: #ea9148;
+}
+
+
+/* =========================================================
+   ABOUT RESTAURANT
+========================================================= */
+
+.restaurant-about-section {
+    width: 100%;
+
+    padding: 8px 45px 28px;
+
+    text-align: center;
+
+    background: #fff9f3;
+
+    border-bottom: 1px solid #eaded5;
+}
+
+.restaurant-about-section h2 {
+    margin: 0 0 8px;
+
+    font-size: 23px;
+    line-height: 1.3;
+
+    font-weight: 500;
+
+    color: #4e3a30;
+}
+
+.restaurant-about-section p {
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    color: #806f65;
+}
+
+
+/* =========================================================
+   RESTAURANT INFORMATION
+========================================================= */
+
+.restaurant-info-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #eaded5;
+}
+
+.restaurant-info-card {
+    min-height: 90px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 18px 28px;
+
+    border-right: 1px solid #eaded5;
+}
+
+.restaurant-info-card:last-child {
+    border-right: none;
+}
+
+.restaurant-info-icon {
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #fff0df;
+
+    color: #ea7615;
+}
+
+.restaurant-info-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.restaurant-info-content {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.restaurant-info-content span {
+    font-size: 12px;
+
+    color: #806f65;
+}
+
+.restaurant-info-content strong {
+    font-size: 14px;
+    line-height: 1.4;
+
+    color: #7a3218;
+}
+
+
+/* =========================================================
+   SPECIAL OFFER
+========================================================= */
+
+.restaurant-special-offer {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 12px 28px;
+
+    background: #ffecd8;
+
+    border-bottom: 1px solid #f0cda9;
+}
+
+.special-offer-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #ea7615;
+
+    color: #ffffff;
+}
+
+.special-offer-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.special-offer-content {
+    min-width: 0;
+}
+
+.special-offer-content h3 {
+    margin: 0 0 3px;
+
+    font-size: 16px;
+
+    color: #7a3218;
+}
+
+.special-offer-content p {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #806f65;
+}
+
+
+/* =========================================================
+   POPULAR ITEMS SECTION
+========================================================= */
+
+.restaurant-menu-section {
+    width: 100%;
+
+    padding: 42px 45px 35px;
+
+    background: #fff9f3;
+}
+
+
+/* =========================================================
+   POPULAR ITEMS HEADER
+========================================================= */
+
+.restaurant-menu-header {
+    width: 100%;
+
+    margin-bottom: 28px;
+
+    text-align: center;
+}
+
+.restaurant-menu-header h2 {
+    margin: 0 0 7px;
+
+    font-size: 30px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #7a3218;
+}
+
+.restaurant-menu-header p {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #806f65;
+}
+
+
+/* =========================================================
+   FOOD LIST
+========================================================= */
+
+.restaurant-food-list {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   FOOD CARD
+========================================================= */
+
+.restaurant-food-card {
+    width: 100%;
+
+    min-height: 180px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 35px;
+
+    margin: 0 0 18px;
+
+    padding: 24px 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #eaded5;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 16px rgba(91, 48, 20, 0.07);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.restaurant-food-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 22px rgba(91, 48, 20, 0.10);
+}
+
+
+/* =========================================================
+   FOOD CONTENT - LEFT SIDE
+========================================================= */
+
+.restaurant-food-content {
+    position: relative;
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding-left: 28px;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   VEGETARIAN ICON
+========================================================= */
+
+.veg-indicator {
+    position: absolute;
+
+    left: 0;
+    top: 4px;
+
+    width: 16px;
+    height: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    border: 1.5px solid #18a957;
+
+    border-radius: 3px;
+}
+
+.veg-indicator span {
+    width: 7px;
+    height: 7px;
+
+    display: block;
+
+    background: #18a957;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   FOOD NAME
+========================================================= */
+
+.restaurant-food-content h3 {
+    margin: 0 0 7px;
+
+    font-size: 21px;
+    line-height: 1.3;
+
+    font-weight: 800;
+
+    color: #321a10;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   HIGHLY REORDERED
+========================================================= */
+
+.food-reorder {
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 0 0 10px;
+
+    font-size: 12px;
+    line-height: 1;
+
+    font-weight: 600;
+
+    color: #777777;
+}
+
+.reorder-bar {
+    position: relative;
+
+    width: 48px;
+    height: 10px;
+
+    display: block;
+
+    background: #16864b;
+
+    border-radius: 0 6px 6px 0;
+}
+
+.reorder-bar::after {
+    content: "";
+
+    position: absolute;
+
+    right: -4px;
+    top: 0;
+
+    width: 4px;
+    height: 10px;
+
+    background: #ffffff;
+
+    border-radius: 0 6px 6px 0;
+}
+
+
+/* =========================================================
+   FOOD DESCRIPTION
+========================================================= */
+
+.restaurant-food-content p {
+    max-width: 620px;
+
+    margin: 0 0 10px;
+
+    font-size: 14px;
+    line-height: 1.55;
+
+    color: #806f65;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   FOOD PRICE
+========================================================= */
+
+.food-price {
+    display: block;
+
+    margin: 0;
+
+    font-size: 17px;
+
+    line-height: 1.2;
+
+    font-weight: 900;
+
+    color: #8b3f12;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   FOOD IMAGE - RIGHT SIDE
+========================================================= */
+
+.restaurant-food-image {
+    position: relative;
+
+    flex: 0 0 185px;
+
+    width: 185px;
+    height: 140px;
+
+    border-radius: 16px;
+
+    background: #fff8f1;
+
+    box-shadow:
+        0 7px 20px rgba(91, 48, 20, 0.12);
+
+    overflow: visible;
+}
+
+.restaurant-food-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+}
+
+
+/* =========================================================
+   ADD BUTTON
+========================================================= */
+
+.food-add-button {
+    position: absolute;
+
+    left: 50%;
+    bottom: -20px;
+
+    transform: translateX(-50%);
+
+    width: 108px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 0;
+
+    border: 1.5px solid #e5751a;
+
+    border-radius: 10px;
+
+    background: #fff9f3;
+
+    color: #e5751a;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 14px rgba(91, 48, 20, 0.08);
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.food-add-button svg {
+    width: 16px;
+    height: 16px;
+}
+
+.food-add-button:hover {
+    background: #e5751a;
+
+    color: #ffffff;
+
+    transform: translateX(-50%) translateY(-2px);
+}
+
+
+/* =========================================================
+   BOTTOM OFFER
+========================================================= */
+
+.restaurant-bottom-offer {
+    width: 100%;
+
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 15px 20px;
+
+    background: #ffecd8;
+
+    border-top: 1px solid #f0cda9;
+
+    color: #7a3218;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.restaurant-bottom-offer svg {
+    width: 18px;
+    height: 18px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .restaurant-details-wrapper {
+        max-width: 100%;
+    }
+
+    .restaurant-hero-image {
+        height: 300px;
+    }
+
+    .restaurant-main-info {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .restaurant-title-content h1 {
+        font-size: 34px;
+    }
+
+    .restaurant-menu-section {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .restaurant-food-card {
+        gap: 25px;
+
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .restaurant-food-image {
+        flex-basis: 165px;
+
+        width: 165px;
+        height: 125px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .restaurant-details-navbar {
+        height: 52px;
+
+        padding: 0 15px;
+    }
+
+    .restaurant-details-navbar h2 {
+        font-size: 18px;
+    }
+
+    .restaurant-hero-image {
+        height: 230px;
+    }
+
+    .restaurant-main-info {
+        padding: 20px 18px 14px;
+
+        gap: 12px;
+    }
+
+    .restaurant-title-content h1 {
+        font-size: 27px;
+    }
+
+    .restaurant-category {
+        font-size: 13px;
+    }
+
+    .restaurant-rating-box {
+        padding: 7px 10px;
+
+        font-size: 13px;
+    }
+
+    .restaurant-about-section {
+        padding: 8px 18px 22px;
+    }
+
+    .restaurant-about-section h2 {
+        font-size: 20px;
+    }
+
+    .restaurant-about-section p {
+        font-size: 13px;
+    }
+
+
+    /* INFORMATION */
+
+    .restaurant-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-info-card {
+        min-height: 72px;
+
+        padding: 14px 18px;
+
+        border-right: none;
+
+        border-bottom: 1px solid #eaded5;
+    }
+
+    .restaurant-info-card:last-child {
+        border-bottom: none;
+    }
+
+
+    /* OFFER */
+
+    .restaurant-special-offer {
+        padding: 11px 15px;
+    }
+
+
+    /* MENU */
+
+    .restaurant-menu-section {
+        padding: 30px 12px 25px;
+    }
+
+    .restaurant-menu-header {
+        margin-bottom: 22px;
+    }
+
+    .restaurant-menu-header h2 {
+        font-size: 25px;
+    }
+
+    .restaurant-menu-header p {
+        font-size: 13px;
+    }
+
+
+    /* FOOD CARD */
+
+    .restaurant-food-card {
+        min-height: 150px;
+
+        gap: 14px;
+
+        margin-bottom: 17px;
+
+        padding: 18px 12px 22px;
+
+        border-radius: 14px;
+    }
+
+    .restaurant-food-content {
+        padding-left: 23px;
+    }
+
+    .restaurant-food-content h3 {
+        font-size: 17px;
+
+        margin-bottom: 7px;
+    }
+
+    .food-reorder {
+        gap: 7px;
+
+        margin-bottom: 8px;
+
+        font-size: 11px;
+    }
+
+    .reorder-bar {
+        width: 43px;
+        height: 9px;
+    }
+
+    .reorder-bar::after {
+        height: 9px;
+    }
+
+    .restaurant-food-content p {
+        font-size: 12px;
+
+        line-height: 1.45;
+
+        margin-bottom: 8px;
+    }
+
+    .food-price {
+        font-size: 15px;
+    }
+
+    .restaurant-food-image {
+        flex: 0 0 125px;
+
+        width: 125px;
+        height: 105px;
+
+        border-radius: 13px;
+    }
+
+    .restaurant-food-image img {
+        border-radius: 13px;
+    }
+
+    .food-add-button {
+        width: 88px;
+        height: 36px;
+
+        bottom: -18px;
+
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .restaurant-details-navbar h2 {
+        font-size: 16px;
+    }
+
+    .restaurant-hero-image {
+        height: 190px;
+    }
+
+    .restaurant-main-info {
+        padding: 17px 14px 12px;
+    }
+
+    .restaurant-title-content h1 {
+        font-size: 23px;
+    }
+
+    .restaurant-rating-box {
+        padding: 6px 8px;
+
+        font-size: 12px;
+    }
+
+    .restaurant-menu-section {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .restaurant-food-card {
+        gap: 9px;
+
+        padding-left: 10px;
+        padding-right: 8px;
+    }
+
+    .restaurant-food-content {
+        padding-left: 21px;
+    }
+
+    .restaurant-food-content h3 {
+        font-size: 15px;
+    }
+
+    .food-reorder {
+        font-size: 10px;
+    }
+
+    .reorder-bar {
+        width: 38px;
+        height: 8px;
+    }
+
+    .reorder-bar::after {
+        height: 8px;
+    }
+
+    .restaurant-food-content p {
+        font-size: 11px;
+    }
+
+    .food-price {
+        font-size: 14px;
+    }
+
+    .restaurant-food-image {
+        flex: 0 0 105px;
+
+        width: 105px;
+        height: 90px;
+    }
+
+    .food-add-button {
+        width: 78px;
+        height: 33px;
+
+        bottom: -17px;
+
+        font-size: 11px;
+    }
+}

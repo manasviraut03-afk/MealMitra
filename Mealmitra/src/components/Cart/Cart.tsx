@@ -1,201 +1,480 @@
+import {
+  FiX,
+  FiPlus,
+  FiMinus,
+  FiTrash2,
+  FiShoppingBag,
+  FiArrowRight,
+} from "react-icons/fi";
+
 import "./Cart.css";
 
-export type CartItem = {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-  quantity: number;
-};
+import type { CartItem } from "../../types";
+
+
+// =========================================================
+// PROPS
+// =========================================================
 
 type CartProps = {
   cartItems: CartItem[];
-  onIncrease: (id: number) => void;
-  onDecrease: (id: number) => void;
-  onRemove: (id: number) => void;
+
   onClose: () => void;
+
+  onIncrease: (id: number) => void;
+
+  onDecrease: (id: number) => void;
+
+  onRemove: (id: number) => void;
+
   onCheckout: () => void;
 };
 
+
+// =========================================================
+// COMPONENT
+// =========================================================
+
 function Cart({
   cartItems,
+  onClose,
   onIncrease,
   onDecrease,
   onRemove,
-  onClose,
   onCheckout,
 }: CartProps) {
 
-  const cartTotal = cartItems.reduce(
-    (total, item) => total + item.price * item.quantity,
+  // =======================================================
+  // TOTAL ITEMS
+  // =======================================================
+
+  const totalItems = cartItems.reduce(
+    (total, item) => total + item.quantity,
     0
   );
 
-  return (
-    <div className="cart-overlay">
 
-      {/* Cart Box */}
-      <div className="cart-container">
+  // =======================================================
+  // SUBTOTAL
+  // =======================================================
 
-        {/* Header */}
-        <div className="cart-header">
+  const subtotal = cartItems.reduce(
+    (total, item) =>
+      total + item.price * item.quantity,
+    0
+  );
 
-          <div>
-            <h2>Your Cart 🛒</h2>
 
-            <p>
-              {cartItems.length === 0
-                ? "Your cart is empty"
-                : `${cartItems.length} item(s) in your cart`}
-            </p>
+  // =======================================================
+  // DELIVERY FEE
+  // =======================================================
+
+  const deliveryFee =
+    cartItems.length > 0 ? 40 : 0;
+
+
+  // =======================================================
+  // DISCOUNT
+  // =======================================================
+
+  const discount =
+    subtotal >= 500 ? 50 : 0;
+
+
+  // =======================================================
+  // TOTAL
+  // =======================================================
+
+  const total =
+    subtotal + deliveryFee - discount;
+
+
+  // =======================================================
+  // EMPTY CART
+  // =======================================================
+
+  if (cartItems.length === 0) {
+
+    return (
+      <div className="cart-overlay">
+
+        <div className="cart-panel">
+
+          {/* HEADER */}
+
+          <div className="cart-header">
+
+            <div className="cart-title">
+
+              <FiShoppingBag />
+
+              <div>
+                <h2>Your Cart</h2>
+
+                <p>
+                  Your cart is empty
+                </p>
+              </div>
+
+            </div>
+
+
+            <button
+              type="button"
+              className="cart-close-button"
+              onClick={onClose}
+              aria-label="Close cart"
+            >
+              <FiX />
+            </button>
+
           </div>
 
+
+          {/* EMPTY CART */}
+
+          <div className="cart-empty">
+
+            <div className="cart-empty-icon">
+              <FiShoppingBag />
+            </div>
+
+            <h3>
+              Your cart is empty
+            </h3>
+
+            <p>
+              Add some delicious food to
+              your cart and order your
+              favourites.
+            </p>
+
+            <button
+              type="button"
+              className="cart-continue-button"
+              onClick={onClose}
+            >
+              Continue Shopping
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+    );
+  }
+
+
+  // =======================================================
+  // CART
+  // =======================================================
+
+  return (
+
+    <div
+      className="cart-overlay"
+      onClick={onClose}
+    >
+
+      <div
+        className="cart-panel"
+        onClick={(event) =>
+          event.stopPropagation()
+        }
+      >
+
+        {/* =================================================
+            HEADER
+        ================================================= */}
+
+        <div className="cart-header">
+
+          <div className="cart-title">
+
+            <div className="cart-title-icon">
+              <FiShoppingBag />
+            </div>
+
+            <div>
+
+              <h2>
+                Your Cart
+              </h2>
+
+              <p>
+                {totalItems}{" "}
+                {totalItems === 1
+                  ? "item"
+                  : "items"}
+              </p>
+
+            </div>
+
+          </div>
+
+
           <button
-            className="cart-close"
+            type="button"
+            className="cart-close-button"
             onClick={onClose}
+            aria-label="Close cart"
           >
-            ✕
+            <FiX />
           </button>
 
         </div>
 
 
-        {/* Cart Items */}
+        {/* =================================================
+            CART ITEMS
+        ================================================= */}
+
         <div className="cart-items">
 
-          {cartItems.length === 0 ? (
+          {cartItems.map((item) => (
 
-            <div className="empty-cart">
+            <div
+              className="cart-item"
+              key={item.id}
+            >
 
-              <div className="empty-cart-icon">
-                🛒
-              </div>
+              {/* IMAGE */}
 
-              <h3>Your cart is empty</h3>
+              <div className="cart-item-image">
 
-              <p>
-                Add some delicious food to your cart!
-              </p>
-
-              <button
-                className="continue-shopping"
-                onClick={onClose}
-              >
-                Continue Shopping
-              </button>
-
-            </div>
-
-          ) : (
-
-            cartItems.map((item) => (
-
-              <div
-                className="cart-item"
-                key={item.id}
-              >
-
-                {/* Image */}
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="cart-item-image"
                 />
 
+              </div>
 
-                {/* Details */}
-                <div className="cart-item-details">
 
-                  <h3>{item.name}</h3>
+              {/* CONTENT */}
 
-                  <p>
-                    ₹{item.price}
-                  </p>
+              <div className="cart-item-content">
 
-                  {/* Quantity */}
+                <h3>
+                  {item.name}
+                </h3>
+
+                <p className="cart-item-price">
+                  ₹{item.price}
+                </p>
+
+
+                {/* QUANTITY */}
+
+                <div className="cart-item-bottom">
+
                   <div className="quantity-control">
 
                     <button
+                      type="button"
                       onClick={() =>
                         onDecrease(item.id)
                       }
+                      aria-label={`Decrease ${item.name}`}
                     >
-                      −
+                      <FiMinus />
                     </button>
+
 
                     <span>
                       {item.quantity}
                     </span>
 
+
                     <button
+                      type="button"
                       onClick={() =>
                         onIncrease(item.id)
                       }
+                      aria-label={`Increase ${item.name}`}
                     >
-                      +
+                      <FiPlus />
                     </button>
 
                   </div>
 
-                </div>
 
-
-                {/* Right Side */}
-                <div className="cart-item-right">
-
-                  <strong>
-                    ₹{item.price * item.quantity}
-                  </strong>
+                  {/* REMOVE */}
 
                   <button
-                    className="remove-item"
+                    type="button"
+                    className="remove-item-button"
                     onClick={() =>
                       onRemove(item.id)
                     }
                   >
-                    Remove
+                    <FiTrash2 />
+
+                    <span>
+                      Remove
+                    </span>
                   </button>
 
                 </div>
 
               </div>
 
-            ))
 
-          )}
+              {/* ITEM TOTAL */}
+
+              <div className="cart-item-total">
+
+                ₹
+                {item.price * item.quantity}
+
+              </div>
+
+            </div>
+
+          ))}
 
         </div>
 
 
-        {/* Bottom */}
-        {cartItems.length > 0 && (
+        {/* =================================================
+            BILL DETAILS
+        ================================================= */}
 
-          <div className="cart-footer">
+        <div className="cart-bill">
 
-            <div className="cart-total">
+          <h3>
+            Bill Details
+          </h3>
 
-              <span>Total</span>
+
+          <div className="bill-row">
+
+            <span>
+              Item Total
+            </span>
+
+            <span>
+              ₹{subtotal}
+            </span>
+
+          </div>
+
+
+          <div className="bill-row">
+
+            <span>
+              Delivery Fee
+            </span>
+
+            <span>
+              ₹{deliveryFee}
+            </span>
+
+          </div>
+
+
+          {discount > 0 && (
+
+            <div className="bill-row discount-row">
+
+              <span>
+                MealMitra Discount
+              </span>
+
+              <span>
+                -₹{discount}
+              </span>
+
+            </div>
+
+          )}
+
+
+          <div className="bill-divider"></div>
+
+
+          <div className="bill-total">
+
+            <strong>
+              To Pay
+            </strong>
+
+            <strong>
+              ₹{total}
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        {/* =================================================
+            OFFER
+        ================================================= */}
+
+        <div className="cart-offer">
+
+          <span>
+            🎉
+          </span>
+
+          <div>
+
+            <strong>
+              Extra ₹50 OFF
+            </strong>
+
+            <p>
+              Get ₹50 off on orders above
+              ₹500.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        {/* =================================================
+            CHECKOUT
+        ================================================= */}
+
+        <div className="cart-footer">
+
+          <button
+            type="button"
+            className="checkout-button"
+            onClick={onCheckout}
+          >
+
+            <div>
+
+              <span>
+                Total
+              </span>
 
               <strong>
-                ₹{cartTotal}
+                ₹{total}
               </strong>
 
             </div>
 
-            <button className="checkout-btn" 
-              onClick={onCheckout}
-            >
-              proceed to checkout
-            </button>
 
-          </div>
+            <span className="checkout-text">
+              Proceed to Checkout
+            </span>
 
-        )}
+
+            <FiArrowRight />
+
+          </button>
+
+        </div>
 
       </div>
 
     </div>
   );
 }
+
 
 export default Cart;

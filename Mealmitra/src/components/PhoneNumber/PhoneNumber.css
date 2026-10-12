@@ -1,0 +1,792 @@
+/* =========================================================
+
+   MEALMITRA - PHONE NUMBER
+
+   STRUCTURED PERSONAL INFORMATION STYLE
+
+========================================================= */
+
+.phone-number-page {
+
+  min-height: 100vh;
+
+  width: 100%;
+
+  background: #f8f8f8;
+
+  color: #1c1c1c;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+/* =========================================================
+
+   HEADER
+
+========================================================= */
+
+.phone-number-header {
+
+  height: 76px;
+
+  width: 100%;
+
+  background: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 48px;
+
+  border-bottom: 1px solid #eeeeee;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 20;
+
+}
+
+
+.phone-number-back-button {
+
+  width: 42px;
+
+  height: 42px;
+
+  border: 1px solid #e2e2e2;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  color: #333333;
+
+  font-size: 20px;
+
+  transition: all 0.2s ease;
+
+}
+
+
+.phone-number-back-button:hover {
+
+  background: #f7f7f7;
+
+  border-color: #cccccc;
+
+}
+
+
+.phone-number-header > div {
+
+  margin-left: 18px;
+
+}
+
+
+.phone-number-header h1 {
+
+  margin: 0;
+
+  font-size: 25px;
+
+  font-weight: 700;
+
+  color: #1c1c1c;
+
+  line-height: 1.2;
+
+}
+
+
+.phone-number-header p {
+
+  margin: 5px 0 0;
+
+  font-size: 14px;
+
+  color: #777777;
+
+}
+
+
+/* =========================================================
+
+   MAIN
+
+========================================================= */
+
+.phone-number-main {
+
+  width: min(1100px, calc(100% - 48px));
+
+  margin: 0 auto;
+
+  padding: 36px 0 60px;
+
+}
+
+
+/* =========================================================
+
+   NOTICE
+
+========================================================= */
+
+.phone-number-notice {
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  background: #fff7ed;
+
+  border: 1px solid #ffe1c2;
+
+  border-radius: 10px;
+
+  padding: 18px 20px;
+
+  margin-bottom: 36px;
+
+}
+
+
+.phone-number-notice-icon {
+
+  width: 44px;
+
+  height: 44px;
+
+  min-width: 44px;
+
+  border-radius: 8px;
+
+  background: #fff0df;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #ff5a1f;
+
+  font-size: 21px;
+
+}
+
+
+.phone-number-notice h3 {
+
+  margin: 0 0 5px;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  color: #222222;
+
+}
+
+
+.phone-number-notice p {
+
+  margin: 0;
+
+  font-size: 14px;
+
+  color: #666666;
+
+  line-height: 1.5;
+
+}
+
+
+/* =========================================================
+
+   SECTION
+
+========================================================= */
+
+.phone-number-section {
+
+  width: 100%;
+
+}
+
+
+/* =========================================================
+
+   HEADING
+
+========================================================= */
+
+.phone-number-heading {
+
+  margin-bottom: 18px;
+
+}
+
+
+.phone-number-heading span {
+
+  display: block;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  color: #ff5a1f;
+
+  margin-bottom: 7px;
+
+}
+
+
+.phone-number-heading h2 {
+
+  margin: 0;
+
+  font-size: 23px;
+
+  font-weight: 700;
+
+  color: #1c1c1c;
+
+}
+
+
+.phone-number-heading p {
+
+  margin: 6px 0 0;
+
+  font-size: 14px;
+
+  color: #777777;
+
+}
+
+
+/* =========================================================
+
+   CARD
+
+========================================================= */
+
+.phone-number-card {
+
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e5e5;
+
+  border-radius: 12px;
+
+  padding: 28px;
+
+  box-shadow:
+
+    0 2px 8px rgba(0, 0, 0, 0.03);
+
+}
+
+
+/* =========================================================
+
+   FORM
+
+========================================================= */
+
+.phone-number-form-group {
+
+  margin-bottom: 22px;
+
+}
+
+
+.phone-number-form-group label {
+
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #444444;
+
+}
+
+
+/* =========================================================
+
+   INPUT
+
+========================================================= */
+
+.phone-number-input {
+
+  height: 46px;
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 7px;
+
+  padding: 0 14px;
+
+  background: #ffffff;
+
+  transition: all 0.2s ease;
+
+}
+
+
+.phone-number-input svg {
+
+  color: #888888;
+
+  font-size: 18px;
+
+  flex-shrink: 0;
+
+}
+
+
+.phone-number-input:focus-within {
+
+  border-color: #ff6b35;
+
+  box-shadow:
+
+    0 0 0 3px rgba(255, 107, 53, 0.08);
+
+}
+
+
+.phone-country-code {
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #555555;
+
+  padding-right: 10px;
+
+  border-right: 1px solid #dddddd;
+
+}
+
+
+.phone-number-input input {
+
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  font-size: 14px;
+
+  color: #222222;
+
+}
+
+
+.phone-number-input input::placeholder {
+
+  color: #aaaaaa;
+
+}
+
+
+/* =========================================================
+
+   ACTIONS
+
+========================================================= */
+
+.phone-number-actions {
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  padding-top: 22px;
+
+  border-top: 1px solid #eeeeee;
+
+  margin-top: 6px;
+
+}
+
+
+/* =========================================================
+
+   CANCEL
+
+========================================================= */
+
+.phone-number-cancel {
+
+  height: 42px;
+
+  padding: 0 18px;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #555555;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+}
+
+
+.phone-number-cancel:hover {
+
+  background: #f7f7f7;
+
+}
+
+
+/* =========================================================
+
+   SAVE
+
+========================================================= */
+
+.phone-number-save {
+
+  height: 42px;
+
+  padding: 0 20px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: linear-gradient(
+
+    135deg,
+
+    #ffb21a,
+
+    #ff4b2b
+
+  );
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+
+}
+
+
+.phone-number-save:hover {
+
+  transform: translateY(-1px);
+
+  box-shadow:
+
+    0 5px 14px rgba(255, 82, 35, 0.18);
+
+}
+
+
+/* =========================================================
+
+   MESSAGE
+
+========================================================= */
+
+.phone-number-message {
+
+  margin-top: 20px;
+
+  padding: 14px 18px;
+
+  background: #fff0e8;
+
+  border: 1px solid #ffd1bd;
+
+  border-radius: 8px;
+
+  color: #e65320;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+}
+
+
+/* =========================================================
+
+   DARK MODE
+
+========================================================= */
+
+.phone-number-page.dark-mode {
+
+  background: #151515;
+
+  color: #ffffff;
+
+}
+
+
+.phone-number-page.dark-mode .phone-number-header {
+
+  background: #1d1d1d;
+
+  border-color: #333333;
+
+}
+
+
+.phone-number-page.dark-mode .phone-number-header h1 {
+
+  color: #ffffff;
+
+}
+
+
+.phone-number-page.dark-mode .phone-number-header p {
+
+  color: #aaaaaa;
+
+}
+
+
+.phone-number-page.dark-mode .phone-number-back-button {
+
+  background: #242424;
+
+  border-color: #444444;
+
+  color: #ffffff;
+
+}
+
+
+.phone-number-page.dark-mode .phone-number-card {
+
+  background: #202020;
+
+  border-color: #353535;
+
+}
+
+
+.phone-number-page.dark-mode .phone-number-form-group label {
+
+  color: #ffffff;
+
+}
+
+
+.phone-number-page.dark-mode .phone-number-input {
+
+  background: #292929;
+
+  border-color: #444444;
+
+}
+
+
+.phone-number-page.dark-mode .phone-number-input input {
+
+  color: #ffffff;
+
+}
+
+
+.phone-number-page.dark-mode .phone-country-code {
+
+  color: #dddddd;
+
+  border-color: #555555;
+
+}
+
+
+.phone-number-page.dark-mode .phone-number-heading h2 {
+
+  color: #ffffff;
+
+}
+
+
+.phone-number-page.dark-mode .phone-number-heading p {
+
+  color: #aaaaaa;
+
+}
+
+
+.phone-number-page.dark-mode .phone-number-cancel {
+
+  background: #242424;
+
+  border-color: #444444;
+
+  color: #ffffff;
+
+}
+
+
+/* =========================================================
+
+   RESPONSIVE
+
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .phone-number-header {
+
+    height: 68px;
+
+    padding: 0 20px;
+
+  }
+
+
+  .phone-number-header h1 {
+
+    font-size: 20px;
+
+  }
+
+
+  .phone-number-header p {
+
+    font-size: 12px;
+
+  }
+
+
+  .phone-number-main {
+
+    width: calc(100% - 28px);
+
+    padding: 24px 0 40px;
+
+  }
+
+
+  .phone-number-card {
+
+    padding: 20px;
+
+  }
+
+}
+
+
+/* =========================================================
+
+   SMALL MOBILE
+
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .phone-number-notice {
+
+    align-items: flex-start;
+
+    padding: 16px;
+
+  }
+
+
+  .phone-number-actions {
+
+    flex-direction: column-reverse;
+
+  }
+
+
+  .phone-number-cancel,
+
+  .phone-number-save {
+
+    width: 100%;
+
+  }
+
+
+  .phone-number-main {
+
+    width: calc(100% - 20px);
+
+  }
+
+}

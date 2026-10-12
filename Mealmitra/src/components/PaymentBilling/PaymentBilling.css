@@ -1,0 +1,394 @@
+/* =========================================================
+   PAYMENT & BILLING PAGE
+========================================================= */
+
+.payment-billing-page {
+  min-height: 100vh;
+  background: #fff6e8;
+  color: #3b1710;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.payment-billing-header {
+  width: 100%;
+  min-height: 85px;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+
+  padding: 15px 30px;
+
+  box-sizing: border-box;
+}
+
+
+.payment-billing-back {
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 23px;
+
+  color: #8f321f;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 12px rgba(80, 40, 20, 0.08);
+
+  transition: all 0.25s ease;
+}
+
+
+.payment-billing-back:hover {
+  transform: translateX(-3px);
+
+  background: #fff0dc;
+}
+
+
+.payment-billing-title {
+  position: absolute;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+
+.payment-billing-title h1 {
+  margin: 0;
+
+  color: #9d281b;
+
+  font-size: 23px;
+
+  font-weight: 600;
+}
+
+
+.payment-billing-title p {
+  margin: 7px 0 0;
+
+  color: #74473d;
+
+  font-size: 13px;
+}
+
+
+.payment-billing-header-space {
+  width: 45px;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.payment-billing-main {
+  width: 100%;
+
+  padding: 0 0 40px;
+
+  box-sizing: border-box;
+}
+
+
+.payment-options-container {
+  width: calc(100% - 140px);
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+
+/* =========================================================
+   PAYMENT OPTION CARD
+========================================================= */
+
+.payment-option-card {
+  width: 100%;
+
+  min-height: 94px;
+
+  border: 1px solid #efd9c8;
+
+  border-radius: 20px;
+
+  background: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  position: relative;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  box-shadow:
+    0 4px 15px rgba(100, 55, 30, 0.04);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.payment-option-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #e7c3ad;
+
+  box-shadow:
+    0 8px 22px rgba(100, 55, 30, 0.10);
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.payment-option-icon {
+  width: 52px;
+  height: 52px;
+
+  min-width: 52px;
+
+  border-radius: 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 24px;
+
+  margin-right: 20px;
+}
+
+
+/* BLUE */
+
+.payment-blue {
+  background: #e4efff;
+
+  color: #2878dd;
+}
+
+
+/* PURPLE */
+
+.payment-purple {
+  background: #eee5ff;
+
+  color: #7547e8;
+}
+
+
+/* RED */
+
+.payment-red {
+  background: #ffe2df;
+
+  color: #ef3327;
+}
+
+
+/* GREEN */
+
+.payment-green {
+  background: #e2f5ea;
+
+  color: #1b9c54;
+}
+
+
+/* ORANGE */
+
+.payment-orange {
+  background: #fff0d2;
+
+  color: #ed9200;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.payment-option-content {
+  flex: 1;
+
+  text-align: center;
+
+  padding-right: 45px;
+}
+
+
+.payment-option-content h2 {
+  margin: 0 0 7px;
+
+  color: #35160f;
+
+  font-size: 17px;
+
+  font-weight: 600;
+}
+
+
+.payment-option-content p {
+  margin: 0;
+
+  color: #795148;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.payment-option-arrow {
+  width: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #9b6755;
+
+  font-size: 21px;
+}
+
+
+.payment-option-card:hover
+.payment-option-arrow {
+  transform: translateX(3px);
+
+  color: #9d281b;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .payment-options-container {
+    width: calc(100% - 60px);
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .payment-billing-header {
+    padding: 15px 18px;
+  }
+
+
+  .payment-billing-title h1 {
+    font-size: 20px;
+  }
+
+
+  .payment-billing-title p {
+    font-size: 11px;
+  }
+
+
+  .payment-options-container {
+    width: calc(100% - 30px);
+
+    gap: 12px;
+  }
+
+
+  .payment-option-card {
+    min-height: 90px;
+
+    padding: 15px;
+
+    border-radius: 16px;
+  }
+
+
+  .payment-option-icon {
+    width: 45px;
+    height: 45px;
+
+    min-width: 45px;
+
+    font-size: 21px;
+
+    margin-right: 12px;
+  }
+
+
+  .payment-option-content {
+    padding-right: 10px;
+
+    text-align: left;
+  }
+
+
+  .payment-option-content h2 {
+    font-size: 15px;
+  }
+
+
+  .payment-option-content p {
+    font-size: 11px;
+  }
+
+
+  .payment-option-arrow {
+    width: 25px;
+
+    font-size: 18px;
+  }
+
+}

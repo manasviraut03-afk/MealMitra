@@ -3,12 +3,15 @@
 ===================================================== */
 
 .services {
+
     padding: 70px 6%;
+
     background: linear-gradient(
         135deg,
-        #7F1D1D 0%,
-        #B8321C 45%,
-        #D95F02 100%
+        #FFCC99 0%,
+        #EA9148 30%,
+        #E5751A 65%,
+        #EA9148 100%
     );
 
     box-sizing: border-box;
@@ -20,23 +23,42 @@
 ===================================================== */
 
 .services-title {
+
     text-align: center;
+
     margin-bottom: 40px;
+
 }
 
 .services-title h2 {
-    font-size: 38px;
-    color: #FFD166;   /* Golden Yellow */
+
+    font-size: 42px;
+
+    color: #FFF8EF;
+
     margin-bottom: 10px;
-    font-weight: 800;
+
+    font-weight: 900;
+
+    letter-spacing: 0.4px;
 
     text-shadow:
-        0 3px 10px rgba(0, 0, 0, 0.25);
+        0 3px 10px rgba(120, 55, 15, 0.25),
+        0 1px 2px rgba(255, 255, 255, 0.25);
+
 }
 
 .services-title p {
-    font-size: 18px;
-    color: #FFF4D6;   /* Warm Cream */
+
+    font-size: 19px;
+
+    color: #FFF3E6;
+
+    font-weight: 700;
+
+    text-shadow:
+        0 2px 6px rgba(120, 55, 15, 0.18);
+
 }
 
 
@@ -45,12 +67,17 @@
 ===================================================== */
 
 .service-cards {
+
     display: flex;
+
     justify-content: center;
+
     gap: 30px;
 
     max-width: 1200px;
+
     margin: auto;
+
 }
 
 
@@ -59,9 +86,11 @@
 ===================================================== */
 
 .service-card {
+
     position: relative;
 
     width: 350px;
+
     height: 380px;
 
     border-radius: 28px;
@@ -69,39 +98,45 @@
     overflow: hidden;
 
     background-size: cover;
+
     background-position: center;
 
     color: white;
 
     transition:
         transform 0.4s ease,
-        box-shadow 0.4s ease;
+        box-shadow 0.4s ease,
+        background-size 0.4s ease;
 
     box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.30);
+        0 12px 30px rgba(120, 55, 15, 0.22);
 
-    border: 2px solid rgba(255, 193, 7, 0.25);
+    border: 2px solid rgba(255, 255, 255, 0.65);
+
 }
 
 
 /* =====================================================
-   DARK RED / ORANGE OVERLAY
+   ORANGE / PEACH OVERLAY
 ===================================================== */
 
 .service-card::before {
+
     content: "";
 
     position: absolute;
+
     inset: 0;
 
     background: linear-gradient(
         to bottom,
-        rgba(70, 10, 10, 0.10),
-        rgba(90, 12, 10, 0.35) 40%,
-        rgba(100, 15, 5, 0.92) 100%
+        rgba(255, 204, 153, 0.02),
+        rgba(234, 145, 72, 0.12) 40%,
+        rgba(70, 30, 10, 0.76) 100%
     );
 
     z-index: 1;
+
 }
 
 
@@ -110,15 +145,21 @@
 ===================================================== */
 
 .food-delivery {
+
     background-image: url("../../assets/food-delivery.jpg");
+
 }
 
 .trending-food {
+
     background-image: url("../../assets/trending-food.jpg");
+
 }
 
 .special-offers {
+
     background-image: url("../../assets/special-offer.jpg");
+
 }
 
 
@@ -127,15 +168,19 @@
 ===================================================== */
 
 .card-content {
+
     position: absolute;
 
     left: 28px;
+
     right: 28px;
+
     bottom: 85px;
 
     z-index: 2;
 
     text-align: left;
+
 }
 
 
@@ -144,16 +189,23 @@
 ===================================================== */
 
 .card-content h3 {
-    font-size: 27px;
 
-    margin-bottom: 8px;
+    font-size: 29px;
 
-    font-weight: 800;
+    margin: 0 0 9px;
 
-    color: #FFFFFF;
+    font-weight: 900;
+
+    line-height: 1.15;
+
+    letter-spacing: 0.3px;
+
+    color: #FFF8EF;
 
     text-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.45);
+        0 3px 8px rgba(0, 0, 0, 0.65),
+        0 1px 2px rgba(0, 0, 0, 0.45);
+
 }
 
 
@@ -162,13 +214,20 @@
 ===================================================== */
 
 .card-content p {
+
     font-size: 16px;
 
-    margin-bottom: 15px;
+    margin: 0 0 15px;
 
     line-height: 1.4;
 
-    color: #FFF7E0;
+    font-weight: 500;
+
+    color: #FFF8EF;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.45);
+
 }
 
 
@@ -177,17 +236,14 @@
 ===================================================== */
 
 .card-content span {
+
     display: inline-block;
 
     padding: 7px 14px;
 
-    background: linear-gradient(
-        135deg,
-        #FFD166,
-        #FFB703
-    );
+    background: #FFCC99;
 
-    color: #8B1E1E;
+    color: #8B3F12;
 
     border-radius: 20px;
 
@@ -196,7 +252,8 @@
     font-weight: 800;
 
     box-shadow:
-        0 5px 15px rgba(255, 183, 3, 0.25);
+        0 5px 15px rgba(229, 117, 26, 0.28);
+
 }
 
 
@@ -205,12 +262,15 @@
 ===================================================== */
 
 .arrow-btn {
+
     position: absolute;
 
     left: 28px;
+
     bottom: 25px;
 
     width: 52px;
+
     height: 52px;
 
     border: none;
@@ -219,12 +279,11 @@
 
     background: linear-gradient(
         135deg,
-        #FFB703,
-        #FF6B00,
-        #E63920
+        #E5751A,
+        #EA9148
     );
 
-    color: white;
+    color: #FFF8EF;
 
     font-size: 28px;
 
@@ -234,10 +293,12 @@
 
     transition:
         transform 0.3s ease,
-        box-shadow 0.3s ease;
+        box-shadow 0.3s ease,
+        background 0.3s ease;
 
     box-shadow:
-        0 6px 18px rgba(255, 107, 0, 0.40);
+        0 6px 18px rgba(229, 117, 26, 0.35);
+
 }
 
 
@@ -246,10 +307,18 @@
 ===================================================== */
 
 .arrow-btn:hover {
+
     transform: scale(1.12);
 
+    background: linear-gradient(
+        135deg,
+        #EA9148,
+        #E5751A
+    );
+
     box-shadow:
-        0 8px 25px rgba(255, 183, 3, 0.55);
+        0 8px 25px rgba(229, 117, 26, 0.45);
+
 }
 
 
@@ -258,39 +327,47 @@
 ===================================================== */
 
 .service-card:hover {
+
     transform: translateY(-10px);
 
     box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.40);
+        0 20px 40px rgba(120, 55, 15, 0.30);
 
-    border-color: rgba(255, 193, 7, 0.65);
-}
+    border-color: rgba(255, 255, 255, 0.90);
 
-
-.service-card:hover {
     background-size: 110%;
+
 }
 
 
 /* =====================================================
-   MOBILE
+   MOBILE / TABLET
 ===================================================== */
 
 @media (max-width: 900px) {
 
     .services {
+
         padding: 60px 5%;
+
     }
 
     .service-cards {
+
         flex-direction: column;
+
         align-items: center;
+
     }
 
     .service-card {
+
         width: 90%;
+
         max-width: 400px;
+
     }
+
 }
 
 
@@ -301,23 +378,61 @@
 @media (max-width: 500px) {
 
     .services {
+
         padding: 50px 20px;
+
     }
 
     .services-title h2 {
-        font-size: 30px;
+
+        font-size: 32px;
+
+        font-weight: 900;
+
     }
 
     .services-title p {
+
         font-size: 16px;
+
+        font-weight: 700;
+
     }
 
     .service-card {
+
         width: 100%;
+
         height: 360px;
+
     }
 
     .card-content h3 {
+
         font-size: 24px;
+
+        font-weight: 900;
+
     }
+
+    .card-content p {
+
+        font-size: 15px;
+
+    }
+
+    .arrow-btn {
+
+        width: 48px;
+
+        height: 48px;
+
+        left: 24px;
+
+        bottom: 22px;
+
+        font-size: 25px;
+
+    }
+
 }

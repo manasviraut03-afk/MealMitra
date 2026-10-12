@@ -1,0 +1,1365 @@
+/* =========================================================
+   MEALMITRA
+   OFFERS & COUPONS
+========================================================= */
+
+.offers-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f8f8f8;
+
+  color: #1f1f1f;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON AREA
+
+   IMPORTANT:
+   This is NOT a navbar.
+
+   It creates a small separate area below
+   your existing MealMitra navbar.
+
+   Only the X button is shown here.
+========================================================= */
+
+.offers-close-area {
+  width: 100%;
+  height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 0 42px;
+
+  background: #f8f8f8;
+
+  box-sizing: border-box;
+
+  position: relative;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.offers-close-button {
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid #ead9cc;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #9f1d1d;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 23px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  box-shadow:
+    0 3px 12px
+    rgba(0, 0, 0, 0.04);
+}
+
+
+.offers-close-button:hover {
+  background: #fff4ed;
+
+  border-color: #f3b08f;
+
+  color: #e0442e;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 6px 16px
+    rgba(0, 0, 0, 0.08);
+}
+
+
+.offers-close-button:active {
+  transform: scale(0.94);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.offers-main {
+  width: min(1120px, 90%);
+
+  margin: 0 auto;
+
+  padding: 0 0 80px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TOP BANNER
+========================================================= */
+
+.offers-banner {
+  position: relative;
+
+  overflow: hidden;
+
+  min-height: 210px;
+
+  border-radius: 18px;
+
+  padding: 36px 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  background:
+    linear-gradient(
+      120deg,
+      #fff3e8,
+      #ffffff,
+      #fff5ef
+    );
+
+  border: 1px solid #eeeeee;
+
+  box-shadow:
+    0 10px 35px
+    rgba(0, 0, 0, 0.05);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BANNER DECORATION
+========================================================= */
+
+.offers-banner::before {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  border-radius: 50%;
+
+  right: -80px;
+  top: -130px;
+
+  border: 45px solid
+    rgba(255, 105, 35, 0.08);
+
+  pointer-events: none;
+}
+
+
+.offers-banner::after {
+  content: "";
+
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  border-radius: 50%;
+
+  right: 120px;
+  bottom: -120px;
+
+  background:
+    rgba(255, 105, 35, 0.06);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BANNER ICON
+========================================================= */
+
+.offers-banner-icon {
+  position: relative;
+
+  z-index: 2;
+
+  min-width: 70px;
+
+  height: 70px;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 30px;
+
+  color: #222;
+
+  box-shadow:
+    0 8px 25px
+    rgba(0, 0, 0, 0.08);
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   BANNER TEXT
+========================================================= */
+
+.offers-banner span {
+  position: relative;
+
+  z-index: 2;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  color: #ff5a1f;
+}
+
+
+.offers-banner h2 {
+  position: relative;
+
+  z-index: 2;
+
+  margin: 7px 0;
+
+  font-size: 32px;
+
+  line-height: 1.12;
+
+  letter-spacing: -1px;
+
+  font-weight: 500;
+}
+
+
+.offers-banner p {
+  position: relative;
+
+  z-index: 2;
+
+  margin: 0;
+
+  color: #666;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   COUPONS SECTION
+========================================================= */
+
+.coupons-section {
+  margin-top: 55px;
+}
+
+
+/* =========================================================
+   COUPON HEADING
+========================================================= */
+
+.coupons-heading {
+  text-align: center;
+}
+
+
+.coupons-heading span {
+  font-size: 11px;
+
+  letter-spacing: 1.5px;
+
+  font-weight: 700;
+
+  color: #ff5a1f;
+}
+
+
+.coupons-heading h2 {
+  margin: 8px 0 5px;
+
+  font-size: 25px;
+
+  font-weight: 500;
+}
+
+
+.coupons-heading p {
+  margin: 0 0 28px;
+
+  color: #777;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   COUPON GRID
+========================================================= */
+
+.coupons-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+
+/* =========================================================
+   COUPON CARD
+========================================================= */
+
+.coupon-card {
+  position: relative;
+
+  min-height: 205px;
+
+  display: flex;
+
+  overflow: visible;
+
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 7px 25px
+    rgba(0, 0, 0, 0.055);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  isolation: isolate;
+
+  box-sizing: border-box;
+}
+
+
+.coupon-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 15px 35px
+    rgba(0, 0, 0, 0.09);
+}
+
+
+/* =========================================================
+   COUPON LEFT
+========================================================= */
+
+.coupon-left {
+  width: 130px;
+
+  flex-shrink: 0;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ff6425,
+      #ff421b
+    );
+
+  border-radius: 16px 0 0 16px;
+
+  color: #ffffff;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+/* LEFT DECORATION */
+
+.coupon-left::before {
+  content: "";
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+
+  border: 25px solid
+    rgba(255, 255, 255, 0.08);
+
+  top: -50px;
+  left: -50px;
+}
+
+
+.coupon-left::after {
+  content: "";
+
+  position: absolute;
+
+  width: 80px;
+  height: 80px;
+
+  border-radius: 50%;
+
+  border: 15px solid
+    rgba(255, 255, 255, 0.07);
+
+  bottom: -40px;
+  right: -30px;
+}
+
+
+/* DISCOUNT */
+
+.coupon-discount {
+  position: relative;
+
+  z-index: 2;
+
+  font-size: 23px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* SMALL TEXT */
+
+.coupon-small-text {
+  position: relative;
+
+  z-index: 2;
+
+  margin-top: 7px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  opacity: 0.85;
+}
+
+
+/* =========================================================
+   DOTTED DIVIDER
+========================================================= */
+
+.coupon-divider {
+  width: 1px;
+
+  position: relative;
+
+  border-left: 1px dashed #d5d5d5;
+
+  margin: 18px 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-around;
+
+  flex-shrink: 0;
+}
+
+
+.coupon-divider span {
+  width: 11px;
+
+  height: 11px;
+
+  border-radius: 50%;
+
+  background: #f8f8f8;
+
+  position: relative;
+
+  left: -6px;
+}
+
+
+/* =========================================================
+   COUPON CONTENT
+========================================================= */
+
+.coupon-content {
+  flex: 1;
+
+  padding: 22px 22px 20px;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* TITLE ROW */
+
+.coupon-title-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+
+.coupon-title-row h3 {
+  margin: 0;
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+
+.coupon-title-row p {
+  margin: 5px 0 0;
+
+  font-size: 12px;
+
+  color: #777;
+
+  line-height: 1.4;
+}
+
+
+/* TAG ICON */
+
+.coupon-tag-icon {
+  width: 34px;
+
+  height: 34px;
+
+  border-radius: 10px;
+
+  background: #fff1ea;
+
+  color: #ff5a1f;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+
+/* MINIMUM */
+
+.coupon-minimum {
+  margin: 10px 0;
+
+  font-size: 11px;
+
+  color: #888;
+}
+
+
+/* =========================================================
+   CODE
+========================================================= */
+
+.coupon-code-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 12px;
+}
+
+
+.coupon-code {
+  padding: 7px 11px;
+
+  border: 1px dashed #cfcfcf;
+
+  border-radius: 7px;
+
+  background: #fafafa;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+.coupon-copy {
+  border: none;
+
+  background: transparent;
+
+  color: #777;
+
+  font-size: 11px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  cursor: pointer;
+
+  padding: 5px;
+}
+
+
+.coupon-copy:hover {
+  color: #ff5a1f;
+}
+
+
+/* =========================================================
+   APPLY BUTTON
+========================================================= */
+
+.coupon-apply-button {
+  width: 100%;
+
+  height: 38px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #ff5a1f;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+.coupon-apply-button:hover {
+  background: #e94c13;
+
+  box-shadow:
+    0 7px 18px
+    rgba(255, 90, 31, 0.25);
+}
+
+
+.coupon-apply-button:active {
+  transform: scale(0.96);
+}
+
+
+.coupon-apply-button.applied {
+  background: #168a55;
+
+  animation:
+    appliedButton 0.45s ease;
+}
+
+
+/* =========================================================
+   APPLIED BUTTON ANIMATION
+========================================================= */
+
+@keyframes appliedButton {
+
+  0% {
+    transform: scale(0.9);
+  }
+
+  55% {
+    transform: scale(1.06);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   COUPON APPLY ANIMATION
+========================================================= */
+
+.coupon-animating {
+  animation:
+    couponTilt 0.65s ease,
+    couponPulse 1.5s ease;
+}
+
+
+@keyframes couponTilt {
+
+  0% {
+    transform:
+      perspective(700px)
+      rotateY(0deg)
+      rotateX(0deg)
+      scale(1);
+  }
+
+  30% {
+    transform:
+      perspective(700px)
+      rotateY(-7deg)
+      rotateX(3deg)
+      scale(1.025);
+  }
+
+  60% {
+    transform:
+      perspective(700px)
+      rotateY(7deg)
+      rotateX(-3deg)
+      scale(1.045);
+  }
+
+  100% {
+    transform:
+      perspective(700px)
+      rotateY(0deg)
+      rotateX(0deg)
+      scale(1);
+  }
+
+}
+
+
+@keyframes couponPulse {
+
+  0% {
+    box-shadow:
+      0 7px 25px
+      rgba(0, 0, 0, 0.055);
+  }
+
+  35% {
+    box-shadow:
+      0 0 0 10px
+        rgba(255, 90, 31, 0.08),
+      0 0 45px
+        rgba(255, 90, 31, 0.25);
+  }
+
+  70% {
+    box-shadow:
+      0 0 0 18px
+        rgba(255, 90, 31, 0),
+      0 0 60px
+        rgba(255, 90, 31, 0.12);
+  }
+
+  100% {
+    box-shadow:
+      0 7px 25px
+      rgba(0, 0, 0, 0.055);
+  }
+
+}
+
+
+/* =========================================================
+   GLOW RING
+========================================================= */
+
+.coupon-glow {
+  position: absolute;
+
+  inset: -8px;
+
+  border-radius: 22px;
+
+  border:
+    2px solid
+    rgba(255, 90, 31, 0.4);
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  animation:
+    glowRing 1.3s ease forwards;
+}
+
+
+@keyframes glowRing {
+
+  0% {
+    opacity: 0;
+
+    transform: scale(0.92);
+  }
+
+  25% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: scale(1.08);
+  }
+
+}
+
+
+/* =========================================================
+   FLYING PARTICLES
+========================================================= */
+
+.coupon-particles {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 20;
+}
+
+
+.particle {
+  position: absolute;
+
+  width: 25px;
+
+  height: 25px;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #ff5a1f;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 5px 15px
+    rgba(0, 0, 0, 0.12);
+
+  animation-duration: 1.1s;
+
+  animation-fill-mode: forwards;
+}
+
+
+.p1 {
+  left: 45%;
+  top: 45%;
+  animation-name: fly1;
+}
+
+
+.p2 {
+  left: 50%;
+  top: 45%;
+  animation-name: fly2;
+}
+
+
+.p3 {
+  left: 48%;
+  top: 50%;
+  animation-name: fly3;
+}
+
+
+.p4 {
+  left: 52%;
+  top: 48%;
+  animation-name: fly4;
+}
+
+
+.p5 {
+  left: 45%;
+  top: 52%;
+  animation-name: fly5;
+}
+
+
+.p6 {
+  left: 55%;
+  top: 50%;
+  animation-name: fly6;
+}
+
+
+/* =========================================================
+   PARTICLE ANIMATIONS
+========================================================= */
+
+@keyframes fly1 {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(0, 0)
+      rotate(0deg)
+      scale(0.4);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-90px, -80px)
+      rotate(-35deg)
+      scale(0.8);
+  }
+
+}
+
+
+@keyframes fly2 {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(0, 0)
+      rotate(0deg)
+      scale(0.4);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(75px, -100px)
+      rotate(40deg)
+      scale(0.7);
+  }
+
+}
+
+
+@keyframes fly3 {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(0, 0)
+      rotate(0deg)
+      scale(0.4);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-120px, 25px)
+      rotate(-60deg)
+      scale(0.8);
+  }
+
+}
+
+
+@keyframes fly4 {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(0, 0)
+      rotate(0deg)
+      scale(0.4);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(120px, 35px)
+      rotate(65deg)
+      scale(0.8);
+  }
+
+}
+
+
+@keyframes fly5 {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(0, 0)
+      rotate(0deg)
+      scale(0.4);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-70px, 100px)
+      rotate(-40deg)
+      scale(0.7);
+  }
+
+}
+
+
+@keyframes fly6 {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(0, 0)
+      rotate(0deg)
+      scale(0.4);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(90px, 90px)
+      rotate(45deg)
+      scale(0.7);
+  }
+
+}
+
+
+/* =========================================================
+   BOTTOM INFO
+========================================================= */
+
+.offers-info {
+  margin-top: 45px;
+
+  padding: 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+
+  border-radius: 14px;
+
+  box-sizing: border-box;
+}
+
+
+.offers-info-icon {
+  width: 42px;
+
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #eaf8f1;
+
+  color: #168a55;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+
+.offers-info h3 {
+  margin: 0 0 4px;
+
+  font-size: 14px;
+}
+
+
+.offers-info p {
+  margin: 0;
+
+  font-size: 12px;
+
+  color: #777;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .coupons-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .offers-close-area {
+    height: 62px;
+
+    padding: 0 18px;
+  }
+
+
+  .offers-close-button {
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 10px;
+
+    font-size: 21px;
+  }
+
+
+  .offers-main {
+    width: 92%;
+
+    padding-bottom: 50px;
+  }
+
+
+  .offers-banner {
+    padding: 25px;
+
+    min-height: 170px;
+
+    gap: 15px;
+  }
+
+
+  .offers-banner h2 {
+    font-size: 25px;
+  }
+
+
+  .offers-banner-icon {
+    display: none;
+  }
+
+
+  .coupon-left {
+    width: 105px;
+  }
+
+
+  .coupon-content {
+    padding: 18px 15px;
+  }
+
+
+  .coupon-discount {
+    font-size: 18px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .offers-close-area {
+    height: 58px;
+
+    padding: 0 14px;
+  }
+
+
+  .offers-main {
+    width: 94%;
+  }
+
+
+  .offers-banner {
+    padding: 20px;
+  }
+
+
+  .coupon-card {
+    min-height: 190px;
+  }
+
+
+  .coupon-left {
+    width: 92px;
+  }
+
+
+  .coupon-discount {
+    font-size: 16px;
+  }
+
+
+  .coupon-content {
+    padding: 16px 12px;
+  }
+
+
+  .coupon-title-row h3 {
+    font-size: 15px;
+  }
+
+
+  .coupon-title-row p {
+    font-size: 11px;
+  }
+
+
+  .coupon-tag-icon {
+    width: 30px;
+
+    height: 30px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .coupon-card,
+  .coupon-animating,
+  .coupon-glow,
+  .particle,
+  .coupon-apply-button,
+  .offers-close-button {
+    animation: none !important;
+
+    transition: none !important;
+  }
+
+}

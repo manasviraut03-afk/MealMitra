@@ -1,93 +1,203 @@
+import React from "react";
+import {
+  FiCheckCircle,
+  FiHome,
+  FiPackage,
+  FiMapPin,
+} from "react-icons/fi";
+import type { CartItem } from "../../types";
 import "./OrderConfirmation.css";
 
-type OrderConfirmationProps = {
-  total: number;
-  onHome: () => void;
-};
+interface OrderConfirmationProps {
+  cartItems: CartItem[];
+  totalAmount: number;
+  orderId: string;
+  onContinueShopping: () => void;
+  onViewOrders: () => void;
+  onTrackOrder: () => void;
+}
 
-function OrderConfirmation({
-  total,
-  onHome,
-}: OrderConfirmationProps) {
+const OrderConfirmation: React.FC<
+  OrderConfirmationProps
+> = ({
+  cartItems,
+  totalAmount,
+  orderId,
+  onContinueShopping,
+  onViewOrders,
+  onTrackOrder,
+}) => {
   return (
-    <div className="confirmation-page">
+    <div className="order-confirmation-page">
+
+      {/* =====================================================
+          SUCCESS HEADER
+      ===================================================== */}
 
       <div className="confirmation-card">
 
-        {/* Success Icon */}
-        <div className="success-icon">
-          ✓
+        <div className="confirmation-icon">
+          <FiCheckCircle />
         </div>
 
-        {/* Heading */}
         <h1>
-          Order Confirmed! 🎉
+          Order Placed Successfully!
         </h1>
 
-        <p className="success-message">
-          Thank you for ordering with MealMitra!
+        <p className="confirmation-message">
+          Thank you for ordering with MealMitra.
         </p>
 
-        {/* Order ID */}
-        <div className="order-id">
-          <span>Order ID</span>
+        <div className="order-id-box">
+          <span>
+            Order ID
+          </span>
+
           <strong>
-            #MM{Math.floor(100000 + Math.random() * 900000)}
+            #{orderId}
           </strong>
         </div>
 
-        {/* Delivery Information */}
+        {/* =====================================================
+            DELIVERY INFORMATION
+        ===================================================== */}
+
         <div className="delivery-info">
 
-          <div className="info-box">
-            <span>🍽️</span>
+          <div className="delivery-info-item">
+            <div className="delivery-icon">
+              <FiPackage />
+            </div>
+
             <div>
-              <strong>Order Received</strong>
-              <p>Your order has been confirmed.</p>
+              <h3>
+                Estimated Delivery
+              </h3>
+
+              <p>
+                30 - 40 minutes
+              </p>
             </div>
           </div>
 
-          <div className="info-box">
-            <span>👨‍🍳</span>
-            <div>
-              <strong>Preparing Your Food</strong>
-              <p>Our restaurant is preparing your order.</p>
+          <div className="delivery-info-item">
+            <div className="delivery-icon">
+              <FiHome />
             </div>
-          </div>
 
-          <div className="info-box">
-            <span>🛵</span>
             <div>
-              <strong>On the Way</strong>
-              <p>Your food will be delivered soon.</p>
+              <h3>
+                Delivery Address
+              </h3>
+
+              <p>
+                Nagpur, Maharashtra
+              </p>
             </div>
           </div>
 
         </div>
 
-        {/* Total */}
+        {/* =====================================================
+            ORDER ITEMS
+        ===================================================== */}
+
+        <div className="confirmation-items">
+
+          <h2>
+            Your Order
+          </h2>
+
+          {cartItems.map((item) => (
+            <div
+              className="confirmation-item"
+              key={item.id}
+            >
+
+              <div className="confirmation-item-image">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                />
+              </div>
+
+              <div className="confirmation-item-info">
+
+                <h3>
+                  {item.name}
+                </h3>
+
+                <p>
+                  ₹{item.price} ×{" "}
+                  {item.quantity}
+                </p>
+
+              </div>
+
+              <strong>
+                ₹
+                {item.price *
+                  item.quantity}
+              </strong>
+
+            </div>
+          ))}
+
+        </div>
+
+        {/* =====================================================
+            TOTAL
+        ===================================================== */}
+
         <div className="confirmation-total">
 
-          <span>Total Paid</span>
+          <span>
+            Total Amount
+          </span>
 
           <strong>
-            ₹{total}
+            ₹{totalAmount}
           </strong>
 
         </div>
 
-        {/* Home Button */}
-        <button
-          className="home-btn"
-          onClick={onHome}
-        >
-          🏠 Back to Home
-        </button>
+        {/* =====================================================
+            BUTTONS
+        ===================================================== */}
+
+        <div className="confirmation-buttons">
+
+          <button
+            type="button"
+            className="track-order-button"
+            onClick={onTrackOrder}
+          >
+            <FiMapPin />
+            Track Order
+          </button>
+
+          <button
+            type="button"
+            className="view-orders-button"
+            onClick={onViewOrders}
+          >
+            View My Orders
+          </button>
+
+          <button
+            type="button"
+            className="continue-shopping-button"
+            onClick={onContinueShopping}
+          >
+            Continue Shopping
+          </button>
+
+        </div>
 
       </div>
 
     </div>
   );
-}
+};
 
 export default OrderConfirmation;

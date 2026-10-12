@@ -13,184 +13,149 @@ import pasta from "../../assets/pasta.png";
 import paratha from "../../assets/paratha.png";
 import shawarma from "../../assets/shawarma.png";
 
-export type CartItem = {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-  quantity: number;
-};
+
+/* =================================================
+   MENU COMPONENT
+================================================= */
 
 type MenuProps = {
-  onAddToCart: (item: CartItem) => void;
+  vegMode?: boolean;
 };
 
-function Menu({ onAddToCart }: MenuProps) {
-  // =========================
-  // FOOD CATEGORIES
-  // =========================
+
+function Menu({
+  vegMode = false,
+}: MenuProps) {
+
+
+  /* =================================================
+     FOOD CATEGORIES
+  ================================================= */
 
   const menuItems = [
-    { name: "North Indian", image: northIndian },
-    { name: "Biryani", image: biryani },
-    { name: "Burger", image: burger },
-    { name: "South Indian", image: southIndian },
-    { name: "Chinese", image: chinese },
-    { name: "Desserts", image: dessert },
-    { name: "Rolls", image: rolls },
-    { name: "Khichdi", image: khichdi },
-    { name: "Momo", image: momo },
-    { name: "Pasta", image: pasta },
-    { name: "Paratha", image: paratha },
-    { name: "Shawarma", image: shawarma },
-  ];
-
-  // =========================
-  // POPULAR FOOD
-  // =========================
-
-  const popularFoods = [
     {
-      id: 1,
-      name: "Chicken Biryani",
+      name: "North Indian",
+      image: northIndian,
+      isVeg: true,
+    },
+
+    {
+      name: "Biryani",
       image: biryani,
-      price: 249,
-      rating: 4.6,
+      isVeg: true,
     },
+
     {
-      id: 2,
-      name: "Veg Burger",
+      name: "Burger",
       image: burger,
-      price: 149,
-      rating: 4.5,
+      isVeg: true,
     },
+
     {
-      id: 3,
-      name: "Chinese Noodles",
+      name: "South Indian",
+      image: southIndian,
+      isVeg: true,
+    },
+
+    {
+      name: "Chinese",
       image: chinese,
-      price: 199,
-      rating: 4.4,
+      isVeg: true,
     },
+
     {
-      id: 4,
-      name: "Momos",
+      name: "Desserts",
+      image: dessert,
+      isVeg: true,
+    },
+
+    {
+      name: "Rolls",
+      image: rolls,
+      isVeg: true,
+    },
+
+    {
+      name: "Khichdi",
+      image: khichdi,
+      isVeg: true,
+    },
+
+    {
+      name: "Momo",
       image: momo,
-      price: 129,
-      rating: 4.7,
+      isVeg: true,
     },
+
     {
-      id: 5,
       name: "Pasta",
       image: pasta,
-      price: 179,
-      rating: 4.5,
+      isVeg: true,
+    },
+
+    {
+      name: "Paratha",
+      image: paratha,
+      isVeg: true,
+    },
+
+    {
+      name: "Shawarma",
+      image: shawarma,
+      isVeg: false,
     },
   ];
+
+
+  /* =================================================
+     VEG MODE FILTER
+  ================================================= */
+
+  const visibleMenuItems = vegMode
+    ? menuItems.filter((item) => item.isVeg)
+    : menuItems;
+
 
   return (
     <section className="menu-section">
 
-      {/* =========================
+
+      {/* =================================================
           BEST FOOD OPTIONS
-      ========================= */}
+      ================================================= */}
 
       <div className="menu-header">
-        <h2>Order our best food options</h2>
+
+        <h2>
+          {vegMode
+            ? "Order our best vegetarian food"
+            : "Order our best food options"}
+        </h2>
+
       </div>
+
+
+      {/* =================================================
+          FOOD CATEGORY GRID
+      ================================================= */}
 
       <div className="menu-grid">
 
-        {menuItems.map((item, index) => (
-          <div className="menu-card" key={index}>
+        {visibleMenuItems.map((item, index) => (
+
+          <div
+            className="menu-card"
+            key={index}
+          >
 
             <img
               src={item.image}
               alt={item.name}
             />
 
-            <p>{item.name}</p>
-
-          </div>
-        ))}
-
-      </div>
-
-
-      {/* =========================
-          POPULAR FOOD
-      ========================= */}
-
-      <div className="popular-header">
-
-        <h2>Popular Food on MealMitra</h2>
-
-        <p>
-          Delicious favourites picked specially for you
-        </p>
-
-      </div>
-
-
-      {/* =========================
-          FOOD CARDS
-      ========================= */}
-
-      <div className="food-grid">
-
-        {popularFoods.map((food) => (
-
-          <div className="food-card" key={food.id}>
-
-            {/* Food Image */}
-
-            <div className="food-image">
-
-              <img
-                src={food.image}
-                alt={food.name}
-              />
-
-            </div>
-
-
-            {/* Food Details */}
-
-            <div className="food-details">
-
-              <h3>{food.name}</h3>
-
-              <div className="food-rating">
-                ⭐ {food.rating}
-              </div>
-
-
-              <div className="food-bottom">
-
-                <span className="food-price">
-                  ₹{food.price}
-                </span>
-
-
-                {/* ADD BUTTON */}
-
-                <button
-                  className="add-cart-btn"
-                  onClick={() =>
-                    onAddToCart({
-                      id: food.id,
-                      name: food.name,
-                      price: food.price,
-                      image: food.image,
-                      quantity: 1,
-                    })
-                  }
-                >
-                  + Add
-                </button>
-
-              </div>
-
-            </div>
+            <p>
+              {item.name}
+            </p>
 
           </div>
 
@@ -201,5 +166,6 @@ function Menu({ onAddToCart }: MenuProps) {
     </section>
   );
 }
+
 
 export default Menu;

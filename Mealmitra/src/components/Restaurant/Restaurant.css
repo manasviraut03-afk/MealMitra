@@ -6,7 +6,6 @@
   width: 100%;
   padding: 50px 40px;
 
-  /* SAME COLOR AS menu.css */
   background: linear-gradient(
     135deg,
     #FFF1B8 0%,
@@ -32,14 +31,16 @@
 .restaurant-header h2 {
   margin: 0;
 
-  font-size: 36px;
-  font-weight: 800;
+  font-size: 42px;
+  font-weight: 900;
 
-  /* SAME RED AS menu.css */
-  color: #C83224;
+  color: #8B3F12;
+
+  letter-spacing: 0.3px;
+  line-height: 1.2;
 
   text-shadow:
-    0 2px 5px rgba(190, 70, 20, 0.15);
+    0 3px 8px rgba(139, 63, 18, 0.18);
 }
 
 
@@ -53,10 +54,8 @@
   display: flex;
   gap: 25px;
 
-  /* ONE HORIZONTAL ROW */
   flex-wrap: nowrap;
 
-  /* Horizontal scrolling */
   overflow-x: auto;
   overflow-y: hidden;
 
@@ -77,14 +76,12 @@
 }
 
 .restaurant-container::-webkit-scrollbar-track {
-  /* SAME YELLOW AS menu.css */
   background: #FFD98A;
 
   border-radius: 10px;
 }
 
 .restaurant-container::-webkit-scrollbar-thumb {
-  /* SAME ORANGE GRADIENT AS menu.css */
   background: linear-gradient(
     90deg,
     #FFB300,
@@ -92,6 +89,10 @@
   );
 
   border-radius: 10px;
+}
+
+.restaurant-container::-webkit-scrollbar-thumb:hover {
+  background: #E5751A;
 }
 
 
@@ -105,22 +106,18 @@
   width: 330px;
   min-width: 330px;
 
-  /* SAME CARD COLORS AS menu.css */
-  background: linear-gradient(
-    145deg,
-    #FFF8DC,
-    #FFE6B8
-  );
+  cursor: pointer;
+
+  background: #FFF9EF;
 
   border-radius: 20px;
 
   overflow: hidden;
 
-  /* SAME BORDER FAMILY */
-  border: 1px solid rgba(230, 125, 30, 0.18);
+  border: 1px solid rgba(234, 145, 72, 0.20);
 
   box-shadow:
-    0 8px 20px rgba(130, 55, 20, 0.16);
+    0 8px 20px rgba(130, 55, 20, 0.14);
 
   transition:
     transform 0.3s ease,
@@ -172,7 +169,6 @@
   width: 100%;
   height: 60%;
 
-  /* SAME WARM BROWN THEME */
   background: linear-gradient(
     transparent,
     rgba(90, 45, 25, 0.78)
@@ -220,8 +216,7 @@
 .rating {
   flex-shrink: 0;
 
-  /* SAME ORANGE/YELLOW FAMILY */
-  background: #F5A623;
+  background: #EA9148;
 
   color: #FFFFFF;
 
@@ -230,10 +225,10 @@
   border-radius: 8px;
 
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
 
   box-shadow:
-    0 3px 8px rgba(245, 166, 35, 0.25);
+    0 3px 8px rgba(234, 145, 72, 0.25);
 }
 
 
@@ -262,7 +257,6 @@
 .details-top p {
   margin: 0;
 
-  /* SAME BROWN AS menu.css */
   color: #7A3218;
 
   font-size: 15px;
@@ -271,7 +265,6 @@
 }
 
 .details-top span {
-  /* SAME BROWN AS menu.css */
   color: #7A3218;
 
   font-size: 15px;
@@ -299,6 +292,7 @@
 
 /* =========================
    MAIN OFFER
+   ORIGINAL LAYOUT KEPT
 ========================= */
 
 .offer {
@@ -316,11 +310,11 @@
 
   box-sizing: border-box;
 
-  /* SAME LIGHT CARD THEME */
-  background: lightgreen;
+  /* CHANGED FROM GREEN */
+  background: #FFE5C7;
 
-  /* SAME DARK BROWN */
-  color: #7A3218;
+  /* PROFESSIONAL ORANGE TEXT */
+  color: #D96516;
 
   border-radius: 10px;
 
@@ -330,15 +324,21 @@
 
   line-height: 1.3;
 
-  border: 1px solid rgba(230, 125, 30, 0.15);
+  border: 1px solid rgba(229, 117, 26, 0.18);
 }
+
+
+/* =========================
+   OFFER ICON
+   ORIGINAL LAYOUT KEPT
+========================= */
 
 .offer span {
   font-size: 18px;
 
   flex-shrink: 0;
 
-  color: #FF7A00;
+  color: #E5751A;
 }
 
 
@@ -351,10 +351,8 @@
 
   padding: 12px;
 
-  /* SAME LIGHT YELLOW */
   background: #FFF1B8;
 
-  /* SAME BROWN */
   color: #7A3218;
 
   border-radius: 10px;
@@ -376,7 +374,6 @@
 .extra-offer {
   margin: 0;
 
-  /* SAME RED/ORANGE FAMILY */
   color: #C83224;
 
   font-size: 14px;
@@ -418,7 +415,9 @@
   }
 
   .restaurant-header h2 {
-    font-size: 28px;
+    font-size: 30px;
+
+    font-weight: 900;
   }
 
   .restaurant-container {

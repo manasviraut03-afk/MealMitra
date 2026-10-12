@@ -1,0 +1,893 @@
+/* =========================================================
+   MEALMITRA - LOGOUT
+   STRUCTURED ACCOUNT ACCESS STYLE
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.logout-page {
+
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f8f8f8;
+  color: #1c1c1c;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.logout-header {
+
+  width: 100%;
+  min-height: 76px;
+
+  padding: 0 48px;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  border-bottom: 1px solid #eeeeee;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 20;
+
+}
+
+
+/* Back button */
+
+.logout-back-button {
+
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  border-radius: 50%;
+
+  border: 1px solid #e2e2e2;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  color: #333333;
+
+  font-size: 20px;
+
+  transition: all 0.2s ease;
+
+}
+
+
+.logout-back-button:hover {
+
+  background: #f7f7f7;
+
+  border-color: #cccccc;
+
+  color: #ff5a1f;
+
+  transform: translateX(-2px);
+
+}
+
+
+/* Header text */
+
+.logout-header > div {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+.logout-header h1 {
+
+  margin: 0;
+
+  font-size: 25px;
+
+  font-weight: 700;
+
+  color: #1c1c1c;
+
+  line-height: 1.2;
+
+}
+
+
+.logout-header p {
+
+  margin: 5px 0 0;
+
+  font-size: 14px;
+
+  color: #777777;
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.logout-main {
+
+  width: min(1100px, calc(100% - 48px));
+
+  margin: 0 auto;
+
+  padding: 36px 0 60px;
+
+}
+
+
+/* =========================================================
+   NOTICE
+========================================================= */
+
+.logout-notice {
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  background: #fff7ed;
+
+  border: 1px solid #ffe1c2;
+
+  border-radius: 10px;
+
+  padding: 18px 20px;
+
+  margin-bottom: 36px;
+
+}
+
+
+.logout-notice-icon {
+
+  width: 44px;
+  height: 44px;
+
+  min-width: 44px;
+
+  border-radius: 8px;
+
+  background: #fff0df;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #ff5a1f;
+
+  font-size: 21px;
+
+}
+
+
+.logout-notice h3 {
+
+  margin: 0 0 5px;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  color: #222222;
+
+}
+
+
+.logout-notice p {
+
+  margin: 0;
+
+  font-size: 14px;
+
+  color: #666666;
+
+  line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.logout-section {
+
+  width: 100%;
+
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.logout-heading {
+
+  margin-bottom: 18px;
+
+}
+
+
+.logout-heading span {
+
+  display: block;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  color: #ff5a1f;
+
+  margin-bottom: 7px;
+
+}
+
+
+.logout-heading h2 {
+
+  margin: 0;
+
+  font-size: 23px;
+
+  font-weight: 700;
+
+  color: #1c1c1c;
+
+}
+
+
+.logout-heading p {
+
+  margin: 6px 0 0;
+
+  font-size: 14px;
+
+  color: #777777;
+
+}
+
+
+/* =========================================================
+   LOGOUT CARD
+========================================================= */
+
+.logout-card {
+
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #ffd1d1;
+
+  border-radius: 12px;
+
+  padding: 28px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 20px;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.03);
+
+}
+
+
+/* Icon */
+
+.logout-card-icon {
+
+  width: 62px;
+  height: 62px;
+
+  min-width: 62px;
+
+  border-radius: 12px;
+
+  background: #fff0f0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #ff3b3b;
+
+  font-size: 27px;
+
+}
+
+
+/* Content */
+
+.logout-card-content {
+
+  flex: 1;
+
+}
+
+
+.logout-card-content h3 {
+
+  margin: 0 0 7px;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  color: #222222;
+
+}
+
+
+.logout-card-content p {
+
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  color: #666666;
+
+}
+
+
+/* =========================================================
+   WARNING
+========================================================= */
+
+.logout-warning {
+
+  margin-top: 18px;
+
+  padding: 12px 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  border-radius: 8px;
+
+  background: #fff8e8;
+
+  border: 1px solid #ffe2a9;
+
+  color: #a56300;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+}
+
+
+.logout-warning svg {
+
+  flex-shrink: 0;
+
+  font-size: 16px;
+
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.logout-actions {
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  padding-top: 22px;
+
+  margin-top: 6px;
+
+}
+
+
+/* =========================================================
+   CANCEL
+========================================================= */
+
+.logout-cancel {
+
+  height: 42px;
+
+  padding: 0 18px;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #555555;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+
+}
+
+
+.logout-cancel:hover {
+
+  background: #f7f7f7;
+
+  border-color: #cccccc;
+
+}
+
+
+/* =========================================================
+   CONFIRM LOGOUT
+========================================================= */
+
+.logout-confirm {
+
+  height: 42px;
+
+  padding: 0 20px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: linear-gradient(
+    135deg,
+    #ff5a1f,
+    #ff3030
+  );
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+
+}
+
+
+.logout-confirm:hover {
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 14px rgba(255, 70, 40, 0.2);
+
+}
+
+
+/* =========================================================
+   SUCCESS CARD
+========================================================= */
+
+.logout-success-card {
+
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e5e5;
+
+  border-radius: 12px;
+
+  padding: 50px 30px;
+
+  text-align: center;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.03);
+
+}
+
+
+.logout-success-icon {
+
+  width: 72px;
+  height: 72px;
+
+  margin: 0 auto 20px;
+
+  border-radius: 18px;
+
+  background: #e9f9ef;
+
+  border: 1px solid #bce8ca;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #188044;
+
+  font-size: 34px;
+
+}
+
+
+.logout-success-card h2 {
+
+  margin: 0 0 10px;
+
+  font-size: 25px;
+
+  font-weight: 700;
+
+  color: #222222;
+
+}
+
+
+.logout-success-card p {
+
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+  color: #666666;
+
+}
+
+
+/* =========================================================
+   SUCCESS BUTTON
+========================================================= */
+
+.logout-success-button {
+
+  margin-top: 26px;
+
+  height: 42px;
+
+  padding: 0 20px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: linear-gradient(
+    135deg,
+    #ffb21a,
+    #ff4b2b
+  );
+
+  color: #ffffff;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+
+}
+
+
+.logout-success-button:hover {
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 14px rgba(255, 82, 35, 0.18);
+
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+.logout-page.dark-mode {
+
+  background: #151515;
+
+  color: #ffffff;
+
+}
+
+
+.logout-page.dark-mode
+.logout-header {
+
+  background: #1d1d1d;
+
+  border-color: #333333;
+
+}
+
+
+.logout-page.dark-mode
+.logout-header h1 {
+
+  color: #ffffff;
+
+}
+
+
+.logout-page.dark-mode
+.logout-header p {
+
+  color: #aaaaaa;
+
+}
+
+
+.logout-page.dark-mode
+.logout-back-button {
+
+  background: #242424;
+
+  border-color: #444444;
+
+  color: #ffffff;
+
+}
+
+
+.logout-page.dark-mode
+.logout-card {
+
+  background: #202020;
+
+  border-color: #4a3030;
+
+}
+
+
+.logout-page.dark-mode
+.logout-card-content h3 {
+
+  color: #ffffff;
+
+}
+
+
+.logout-page.dark-mode
+.logout-card-content p {
+
+  color: #aaaaaa;
+
+}
+
+
+.logout-page.dark-mode
+.logout-heading h2 {
+
+  color: #ffffff;
+
+}
+
+
+.logout-page.dark-mode
+.logout-heading p {
+
+  color: #aaaaaa;
+
+}
+
+
+.logout-page.dark-mode
+.logout-cancel {
+
+  background: #242424;
+
+  border-color: #444444;
+
+  color: #ffffff;
+
+}
+
+
+.logout-page.dark-mode
+.logout-success-card {
+
+  background: #202020;
+
+  border-color: #353535;
+
+}
+
+
+.logout-page.dark-mode
+.logout-success-card h2 {
+
+  color: #ffffff;
+
+}
+
+
+.logout-page.dark-mode
+.logout-success-card p {
+
+  color: #aaaaaa;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .logout-header {
+
+    height: 68px;
+
+    padding: 0 20px;
+
+  }
+
+
+  .logout-header h1 {
+
+    font-size: 20px;
+
+  }
+
+
+  .logout-header p {
+
+    font-size: 12px;
+
+  }
+
+
+  .logout-main {
+
+    width: calc(100% - 28px);
+
+    padding: 24px 0 40px;
+
+  }
+
+
+  .logout-card {
+
+    padding: 20px;
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .logout-notice {
+
+    align-items: flex-start;
+
+    padding: 16px;
+
+  }
+
+
+  .logout-card {
+
+    flex-direction: column;
+
+  }
+
+
+  .logout-actions {
+
+    flex-direction: column-reverse;
+
+  }
+
+
+  .logout-cancel,
+  .logout-confirm {
+
+    width: 100%;
+
+  }
+
+
+  .logout-success-card {
+
+    padding: 35px 20px;
+
+  }
+
+
+  .logout-main {
+
+    width: calc(100% - 20px);
+
+  }
+
+}

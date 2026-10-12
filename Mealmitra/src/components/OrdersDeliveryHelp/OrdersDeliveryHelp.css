@@ -1,0 +1,1001 @@
+/* =========================================================
+   MEALMITRA — ORDERS & DELIVERY HELP
+   Cream → Orange → Yellow → Red
+========================================================= */
+
+.orders-help-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: linear-gradient(
+    135deg,
+    #fff7ed 0%,
+    #fff1dc 50%,
+    #ffe8c7 100%
+  );
+
+  color: #3b2a24;
+
+  padding: 30px 7% 60px;
+
+  box-sizing: border-box;
+
+  overflow-y: auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.orders-help-header {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+}
+
+
+.orders-help-back {
+  width: 46px;
+  height: 46px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #7f1d1d;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 21px;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+
+.orders-help-back:hover {
+  background: #a52a2a;
+
+  transform: translateX(-3px);
+
+  box-shadow:
+    0 6px 15px rgba(127, 29, 29, 0.20);
+}
+
+
+.orders-help-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin: 0 auto;
+}
+
+
+.orders-help-title-icon {
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #ffd166,
+    #ff9418
+  );
+
+  color: #7f1d1d;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 27px;
+}
+
+
+.orders-help-title h1 {
+  margin: 0;
+
+  color: #8b1e1e;
+
+  font-size: 30px;
+
+  font-weight: 800;
+}
+
+
+.orders-help-title p {
+  margin: 4px 0 0;
+
+  color: #765b4d;
+
+  font-size: 13px;
+}
+
+
+.orders-help-header-space {
+  width: 46px;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.orders-help-main {
+  width: 100%;
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.orders-help-hero {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 250px;
+
+  padding: 40px 45px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background: linear-gradient(
+    135deg,
+    #7f1d1d 0%,
+    #a51c1c 45%,
+    #d94f18 100%
+  );
+
+  box-shadow:
+    0 12px 35px rgba(91, 45, 20, 0.16);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 40px;
+}
+
+
+.orders-help-circle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 209, 102, 0.13);
+
+  pointer-events: none;
+}
+
+
+.orders-help-circle.circle-one {
+  width: 300px;
+  height: 300px;
+
+  right: -100px;
+  top: -170px;
+}
+
+
+.orders-help-circle.circle-two {
+  width: 220px;
+  height: 220px;
+
+  right: 180px;
+  bottom: -160px;
+}
+
+
+.orders-help-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 650px;
+}
+
+
+.orders-help-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 7px 13px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255, 209, 102, 0.18);
+
+  border:
+    1px solid rgba(255, 209, 102, 0.30);
+
+  color: #ffd166;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.orders-help-hero-content h2 {
+  margin: 15px 0 10px;
+
+  color: white;
+
+  font-size: 42px;
+
+  line-height: 1.1;
+
+  font-weight: 800;
+}
+
+
+.orders-help-hero-content h2 span {
+  color: #ffd166;
+}
+
+
+.orders-help-hero-content p {
+  margin: 0;
+
+  max-width: 560px;
+
+  color: #ffe8d2;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+
+.orders-help-hero-icon {
+  position: relative;
+
+  z-index: 2;
+
+  width: 125px;
+  height: 125px;
+
+  margin-right: 25px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #ffd166,
+    #ff9418
+  );
+
+  color: #7f1d1d;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 55px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.15);
+
+  transform: rotate(7deg);
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.orders-help-section {
+  width: 100%;
+
+  margin-bottom: 40px;
+}
+
+
+.orders-help-section-heading {
+  margin-bottom: 22px;
+}
+
+
+.orders-help-section-heading > span {
+  color: #a51c1c;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+
+.orders-help-section-heading h2 {
+  margin: 5px 0;
+
+  color: #8b1e1e;
+
+  font-size: 28px;
+
+  font-weight: 800;
+}
+
+
+.orders-help-section-heading p {
+  margin: 0;
+
+  color: #765b4d;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   QUICK OPTIONS
+========================================================= */
+
+.orders-help-options {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 18px;
+}
+
+
+.orders-help-option {
+  width: 100%;
+
+  padding: 20px;
+
+  border: 1px solid #f0ddcc;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(91, 45, 20, 0.06);
+
+  transition: 0.25s ease;
+}
+
+
+.orders-help-option:hover {
+  transform: translateY(-4px);
+
+  border-color: #ffb703;
+
+  box-shadow:
+    0 14px 30px rgba(91, 45, 20, 0.11);
+}
+
+
+.orders-help-option-icon {
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  border-radius: 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 23px;
+}
+
+
+.orders-help-option-icon.orange {
+  background: #fff0c7;
+  color: #d94f18;
+}
+
+
+.orders-help-option-icon.blue {
+  background: #e8f2ff;
+  color: #2878c8;
+}
+
+
+.orders-help-option-icon.red {
+  background: #ffe7e7;
+  color: #c62828;
+}
+
+
+.orders-help-option-icon.green {
+  background: #e7f7ed;
+  color: #278a46;
+}
+
+
+.orders-help-option strong {
+  display: block;
+
+  color: #3b2a24;
+
+  font-size: 15px;
+
+  margin-bottom: 5px;
+}
+
+
+.orders-help-option span {
+  color: #765b4d;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   ORDER PROCESS
+========================================================= */
+
+.order-process {
+  background: #ffffff;
+
+  border: 1px solid #f0ddcc;
+
+  border-radius: 22px;
+
+  padding: 25px;
+
+  box-shadow:
+    0 10px 30px rgba(91, 45, 20, 0.07);
+}
+
+
+.order-process-step {
+  display: grid;
+
+  grid-template-columns:
+    45px 52px 1fr;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+.process-number {
+  color: #a51c1c;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+
+.process-icon {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 15px;
+
+  background: linear-gradient(
+    135deg,
+    #fff0c7,
+    #ffe0a3
+  );
+
+  color: #a51c1c;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 21px;
+}
+
+
+.order-process-step strong {
+  display: block;
+
+  color: #3b2a24;
+
+  font-size: 15px;
+
+  margin-bottom: 4px;
+}
+
+
+.order-process-step p {
+  margin: 0;
+
+  color: #765b4d;
+
+  font-size: 12px;
+}
+
+
+.order-process-line {
+  height: 25px;
+
+  border-left:
+    2px dashed #e3cdbb;
+
+  margin-left: 69px;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.orders-help-faq {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #f0ddcc;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 30px rgba(91, 45, 20, 0.06);
+}
+
+
+.orders-help-faq-item {
+  border-bottom:
+    1px solid #f0ddcc;
+}
+
+
+.orders-help-faq-item:last-child {
+  border-bottom: none;
+}
+
+
+.orders-help-faq-question {
+  width: 100%;
+
+  border: none;
+
+  background: transparent;
+
+  padding: 20px 23px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  color: #3b2a24;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+
+.orders-help-faq-question:hover {
+  background: #fffaf5;
+}
+
+
+.orders-help-faq-question > div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+}
+
+
+.faq-question-number {
+  color: #a51c1c;
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+
+.orders-help-faq-question svg {
+  color: #a51c1c;
+
+  flex-shrink: 0;
+}
+
+
+.orders-help-faq-answer {
+  padding:
+    0 23px 20px 56px;
+}
+
+
+.orders-help-faq-answer p {
+  margin: 0;
+
+  color: #765b4d;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SUPPORT
+========================================================= */
+
+.orders-help-support {
+  position: relative;
+
+  overflow: hidden;
+
+  width: 100%;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  border-radius: 22px;
+
+  background: linear-gradient(
+    135deg,
+    #7f1d1d,
+    #d94f18
+  );
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  box-shadow:
+    0 12px 35px rgba(91, 45, 20, 0.15);
+}
+
+
+.orders-help-support-icon {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  border-radius: 16px;
+
+  background: #ffd166;
+
+  color: #7f1d1d;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 25px;
+}
+
+
+.orders-help-support > div:nth-child(2) {
+  flex: 1;
+}
+
+
+.orders-help-support span {
+  color: #ffd166;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+
+.orders-help-support h2 {
+  margin: 5px 0;
+
+  font-size: 24px;
+}
+
+
+.orders-help-support p {
+  margin: 0;
+
+  color: #ffe8d2;
+
+  font-size: 13px;
+}
+
+
+.orders-help-support-button {
+  padding: 13px 20px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #ffd166;
+
+  color: #7f1d1d;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+
+.orders-help-support-button:hover {
+  background: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .orders-help-page {
+    padding:
+      25px 5% 50px;
+  }
+
+
+  .orders-help-hero {
+    padding: 35px;
+  }
+
+
+  .orders-help-hero-content h2 {
+    font-size: 36px;
+  }
+
+
+  .orders-help-hero-icon {
+    width: 105px;
+    height: 105px;
+
+    font-size: 45px;
+
+    margin-right: 5px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .orders-help-page {
+    padding:
+      20px 15px 40px;
+  }
+
+
+  .orders-help-title {
+    gap: 9px;
+  }
+
+
+  .orders-help-title-icon {
+    width: 43px;
+    height: 43px;
+
+    font-size: 20px;
+  }
+
+
+  .orders-help-title h1 {
+    font-size: 21px;
+  }
+
+
+  .orders-help-title p {
+    font-size: 10px;
+  }
+
+
+  .orders-help-back {
+    width: 42px;
+    height: 42px;
+  }
+
+
+  .orders-help-header-space {
+    width: 42px;
+  }
+
+
+  .orders-help-hero {
+    min-height: 270px;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    align-items: flex-start;
+  }
+
+
+  .orders-help-hero-content h2 {
+    font-size: 31px;
+  }
+
+
+  .orders-help-hero-content p {
+    max-width: 270px;
+
+    font-size: 12px;
+  }
+
+
+  .orders-help-hero-icon {
+    position: absolute;
+
+    right: -15px;
+
+    bottom: -20px;
+
+    width: 115px;
+    height: 115px;
+
+    font-size: 48px;
+  }
+
+
+  .orders-help-options {
+    grid-template-columns: 1fr;
+  }
+
+
+  .order-process {
+    padding: 20px;
+  }
+
+
+  .order-process-step {
+    grid-template-columns:
+      35px 45px 1fr;
+
+    gap: 10px;
+  }
+
+
+  .process-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+
+  .order-process-line {
+    margin-left: 57px;
+  }
+
+
+  .orders-help-support {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .orders-help-support-button {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .orders-help-title h1 {
+    font-size: 18px;
+  }
+
+
+  .orders-help-title p {
+    display: none;
+  }
+
+
+  .orders-help-hero {
+    padding: 25px;
+
+    min-height: 255px;
+  }
+
+
+  .orders-help-hero-content h2 {
+    font-size: 27px;
+  }
+
+
+  .orders-help-section-heading h2 {
+    font-size: 24px;
+  }
+
+}

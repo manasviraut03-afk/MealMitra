@@ -1,118 +1,292 @@
-/* =====================================================
-   WHY MEALMITRA SECTION
-===================================================== */
+/* =========================================================
+   MAIN SECTION
+========================================================= */
 
 .why-mealmitra {
+  position: relative;
+
   width: 100%;
-  padding: 80px 40px;
 
-  /* SAME DARK RED → ORANGE GRADIENT AS SERVICES */
-  background: linear-gradient(
-    135deg,
-    #7F1D1D 0%,
-    #B8321C 45%,
-    #D95F02 100%
-  );
-
-  box-sizing: border-box;
   overflow: hidden;
+
+  padding: 95px 40px 85px;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(255, 204, 153, 0.95) 0%,
+      rgba(255, 191, 84, 0.45) 25%,
+      transparent 55%
+    ),
+    linear-gradient(
+      135deg,
+      #fff0dc 0%,
+      #ffcc99 35%,
+      #ea9148 70%,
+      #e5751a 100%
+    );
+
+  color: #5c2a12;
+
+  isolation: isolate;
 }
 
 
-/* =====================================================
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.background-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: -3;
+
+  filter: blur(40px);
+}
+
+
+.glow-one {
+  width: 450px;
+  height: 450px;
+
+  left: -170px;
+  top: 160px;
+
+  background: rgba(255, 204, 153, 0.7);
+
+  animation: glowMoveOne 7s ease-in-out infinite;
+}
+
+
+.glow-two {
+  width: 500px;
+  height: 500px;
+
+  right: -200px;
+  bottom: -100px;
+
+  background: rgba(255, 191, 84, 0.45);
+
+  animation: glowMoveTwo 8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   BACKGROUND CIRCLES
+========================================================= */
+
+.background-circle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(139, 63, 18, 0.10);
+
+  pointer-events: none;
+
+  z-index: -2;
+}
+
+
+.circle-one {
+  width: 180px;
+  height: 180px;
+
+  left: 31%;
+  top: 40px;
+}
+
+
+.circle-two {
+  width: 240px;
+  height: 240px;
+
+  right: 8%;
+  top: 120px;
+}
+
+
+.circle-three {
+  width: 130px;
+  height: 130px;
+
+  left: 5%;
+  bottom: 80px;
+}
+
+
+/* =========================================================
    HEADER
-===================================================== */
+========================================================= */
 
 .why-header {
-  width: 100%;
-  max-width: 850px;
+  position: relative;
 
-  margin: 0 auto 60px;
+  z-index: 10;
+
+  max-width: 800px;
+
+  margin: 0 auto 45px;
 
   text-align: center;
 }
 
-.why-header h2 {
-  margin: 0 0 18px;
 
-  font-size: 48px;
-  line-height: 1.15;
+.section-small-title {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  font-size: 12px;
 
   font-weight: 800;
 
-  /* SAME GOLDEN YELLOW AS SERVICES */
-  color: #FFD166;
+  letter-spacing: 4px;
 
-  text-shadow:
-    0 3px 10px rgba(0, 0, 0, 0.30);
+  color: #8b3f12;
 }
+
+
+.why-header h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(38px, 4vw, 56px);
+
+  line-height: 1.05;
+
+  font-weight: 700;
+
+  color: #5c2a12;
+
+  letter-spacing: -1px;
+}
+
+
+.why-header h2 span {
+  display: inline-block;
+
+  color: #e5751a;
+
+  position: relative;
+}
+
+
+.why-header h2 span::after {
+  content: "";
+
+  position: absolute;
+
+  left: 8%;
+  right: 8%;
+
+  bottom: -7px;
+
+  height: 3px;
+
+  border-radius: 10px;
+
+  background: #e5751a;
+
+  opacity: 0.55;
+}
+
+
+/* =========================================================
+   HEADER DESCRIPTION
+   BOLD + LIGHTER COLOUR
+========================================================= */
 
 .why-header p {
+  margin: 20px auto 0;
+
   max-width: 650px;
 
-  margin: 0 auto;
+  font-size: 15px;
 
-  font-size: 20px;
-  line-height: 1.6;
+  line-height: 1.7;
 
-  /* SAME CREAM AS SERVICES */
-  color: #FFF4D6;
+  font-weight: 700;
+
+  color: #fff3e6;
+
+  text-shadow:
+    0 1px 3px rgba(120, 55, 15, 0.18);
 }
 
 
-/* =====================================================
+/* =========================================================
    MAIN CONTENT
-===================================================== */
+========================================================= */
 
 .why-content {
-  width: 100%;
-  max-width: 1200px;
+  position: relative;
+
+  width: min(1180px, 100%);
+
+  min-height: 710px;
 
   margin: 0 auto;
 
   display: grid;
 
-  grid-template-columns: 1fr 300px 1fr;
+  grid-template-columns:
+    260px
+    430px
+    260px;
+
+  justify-content: center;
 
   align-items: center;
 
-  gap: 70px;
+  column-gap: 70px;
+
+  perspective: 1800px;
+
+  transform-style: preserve-3d;
+
+  z-index: 5;
 }
 
 
-/* =====================================================
+/* =========================================================
    FEATURE COLUMNS
-===================================================== */
+========================================================= */
 
 .feature-column {
   display: flex;
 
   flex-direction: column;
 
-  gap: 25px;
+  gap: 26px;
+
+  align-items: center;
+
+  position: relative;
+
+  z-index: 20;
 }
 
 
-/* =====================================================
+/* =========================================================
    FEATURE CARD
-===================================================== */
+========================================================= */
 
 .feature-card {
-  width: 210px;
-  height: 145px;
+  position: relative;
 
-  padding: 20px;
+  width: 250px;
 
-  /* GOLDEN GRADIENT */
-  background: linear-gradient(
-    135deg,
-    #FFD166,
-    #FFB703
-  );
+  min-height: 150px;
 
-  border: 2px solid rgba(255, 193, 7, 0.50);
+  padding: 23px 22px;
 
-  border-radius: 22px;
+  border-radius: 27px;
 
   display: flex;
 
@@ -120,430 +294,1496 @@
 
   justify-content: center;
 
-  align-items: center;
+  align-items: flex-start;
 
-  text-align: center;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(255, 229, 207, 0.98)
+    );
 
-  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.95);
 
   box-shadow:
-    0 10px 25px rgba(0, 0, 0, 0.25);
+    0 24px 38px rgba(111, 48, 14, 0.20),
+    0 12px 0 rgba(205, 91, 20, 0.30),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.95),
+    inset -5px -6px 18px rgba(139, 63, 18, 0.08);
+
+  transform-style: preserve-3d;
+
+  opacity: 0;
+
+  overflow: visible;
 
   transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    box-shadow 0.3s ease;
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+
+  z-index: 20;
 }
 
 
-/* =====================================================
-   CARD HOVER
-===================================================== */
+/* =========================================================
+   CARD 3D BOTTOM
+========================================================= */
 
-.feature-card:hover {
-  transform: translateY(-7px);
+.feature-card::before {
+  content: "";
 
-  /* ORANGE → GOLD */
-  background: linear-gradient(
-    135deg,
-    #FFB703,
-    #FF6B00
-  );
+  position: absolute;
+
+  left: 12px;
+  right: 12px;
+
+  bottom: -14px;
+
+  height: 18px;
+
+  border-radius: 0 0 18px 18px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #e5751a,
+      #b9500f
+    );
+
+  transform: translateZ(-15px);
+
+  z-index: -2;
 
   box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.35);
+    0 10px 15px rgba(90, 36, 8, 0.22);
 }
 
 
-/* =====================================================
-   LEFT CARDS
-===================================================== */
+/* =========================================================
+   CARD SIDE DEPTH
+========================================================= */
 
-.left-features .feature-card {
-  margin-left: auto;
+.feature-card::after {
+  content: "";
+
+  position: absolute;
+
+  right: -10px;
+
+  top: 12px;
+
+  width: 11px;
+
+  height: calc(100% - 24px);
+
+  border-radius: 0 10px 10px 0;
+
+  background:
+    linear-gradient(
+      to right,
+      #d96816,
+      #a8460d
+    );
+
+  transform: translateZ(-8px);
+
+  z-index: -2;
 }
 
 
-/* =====================================================
-   RIGHT CARDS
-===================================================== */
+/* =========================================================
+   CARD SHINE
+========================================================= */
 
-.right-features .feature-card {
-  margin-right: auto;
+.feature-card-shine {
+  position: absolute;
+
+  width: 80px;
+  height: 150%;
+
+  left: -90px;
+  top: -30px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.65),
+      transparent
+    );
+
+  transform: rotate(25deg);
+
+  opacity: 0;
+
+  pointer-events: none;
 }
 
 
-/* =====================================================
-   FEATURE ICON
-===================================================== */
+/* =========================================================
+   CARD ICON
+========================================================= */
 
 .feature-icon {
-  font-size: 42px;
+  width: 48px;
+  height: 48px;
 
-  line-height: 1;
+  border-radius: 14px;
 
-  margin-bottom: 14px;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 25px;
+
+  margin-bottom: 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffaf5,
+      #ffd5af
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 8px 12px rgba(139, 63, 18, 0.18),
+    0 5px 0 #e5751a,
+    inset 2px 2px 4px rgba(255, 255, 255, 0.9);
+
+  transform: translateZ(28px);
+
+  transition: transform 0.35s ease;
 }
 
 
-/* =====================================================
-   FEATURE TITLE
-===================================================== */
+/* =========================================================
+   CARD TITLE
+========================================================= */
 
 .feature-card h3 {
   margin: 0;
 
-  font-size: 18px;
+  font-family: Georgia, "Times New Roman", serif;
 
-  line-height: 1.3;
+  font-size: 17px;
 
   font-weight: 700;
 
-  /* DARK RED FROM SERVICES */
-  color: #7F1D1D !important;
+  color: #6d3214;
+
+  transform: translateZ(22px);
 }
 
 
-/* =====================================================
+/* =========================================================
+   CARD LINE
+========================================================= */
+
+.card-bottom-line {
+  width: 36px;
+
+  height: 3px;
+
+  margin-top: 13px;
+
+  border-radius: 10px;
+
+  background: #e5751a;
+
+  transform: translateZ(20px);
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.feature-card:hover {
+  transform:
+    translateY(-12px)
+    translateZ(30px)
+    rotateX(5deg)
+    rotateY(-3deg);
+
+  box-shadow:
+    0 35px 45px rgba(111, 48, 14, 0.28),
+    0 15px 0 rgba(205, 91, 20, 0.38),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.95);
+}
+
+
+.feature-card:hover .feature-icon {
+  transform:
+    translateZ(40px)
+    translateY(-3px)
+    scale(1.05);
+}
+
+
+.feature-card:hover .feature-card-shine {
+  opacity: 1;
+
+  animation: cardShine 0.9s ease;
+}
+
+
+/* =========================================================
    PHONE CONTAINER
-===================================================== */
+========================================================= */
 
 .phone-container {
+  position: relative;
+
+  width: 430px;
+
+  height: 710px;
+
   display: flex;
+
+  align-items: center;
 
   justify-content: center;
 
-  align-items: center;
+  perspective: 1800px;
+
+  transform-style: preserve-3d;
+
+  z-index: 50;
 }
 
 
-/* =====================================================
+/* =========================================================
+   PHONE GLOW
+========================================================= */
+
+.phone-glow {
+  position: absolute;
+
+  width: 330px;
+  height: 560px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(255, 191, 84, 0.48) 0%,
+      rgba(234, 145, 72, 0.25) 40%,
+      transparent 72%
+    );
+
+  filter: blur(35px);
+
+  transform: translateZ(20px);
+
+  animation:
+    phoneGlow 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   PHONE SHADOW
+========================================================= */
+
+.phone-shadow {
+  position: absolute;
+
+  width: 280px;
+  height: 70px;
+
+  bottom: 38px;
+
+  border-radius: 50%;
+
+  background: rgba(101, 43, 10, 0.35);
+
+  filter: blur(25px);
+
+  transform: translateZ(20px);
+
+  animation:
+    phoneShadow 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
    PHONE BODY
-===================================================== */
+========================================================= */
 
 .phone {
   position: relative;
 
-  width: 270px;
-  height: 500px;
+  width: 325px;
+  height: 610px;
 
-  padding: 10px;
+  padding: 9px;
 
-  /* DARK RED */
-  background: #7F1D1D;
+  border-radius: 48px;
 
-  border-radius: 42px;
+  background:
+    linear-gradient(
+      145deg,
+      #555555 0%,
+      #242424 12%,
+      #050505 38%,
+      #111111 70%,
+      #383838 100%
+    );
 
-  box-sizing: border-box;
+  border: 2px solid rgba(255, 255, 255, 0.42);
+
+  transform-style: preserve-3d;
+
+  /* STRAIGHT FRONT VIEW */
+  transform: translateZ(120px);
 
   box-shadow:
-    0 25px 50px rgba(0, 0, 0, 0.40);
+    0 45px 70px rgba(71, 30, 7, 0.42),
+    0 25px 35px rgba(71, 30, 7, 0.30),
+    12px 15px 0 #111111,
+    18px 21px 0 rgba(0, 0, 0, 0.45),
+    inset 2px 2px 2px rgba(255, 255, 255, 0.45),
+    inset -4px -4px 12px rgba(0, 0, 0, 0.9);
 
-  border: 2px solid rgba(255, 193, 7, 0.35);
+  z-index: 100;
+
+  animation:
+    phoneFrontFloat 4.5s ease-in-out infinite;
 }
 
 
-/* =====================================================
+/* =========================================================
+   PHONE SIDE
+========================================================= */
+
+.phone-side {
+  position: absolute;
+
+  right: -15px;
+
+  top: 25px;
+
+  width: 15px;
+
+  height: calc(100% - 50px);
+
+  border-radius: 0 18px 18px 0;
+
+  background:
+    linear-gradient(
+      to right,
+      #111111,
+      #050505
+    );
+
+  box-shadow:
+    8px 8px 18px rgba(0, 0, 0, 0.45);
+
+  transform: translateZ(-8px);
+
+  z-index: -1;
+}
+
+
+/* =========================================================
+   PHONE NOTCH
+========================================================= */
+
+.phone-notch {
+  position: absolute;
+
+  top: 13px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    translateZ(35px);
+
+  width: 105px;
+
+  height: 27px;
+
+  border-radius:
+    0 0 18px 18px;
+
+  background: #050505;
+
+  z-index: 20;
+}
+
+
+.phone-camera {
+  position: absolute;
+
+  right: 14px;
+
+  top: 8px;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 35%,
+      #6f7e8d,
+      #101820 55%,
+      #020202 70%
+    );
+
+  box-shadow:
+    0 0 4px rgba(80, 150, 220, 0.35);
+}
+
+
+/* =========================================================
    PHONE SCREEN
-===================================================== */
+========================================================= */
 
 .phone-screen {
+  position: relative;
+
   width: 100%;
   height: 100%;
 
-  padding: 55px 20px 20px;
+  overflow: hidden;
 
-  /* CREAM */
-  background: #FFF4D6;
+  border-radius: 39px;
 
-  border-radius: 34px;
+  background:
+    linear-gradient(
+      180deg,
+      #fffaf5 0%,
+      #fff4e8 45%,
+      #ffe7d0 100%
+    );
 
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.8),
+    inset 0 0 25px rgba(234, 145, 72, 0.12);
+
+  transform: translateZ(12px);
+}
+
+
+/* =========================================================
+   SCREEN REFLECTION
+========================================================= */
+
+.screen-reflection {
+  position: absolute;
+
+  top: -80px;
+
+  left: -100px;
+
+  width: 80px;
+
+  height: 700px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.18),
+      transparent
+    );
+
+  transform: rotate(18deg);
+
+  pointer-events: none;
+
+  animation:
+    screenReflection 5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   PHONE STATUS
+========================================================= */
+
+.phone-status {
+  height: 38px;
+
+  padding: 10px 18px 0;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  color: #6d3214;
+}
+
+
+.status-icons {
+  display: flex;
+
+  gap: 4px;
+
+  font-size: 7px;
+}
+
+
+/* =========================================================
+   APP HEADER
+========================================================= */
+
+.phone-app-header {
+  margin: 7px 15px 0;
+
+  padding: 10px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff9f3,
+      #fff0e2
+    );
+
+  box-shadow:
+    0 5px 12px rgba(139, 63, 18, 0.08);
+}
+
+
+.mini-logo {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffb44d,
+      #e5751a
+    );
+
+  font-size: 18px;
+
+  box-shadow:
+    0 5px 10px rgba(229, 117, 26, 0.25);
+}
+
+
+.phone-app-header strong {
+  display: block;
+
+  font-family: Georgia, serif;
+
+  font-size: 12px;
+
+  color: #713513;
+}
+
+
+.phone-app-header small {
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: 7px;
+
+  color: #a56b43;
+}
+
+
+/* =========================================================
+   WELCOME
+========================================================= */
+
+.phone-welcome {
+  padding: 17px 20px 10px;
+}
+
+
+.phone-welcome span {
+  font-size: 8px;
+
+  color: #9b6240;
+}
+
+
+.phone-welcome h3 {
+  margin: 5px 0 0;
+
+  font-family: Georgia, serif;
+
+  font-size: 16px;
+
+  color: #693014;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.phone-search {
+  margin: 0 15px;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0 12px;
+
+  border-radius: 13px;
+
+  background: white;
+
+  box-shadow:
+    0 5px 12px rgba(139, 63, 18, 0.08);
+
+  font-size: 10px;
+}
+
+
+.search-text {
+  color: #b99b87;
+}
+
+
+/* =========================================================
+   CATEGORIES
+========================================================= */
+
+.phone-categories {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 7px;
+
+  padding: 13px 15px;
+}
+
+
+.category {
+  height: 58px;
+
+  border-radius: 13px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 4px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  color: #9b6240;
+
+  transition: 0.3s ease;
+}
+
+
+.category span {
+  font-size: 17px;
+}
+
+
+.category small {
+  font-size: 6px;
+}
+
+
+.category.active {
+  background:
+    linear-gradient(
+      145deg,
+      #ffb44d,
+      #e5751a
+    );
+
+  color: white;
+
+  box-shadow:
+    0 7px 12px rgba(229, 117, 26, 0.25);
+}
+
+
+/* =========================================================
+   FOOD CARD
+========================================================= */
+
+.phone-food-card {
+  margin: 2px 15px 0;
+
+  min-height: 73px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 9px;
+
+  border-radius: 16px;
+
+  background: white;
+
+  box-shadow:
+    0 7px 15px rgba(139, 63, 18, 0.09);
+}
+
+
+.food-image {
+  width: 50px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  font-size: 27px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffe1bd,
+      #ffb866
+    );
+}
+
+
+.food-info {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.food-info strong {
+  font-size: 9px;
+
+  color: #713513;
+}
+
+
+.food-info small {
+  font-size: 7px;
+
+  color: #a57c63;
+}
+
+
+.food-info b {
+  font-size: 9px;
+
+  color: #e5751a;
+}
+
+
+.phone-food-card button {
+  width: 27px;
+  height: 27px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffb44d,
+      #e5751a
+    );
+
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 10px rgba(229, 117, 26, 0.22);
+}
+
+
+/* =========================================================
+   ORDER BOX
+========================================================= */
+
+.order-box {
+  margin: 13px 15px;
+
+  min-height: 58px;
+
+  padding: 9px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff2e3,
+      #ffd9b6
+    );
+
+  border: 1px solid rgba(229, 117, 26, 0.14);
+}
+
+
+.order-icon {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: white;
+
+  font-size: 15px;
+}
+
+
+.order-text {
+  flex: 1;
+}
+
+
+.order-text strong {
+  display: block;
+
+  font-size: 9px;
+
+  color: #713513;
+}
+
+
+.order-text small {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 6px;
+
+  color: #a57c63;
+}
+
+
+.order-arrow {
+  color: #e5751a;
+
+  font-size: 18px;
+
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   BOTTOM NAV
+========================================================= */
+
+.phone-bottom-nav {
+  position: absolute;
+
+  left: 9px;
+  right: 9px;
+  bottom: 8px;
+
+  height: 55px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  align-items: center;
+
+  border-radius: 19px;
+
+  background:
+    rgba(255, 255, 255, 0.92);
+
+  box-shadow:
+    0 -5px 15px rgba(139, 63, 18, 0.08);
+}
+
+
+.bottom-item {
   display: flex;
 
   flex-direction: column;
 
   align-items: center;
 
-  box-sizing: border-box;
+  justify-content: center;
 
-  overflow: hidden;
+  gap: 3px;
+
+  font-size: 13px;
+
+  color: #b39a89;
 }
 
 
-/* =====================================================
-   PHONE NOTCH
-===================================================== */
+.bottom-item small {
+  font-size: 6px;
+}
 
-.phone-notch {
+
+.bottom-item.active {
+  color: #e5751a;
+}
+
+
+/* =========================================================
+   FLOATING FOOD
+========================================================= */
+
+.floating-food {
   position: absolute;
 
-  top: 10px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  width: 110px;
-  height: 28px;
-
-  /* SAME DARK RED */
-  background: #7F1D1D;
-
-  border-radius: 0 0 18px 18px;
-
-  z-index: 5;
-}
-
-
-/* =====================================================
-   PHONE LOGO
-===================================================== */
-
-.phone-logo {
-  width: 65px;
-  height: 65px;
-
-  /* SAME SERVICES GOLDEN GRADIENT */
-  background: linear-gradient(
-    135deg,
-    #FFD166,
-    #FFB703
-  );
-
-  border-radius: 20px;
+  width: 58px;
+  height: 58px;
 
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  font-size: 32px;
+  border-radius: 50%;
+
+  font-size: 27px;
+
+  background:
+    rgba(255, 247, 238, 0.85);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
 
   box-shadow:
-    0 8px 20px rgba(255, 183, 3, 0.40);
+    0 15px 25px rgba(111, 48, 14, 0.16);
+
+  backdrop-filter: blur(8px);
+
+  z-index: 80;
 }
 
 
-/* =====================================================
-   PHONE TITLE
-===================================================== */
+.floating-food-one {
+  left: 18px;
+  top: 190px;
 
-.phone-screen h3 {
-  margin: 15px 0 3px;
-
-  font-size: 25px;
-
-  font-weight: 700;
-
-  /* SERVICES ORANGE */
-  color: #B8321C;
+  animation:
+    floatingFoodOne 4.5s ease-in-out infinite;
 }
 
 
-/* =====================================================
-   PHONE SUBTITLE
-===================================================== */
+.floating-food-two {
+  right: 5px;
+  top: 350px;
 
-.phone-screen > p {
+  animation:
+    floatingFoodTwo 5s ease-in-out infinite;
+}
+
+
+.floating-food-three {
+  left: 45px;
+  bottom: 100px;
+
+  font-size: 22px;
+
+  animation:
+    floatingFoodThree 3.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   BOTTOM TEXT
+   BOLD + LIGHTER COLOUR
+========================================================= */
+
+.why-bottom-text {
+  position: relative;
+
+  z-index: 15;
+
+  width: 100%;
+
+  min-height: 55px;
+
+  margin: 20px auto 0;
+
+  padding-top: 10px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  text-align: center;
+
+  clear: both;
+
+  color: #fff3e6;
+}
+
+
+.why-bottom-text p {
   margin: 0;
 
   font-size: 14px;
 
-  color: #7F4A32;
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+
+  line-height: 1.5;
+
+  color: #fff3e6;
+
+  text-shadow:
+    0 1px 3px rgba(120, 55, 15, 0.18);
 }
 
 
-/* =====================================================
-   FOOD DISPLAY
-===================================================== */
+.why-bottom-text span {
+  flex-shrink: 0;
 
-.food-display {
-  width: 190px;
-  height: 150px;
+  color: #ffe4c7;
 
-  margin-top: 35px;
+  font-size: 17px;
 
-  background: #FFFFFF;
+  font-weight: 800;
 
-  border-radius: 25px;
+  text-shadow:
+    0 1px 3px rgba(120, 55, 15, 0.18);
+}
 
-  display: flex;
 
-  align-items: center;
-  justify-content: center;
+/* =========================================================
+   ENTRANCE ANIMATION
+========================================================= */
 
-  gap: 8px;
+.start-animation .left-features .feature-1 {
+  animation:
+    cardLeft 0.8s 0.1s ease forwards;
+}
 
-  font-size: 42px;
+
+.start-animation .left-features .feature-2 {
+  animation:
+    cardLeft 0.8s 0.22s ease forwards;
+}
+
+
+.start-animation .left-features .feature-3 {
+  animation:
+    cardLeft 0.8s 0.34s ease forwards;
+}
+
+
+.start-animation .right-features .feature-4 {
+  animation:
+    cardRight 0.8s 0.1s ease forwards;
+}
+
+
+.start-animation .right-features .feature-5 {
+  animation:
+    cardRight 0.8s 0.22s ease forwards;
+}
+
+
+.start-animation .right-features .feature-6 {
+  animation:
+    cardRight 0.8s 0.34s ease forwards;
+}
+
+
+/* =========================================================
+   KEYFRAMES
+========================================================= */
+
+@keyframes cardLeft {
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(-70px)
+      translateZ(-40px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0)
+      translateZ(0);
+  }
+}
+
+
+@keyframes cardRight {
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(70px)
+      translateZ(-40px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0)
+      translateZ(0);
+  }
+}
+
+
+@keyframes cardShine {
+  from {
+    left: -90px;
+  }
+
+  to {
+    left: 310px;
+  }
+}
+
+
+@keyframes phoneFrontFloat {
+  0% {
+    transform:
+      translateY(0)
+      translateZ(120px);
+  }
+
+  50% {
+    transform:
+      translateY(-12px)
+      translateZ(135px);
+  }
+
+  100% {
+    transform:
+      translateY(0)
+      translateZ(120px);
+  }
+}
+
+
+@keyframes phoneGlow {
+  0%,
+  100% {
+    opacity: 0.55;
+
+    transform:
+      translateZ(20px)
+      scale(0.95);
+  }
+
+  50% {
+    opacity: 0.9;
+
+    transform:
+      translateZ(20px)
+      scale(1.05);
+  }
+}
+
+
+@keyframes phoneShadow {
+  0%,
+  100% {
+    opacity: 0.4;
+
+    transform: scaleX(0.9);
+  }
+
+  50% {
+    opacity: 0.65;
+
+    transform: scaleX(1.05);
+  }
+}
+
+
+@keyframes screenReflection {
+  0% {
+    left: -120px;
+
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.3;
+  }
+
+  45% {
+    opacity: 0.15;
+  }
+
+  60% {
+    left: 350px;
+
+    opacity: 0;
+  }
+
+  100% {
+    left: 350px;
+
+    opacity: 0;
+  }
+}
+
+
+@keyframes floatingFoodOne {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(-8deg);
+  }
+
+  50% {
+    transform:
+      translateY(-18px)
+      rotate(8deg);
+  }
+}
+
+
+@keyframes floatingFoodTwo {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(8deg);
+  }
+
+  50% {
+    transform:
+      translateY(20px)
+      rotate(-8deg);
+  }
+}
+
+
+@keyframes floatingFoodThree {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateY(-14px)
+      scale(1.15);
+  }
+}
+
+
+@keyframes glowMoveOne {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(70px, -30px);
+  }
+}
+
+
+@keyframes glowMoveTwo {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-70px, -40px);
+  }
+}
+
+
+/* =========================================================
+   PHONE HOVER
+========================================================= */
+
+.phone-container:hover .phone {
+  animation-play-state: paused;
+
+  transform:
+    translateY(-10px)
+    translateZ(155px);
 
   box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.18);
+    0 55px 85px rgba(71, 30, 7, 0.48),
+    0 30px 45px rgba(71, 30, 7, 0.32),
+    12px 15px 0 #111111,
+    18px 21px 0 rgba(0, 0, 0, 0.5),
+    inset 2px 2px 2px rgba(255, 255, 255, 0.45),
+    inset -4px -4px 12px rgba(0, 0, 0, 0.9);
 }
 
 
-/* =====================================================
-   ORDER BOX
-===================================================== */
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
-.order-box {
-  width: 190px;
+@media (max-width: 1150px) {
 
-  margin-top: 25px;
+  .why-content {
+    grid-template-columns:
+      220px
+      380px
+      220px;
 
-  padding: 14px;
+    column-gap: 35px;
 
-  /* SAME SERVICES ARROW GRADIENT */
-  background: linear-gradient(
-    135deg,
-    #FFB703,
-    #FF6B00,
-    #E63920
-  );
+    min-height: 710px;
+  }
 
-  color: #FFFFFF;
+  .feature-card {
+    width: 215px;
+  }
 
-  border-radius: 15px;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 12px;
-
-  box-sizing: border-box;
-
-  box-shadow:
-    0 6px 18px rgba(255, 107, 0, 0.40);
+  .phone-container {
+    width: 380px;
+  }
 }
 
 
-/* =====================================================
-   ORDER ICON
-===================================================== */
-
-.order-box span {
-  font-size: 25px;
-}
-
-
-/* =====================================================
-   ORDER TEXT
-===================================================== */
-
-.order-box strong {
-  display: block;
-
-  font-size: 14px;
-}
-
-.order-box small {
-  display: block;
-
-  margin-top: 4px;
-
-  font-size: 11px;
-}
-
-
-/* =====================================================
+/* =========================================================
    TABLET
-===================================================== */
+========================================================= */
 
-@media (max-width: 1050px) {
+@media (max-width: 950px) {
 
   .why-mealmitra {
-    padding: 70px 25px;
+    padding-left: 20px;
+
+    padding-right: 20px;
   }
 
   .why-content {
-    grid-template-columns: 1fr 270px 1fr;
+    grid-template-columns:
+      1fr 1fr;
 
-    gap: 35px;
+    column-gap: 30px;
+
+    row-gap: 40px;
+
+    min-height: auto;
   }
 
-  .feature-card {
-    width: 190px;
+  .phone-container {
+    grid-column: 1 / -1;
 
-    height: 140px;
+    grid-row: 1;
+
+    width: 430px;
+
+    height: 710px;
+
+    margin: 0 auto;
   }
 
-  .phone {
-    width: 250px;
+  .left-features {
+    grid-column: 1;
 
-    height: 470px;
+    grid-row: 2;
   }
 
-  .why-header h2 {
-    font-size: 42px;
+  .right-features {
+    grid-column: 2;
+
+    grid-row: 2;
+  }
+
+  .why-bottom-text {
+    margin-top: 35px;
   }
 }
 
 
-/* =====================================================
-   SMALL TABLET
-===================================================== */
-
-@media (max-width: 850px) {
-
-  .why-content {
-    grid-template-columns: 1fr 240px 1fr;
-
-    gap: 20px;
-  }
-
-  .feature-card {
-    width: 170px;
-
-    height: 135px;
-  }
-
-  .feature-icon {
-    font-size: 38px;
-  }
-
-  .feature-card h3 {
-    font-size: 16px;
-  }
-
-  .phone {
-    width: 230px;
-
-    height: 440px;
-  }
-
-  .food-display {
-    width: 170px;
-
-    height: 130px;
-
-    font-size: 35px;
-  }
-
-  .order-box {
-    width: 170px;
-  }
-}
-
-
-/* =====================================================
+/* =========================================================
    MOBILE
-===================================================== */
+========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 650px) {
 
   .why-mealmitra {
-    padding: 60px 20px;
+    padding:
+      70px 15px 60px;
   }
 
   .why-header {
-    margin-bottom: 45px;
+    margin-bottom: 20px;
   }
 
   .why-header h2 {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   .why-header p {
-    font-size: 17px;
+    font-size: 13px;
+
+    font-weight: 700;
   }
 
   .why-content {
@@ -551,22 +1791,26 @@
 
     flex-direction: column;
 
-    gap: 35px;
-  }
+    gap: 30px;
 
-  /* Phone first */
+    min-height: auto;
+  }
 
   .phone-container {
     order: 1;
-  }
 
-  /* Left features */
+    width: 350px;
+
+    height: 650px;
+
+    margin: 0 auto;
+
+    transform: scale(0.88);
+  }
 
   .left-features {
     order: 2;
   }
-
-  /* Right features */
 
   .right-features {
     order: 3;
@@ -575,45 +1819,74 @@
   .feature-column {
     width: 100%;
 
-    align-items: center;
-
-    gap: 20px;
-  }
-
-  .left-features .feature-card,
-  .right-features .feature-card {
-    margin: 0;
+    gap: 24px;
   }
 
   .feature-card {
-    width: 210px;
+    width: min(320px, 90vw);
+  }
 
-    height: 140px;
+  .why-bottom-text {
+    margin-top: 15px;
+
+    padding:
+      15px 10px 0;
+
+    gap: 10px;
+
+    min-height: 65px;
+  }
+
+  .why-bottom-text p {
+    text-align: center;
+
+    font-size: 11px;
+
+    font-weight: 800;
   }
 }
 
 
-/* =====================================================
-   VERY SMALL MOBILE
-===================================================== */
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
 @media (max-width: 400px) {
 
+  .phone-container {
+    transform: scale(0.78);
+
+    margin-top: -40px;
+
+    margin-bottom: -40px;
+  }
+
   .why-header h2 {
-    font-size: 28px;
+    font-size: 31px;
   }
 
-  .why-header p {
-    font-size: 16px;
+  .why-bottom-text {
+    margin-top: 20px;
   }
+}
 
-  .phone {
-    width: 220px;
 
-    height: 430px;
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .phone,
+  .phone-glow,
+  .phone-shadow,
+  .floating-food,
+  .screen-reflection,
+  .background-glow {
+    animation: none !important;
   }
 
   .feature-card {
-    width: 190px;
+    opacity: 1;
   }
 }

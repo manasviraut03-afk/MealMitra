@@ -1,0 +1,1336 @@
+/* =========================================================
+   MEALMITRA HELP CENTER
+   Professional / Swiggy-style layout
+========================================================= */
+
+.help-center-page {
+  min-height: 100vh;
+  width: 100%;
+
+  background:
+    radial-gradient(
+      circle at 8% 25%,
+      rgba(255, 190, 100, 0.12),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 92% 35%,
+      rgba(255, 120, 70, 0.07),
+      transparent 28%
+    ),
+    #f8f8f8;
+
+  color: #222;
+
+  position: relative;
+
+  box-sizing: border-box;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+   FIXED OUTSIDE THE CONTENT
+   DOES NOT MOVE WHILE SCROLLING
+========================================================= */
+
+.help-center-close {
+  position: fixed;
+
+  top: 105px;
+  right: 28px;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 13px;
+
+  border: 1px solid #ead8ca;
+
+  background: #ffffff;
+
+  color: #c52b20;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  z-index: 9999;
+
+  box-shadow:
+    0 7px 20px rgba(0, 0, 0, 0.08);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.help-center-close:hover {
+  background: #fff6f1;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+.help-center-close:active {
+  transform: scale(0.96);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.help-center-main {
+  width: min(1050px, 88%);
+
+  margin: 0 auto;
+
+  /*
+     TOP SPACE IS INTENTIONALLY SMALLER
+     SO THE CARD DOES NOT COME TOO FAR BELOW NAVBAR
+  */
+  padding:
+    24px
+    0
+    70px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO CARD
+   SMALLER LIKE SETTINGS CARD
+========================================================= */
+
+.help-hero {
+  width: 100%;
+
+  min-height: 245px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  border: 1px solid #f0ddd0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff5eb 0%,
+      #fffdfb 50%,
+      #ffeadb 100%
+    );
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.05);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO DECORATIONS
+========================================================= */
+
+.help-hero-decoration {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* RIGHT TOP CIRCLE */
+
+.help-circle-one {
+  width: 190px;
+  height: 190px;
+
+  border: 26px solid rgba(255, 145, 90, 0.09);
+
+  top: -105px;
+  right: -35px;
+}
+
+
+/* LEFT BOTTOM CIRCLE */
+
+.help-circle-two {
+  width: 110px;
+  height: 110px;
+
+  background:
+    rgba(255, 190, 100, 0.10);
+
+  bottom: -62px;
+  left: -38px;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.help-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  text-align: center;
+
+  padding:
+    30px
+    20px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO LABEL
+========================================================= */
+
+.help-hero-label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  color: #ff5126;
+}
+
+
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.help-hero h1 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 40px;
+
+  line-height: 1.1;
+
+  font-weight: 500;
+
+  color: #8e211c;
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.help-hero p {
+  margin:
+    10px
+    auto
+    18px;
+
+  font-size: 13px;
+
+  color: #666;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   SEARCH BOX
+========================================================= */
+
+.help-search-box {
+  width: min(540px, 90%);
+
+  height: 54px;
+
+  margin: 0 auto;
+
+  padding:
+    0
+    17px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #ead9ce;
+
+  border-radius: 13px;
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.05);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.help-search-box:focus-within {
+  border-color: #ff8057;
+
+  box-shadow:
+    0 7px 24px rgba(255, 94, 48, 0.10);
+}
+
+
+.help-search-icon {
+  color: #ff572f;
+
+  font-size: 18px;
+
+  flex-shrink: 0;
+}
+
+
+.help-search-box input {
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  font-size: 14px;
+
+  color: #333;
+
+  font-family: inherit;
+}
+
+
+.help-search-box input::placeholder {
+  color: #999;
+}
+
+
+/* =========================================================
+   QUICK HELP
+========================================================= */
+
+.quick-help-section {
+  margin-top: 34px;
+}
+
+
+.quick-help-heading {
+  margin-bottom: 16px;
+}
+
+
+.quick-help-heading > span {
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.6px;
+
+  color: #ff5428;
+}
+
+
+.quick-help-heading h2 {
+  margin:
+    5px
+    0
+    0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 25px;
+
+  font-weight: 500;
+
+  color: #222;
+}
+
+
+/* =========================================================
+   QUICK HELP GRID
+========================================================= */
+
+.quick-help-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   QUICK HELP CARD
+========================================================= */
+
+.quick-help-card {
+  min-height: 115px;
+
+  padding: 18px;
+
+  border:
+    1px solid #eadfd8;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  color: #222;
+
+  position: relative;
+
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.035);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.quick-help-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #ffc9b3;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================================
+   QUICK HELP ICON
+========================================================= */
+
+.quick-help-icon {
+  width: 46px;
+  height: 46px;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff0df,
+      #ffe3d1
+    );
+
+  color: #f05a28;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 20px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   QUICK HELP CONTENT
+========================================================= */
+
+.quick-help-content {
+  flex: 1;
+}
+
+
+.quick-help-content h3 {
+  margin:
+    0
+    0
+    5px;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+
+.quick-help-content p {
+  margin: 0;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   QUICK HELP ARROW
+========================================================= */
+
+.quick-help-arrow {
+  color: #999;
+
+  font-size: 17px;
+
+  transform:
+    rotate(-90deg);
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   FAQ SECTION
+========================================================= */
+
+.faq-section {
+  margin-top: 42px;
+}
+
+
+.faq-heading {
+  margin-bottom: 17px;
+}
+
+
+.faq-heading > span {
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.7px;
+
+  color: #ff5428;
+}
+
+
+.faq-heading h2 {
+  margin:
+    5px
+    0
+    4px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 27px;
+
+  font-weight: 500;
+
+  color: #222;
+}
+
+
+.faq-heading p {
+  margin: 0;
+
+  font-size: 13px;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   FAQ LIST
+========================================================= */
+
+.faq-list {
+  background: #ffffff;
+
+  border:
+    1px solid #e8ddd6;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 7px 24px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   FAQ ITEM
+========================================================= */
+
+.faq-item {
+  background: #ffffff;
+
+  border-bottom:
+    1px solid #eee4de;
+}
+
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+
+.faq-item-open {
+  background: #fffaf7;
+}
+
+
+/* =========================================================
+   FAQ QUESTION
+========================================================= */
+
+.faq-question {
+  width: 100%;
+
+  min-height: 68px;
+
+  padding:
+    14px
+    22px;
+
+  border: none;
+
+  background: transparent;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  color: #222;
+}
+
+
+.faq-question:hover {
+  background: #fff8f3;
+}
+
+
+/* =========================================================
+   FAQ QUESTION LEFT
+========================================================= */
+
+.faq-question-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   FAQ NUMBER
+========================================================= */
+
+.faq-number {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 11px;
+
+  background: #fff0e5;
+
+  color: #ef6428;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   FAQ QUESTION TEXT
+========================================================= */
+
+.faq-question-text {
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   FAQ ARROW
+========================================================= */
+
+.faq-arrow {
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+
+  background: #f8f8f8;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #888;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+
+.faq-item-open .faq-arrow {
+  transform:
+    rotate(180deg);
+
+  background: #fff0e5;
+
+  color: #ef6428;
+}
+
+
+/* =========================================================
+   FAQ ANSWER
+========================================================= */
+
+.faq-answer {
+  padding:
+    0
+    70px
+    20px;
+}
+
+
+.faq-answer p {
+  margin: 0;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  color: #666;
+}
+
+
+/* =========================================================
+   NO RESULTS
+========================================================= */
+
+.no-results {
+  padding:
+    50px
+    20px;
+
+  text-align: center;
+
+  color: #777;
+}
+
+
+.no-results svg {
+  font-size: 30px;
+
+  color: #ff6335;
+}
+
+
+.no-results h3 {
+  margin:
+    12px
+    0
+    5px;
+
+  color: #333;
+}
+
+
+.no-results p {
+  margin: 0;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   SUPPORT BANNER
+========================================================= */
+
+.support-banner {
+  position: relative;
+
+  overflow: hidden;
+
+  margin-top: 36px;
+
+  padding:
+    25px
+    28px;
+
+  border-radius: 19px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff3e8,
+      #fffdfb
+    );
+
+  border:
+    1px solid #efddd1;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  box-shadow:
+    0 7px 22px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   SUPPORT DECORATION
+========================================================= */
+
+.support-decoration {
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  border-radius: 50%;
+
+  border:
+    24px solid rgba(255, 130, 80, 0.08);
+
+  right: -55px;
+  top: -75px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SUPPORT ICON
+========================================================= */
+
+.support-banner-icon {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  color: #f05a28;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 22px;
+
+  flex-shrink: 0;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   SUPPORT CONTENT
+========================================================= */
+
+.support-banner-content {
+  flex: 1;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.support-banner-content span {
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  color: #ff5428;
+}
+
+
+.support-banner-content h2 {
+  margin:
+    5px
+    0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 22px;
+
+  font-weight: 500;
+}
+
+
+.support-banner-content p {
+  margin: 0;
+
+  font-size: 12px;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   SUPPORT ACTIONS
+========================================================= */
+
+.support-banner-actions {
+  display: flex;
+
+  gap: 9px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.chat-support-btn,
+.email-support-btn {
+  padding:
+    10px
+    14px;
+
+  border-radius: 9px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.chat-support-btn {
+  border: none;
+
+  background: #ff592b;
+
+  color: white;
+}
+
+
+.chat-support-btn:hover {
+  background: #e94b20;
+
+  transform: translateY(-1px);
+}
+
+
+.email-support-btn {
+  border:
+    1px solid #e3d5cc;
+
+  background: #ffffff;
+
+  color: #444;
+}
+
+
+.email-support-btn:hover {
+  background: #fff7f2;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CONTACT CARDS
+========================================================= */
+
+.support-contact-grid {
+  margin-top: 18px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 15px;
+}
+
+
+.support-contact-card {
+  padding: 19px;
+
+  background: #ffffff;
+
+  border:
+    1px solid #eadfd8;
+
+  border-radius: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.035);
+}
+
+
+/* =========================================================
+   CONTACT ICON
+========================================================= */
+
+.support-contact-icon {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 12px;
+
+  background: #fff0e5;
+
+  color: #f05a28;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 19px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   CONTACT TEXT
+========================================================= */
+
+.support-contact-card span {
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  color: #ff5428;
+}
+
+
+.support-contact-card h3 {
+  margin:
+    4px
+    0;
+
+  font-size: 14px;
+}
+
+
+.support-contact-card p {
+  margin: 0;
+
+  font-size: 12px;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .help-center-close {
+    top: 95px;
+
+    right: 20px;
+  }
+
+
+  .quick-help-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .support-banner {
+    flex-wrap: wrap;
+  }
+
+
+  .support-banner-actions {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .help-center-main {
+    width: 92%;
+
+    padding:
+      18px
+      0
+      50px;
+  }
+
+
+  /*
+     X STILL STAYS FIXED
+     AND OUTSIDE THE CARD
+  */
+
+  .help-center-close {
+    top: 82px;
+
+    right: 14px;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+
+    font-size: 20px;
+  }
+
+
+  .help-hero {
+    min-height: 250px;
+
+    border-radius: 18px;
+  }
+
+
+  .help-hero-content {
+    padding:
+      28px
+      16px;
+  }
+
+
+  .help-hero h1 {
+    font-size: 34px;
+  }
+
+
+  .help-hero p {
+    font-size: 13px;
+
+    max-width: 90%;
+  }
+
+
+  .help-search-box {
+    width: 100%;
+
+    height: 52px;
+  }
+
+
+  .quick-help-section {
+    margin-top: 30px;
+  }
+
+
+  .quick-help-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .faq-section {
+    margin-top: 36px;
+  }
+
+
+  .faq-question {
+    padding:
+      14px;
+  }
+
+
+  .faq-question-left {
+    gap: 11px;
+  }
+
+
+  .faq-question-text {
+    font-size: 13px;
+  }
+
+
+  .faq-answer {
+    padding:
+      0
+      20px
+      20px
+      61px;
+  }
+
+
+  .support-banner {
+    padding: 22px;
+
+    align-items: flex-start;
+  }
+
+
+  .support-banner-actions {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+
+  .chat-support-btn,
+  .email-support-btn {
+    justify-content: center;
+  }
+
+
+  .support-contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .help-center-close {
+    top: 78px;
+
+    right: 10px;
+
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .help-hero h1 {
+    font-size: 30px;
+  }
+
+
+  .help-hero-content {
+    padding:
+      25px
+      13px;
+  }
+
+
+  .faq-question {
+    padding:
+      12px;
+    }
+
+  .faq-number {
+    width: 33px;
+    height: 33px;
+
+    border-radius: 10px;
+  }
+
+
+  .faq-arrow {
+    width: 31px;
+    height: 31px;
+  }
+
+}
